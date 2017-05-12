@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            x:Class="Utiliza.Usuario.Views.CategoriaPage"
+            prism:ViewModelLocator.AutowireViewModel="True"
+             Title="{Binding Title}">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding NavigateToMainPageCommand}" Order = "Primary" Icon="lupa32.png"  />
+        <ToolbarItem Text="Home" Command="{Binding NavigateToMainPageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Fornecedores" Command="{Binding NavigateToCategoriaPageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Sobre" Command="{Binding NavigateToSobrePageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Config" Command="{Binding NavigateToConfiguracaoPageCommand}" Order = "Secondary"/>
+    </ContentPage.ToolbarItems>
+
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand" >
+        <ListView ItemsSource="{Binding Categorias}" 
+                ItemTapped="OnItemTapped"
+                BackgroundColor="White" 
+                SeparatorVisibility="Default" 
+                SeparatorColor="Red" 
+                >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell ImageSource="{Binding UrlLogo}"
+                               Text="{Binding NomeCategoria}" 
+                               TextColor="Navy" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
