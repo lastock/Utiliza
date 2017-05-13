@@ -3,6 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Utiliza.Usuario.Views.FornecedorDetalhePage">
+             x:Class="Utiliza.Usuario.Views.FornecedorDetalhePage"
+             BackgroundColor="White"
+             Title="Total Dog"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding NavigateToMainPageCommand}" Order = "Primary" Icon="lupa32.png"  />
+        <ToolbarItem Text="Home" Command="{Binding NavigateToMainPageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Fornecedores" Command="{Binding NavigateToCategoriaPageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Sobre" Command="{Binding NavigateToSobrePageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Config" Command="{Binding NavigateToConfiguracaoPageCommand}" Order = "Secondary"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="0" Margin="0,0,0,0" >
+        <Image Source="http://www.totaldog.com.br/images/galeria/hospedagem/big-1.jpg" Aspect="AspectFill"/>
+        <Label Text="Total Dog - Seu cão mais feliz!" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
+        <Label Text = "O melhor hotel para cães da grande São Paulo!" HorizontalTextAlignment="Center" TextColor="Gray" />
+        <Label Text="(11)99935-1364 / (11)99935-4059" HorizontalTextAlignment="Center" TextColor="Navy"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Text="Mapa" Image="icone_localizacao_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="5,0,0,0"/>
+            <Button Grid.Column="1" Text="Site" Image="icone_site_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="0,0,5,0"/>
+        </Grid>
+        
+    </StackLayout>
   
 </ContentPage>

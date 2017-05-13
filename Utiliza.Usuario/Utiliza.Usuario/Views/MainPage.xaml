@@ -43,6 +43,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Navega para Categoria" Command="{Binding NavigateToCategoriaPageCommand}"/>
     </StackLayout>
 </ContentPage>
