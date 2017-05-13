@@ -109,6 +109,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\teste.png" />
+    <Content Include="icon.png" />
+    <Content Include="icone_localizacao_16.png" />
+    <Content Include="icone_localizacao_32.png" />
+    <Content Include="icone_site_16.png" />
+    <Content Include="icone_site_32.png" />
+    <Content Include="icone_site_64.png" />
+    <Content Include="lupa16.png" />
+    <Content Include="lupa32.png" />
+    <Content Include="lupa64.png" />
+    <Content Include="mail_icon_16.png" />
+    <Content Include="mail_icon_32.png" />
+    <Content Include="mail_icon_64.png" />
+    <Content Include="percentage_16.png" />
+    <Content Include="percentage_32.png" />
+    <Content Include="percentage_64.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -117,6 +132,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="teste.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

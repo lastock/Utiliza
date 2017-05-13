@@ -25,7 +25,9 @@
     <ConsolePause>false</ConsolePause>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
-    <MtouchDebug>true</MtouchDebug>
+    <MtouchDebug>True</MtouchDebug>
+    <IOSDebugOverWiFi>False</IOSDebugOverWiFi>
+    <IOSDebuggerPort>10000</IOSDebuggerPort>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -195,6 +197,24 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icone_site_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mail_icon_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mail_icon_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mail_icon_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\percentage_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\percentage_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\percentage_64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
