@@ -110,6 +110,7 @@
   <ItemGroup>
     <Content Include="Assets\teste.png" />
     <Content Include="icon.png" />
+    <Content Include="icone_chat_32.png" />
     <Content Include="icone_localizacao_16.png" />
     <Content Include="icone_localizacao_32.png" />
     <Content Include="icone_site_16.png" />
