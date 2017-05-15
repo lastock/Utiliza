@@ -2,6 +2,7 @@
 using UIKit;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
+using Syncfusion.SfRating.XForms.iOS;
 
 namespace Utiliza.Usuario.iOS
 {
@@ -20,6 +21,7 @@ namespace Utiliza.Usuario.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            new SfRatingRenderer();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
 

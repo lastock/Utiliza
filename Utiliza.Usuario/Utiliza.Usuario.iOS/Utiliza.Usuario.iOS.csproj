@@ -145,6 +145,15 @@
     <Reference Include="Prism.Unity.Forms, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Prism.Unity.Forms.6.3.0\lib\Xamarin.iOS1.0\Prism.Unity.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.SfRating.iOS, Version=15.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.40\lib\Xamarin.iOS10\Syncfusion.SfRating.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRating.XForms, Version=15.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.40\lib\Xamarin.iOS10\Syncfusion.SfRating.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRating.XForms.iOS, Version=15.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.40\lib\Xamarin.iOS10\Syncfusion.SfRating.XForms.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />

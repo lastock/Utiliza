@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Utiliza.Usuario.Views.FornecedorDetalhePage"
              BackgroundColor="White"
@@ -45,7 +46,10 @@
                 <Button Grid.Column="1" Text="Oferta" Image="percentage_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="0,0,5,20"/>
             </Grid>
             <Label Text="Contatos" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
-            
+            <Label Text="(11) 99935-1364 Luis Alfredo - luis@totaldog.com.br" Grid.Column="0" Grid.Row="2" TextColor="Navy" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold"/>
+            <Label Text="(11) 99935-4059 Cindy - cindy@totaldog.com.br" Grid.Column="0" Grid.Row="4" TextColor="Navy" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold"/>
+            <Label Text="Avaliação" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
+            <rating:SfRating x:Name="Rating" ItemSize="20" HorizontalOptions="Center"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

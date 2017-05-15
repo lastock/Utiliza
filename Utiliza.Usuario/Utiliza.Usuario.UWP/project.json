@@ -5,6 +5,7 @@
     "Prism.Core": "6.3.0",
     "Prism.Forms": "6.3.0",
     "Prism.Unity.Forms": "6.3.0",
+    "Syncfusion.Xamarin.SfRating": "15.2.0.40",
     "Unity": "4.0.1",
     "Xam.Plugin.ExternalMaps": "3.0.10",
     "Xam.Plugin.Geolocator": "3.0.4",
