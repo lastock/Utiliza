@@ -36,12 +36,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\Contato.cs" />
     <Compile Include="Model\Conversa.cs" />
     <Compile Include="Model\Fornecedor.cs" />
     <Compile Include="Model\FornecedorSubCategoria.cs" />
     <Compile Include="Model\SubCategoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\PopulaListaCategorias.cs" />
+    <Compile Include="Servicos\PopulaListaContatos.cs" />
     <Compile Include="Servicos\PopulaListaConversas.cs" />
     <Compile Include="Servicos\PopulaListaFornecedores.cs" />
     <Compile Include="Servicos\PopulaListaSubCategorias.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="ViewModels\EventToCommandBehavior.cs" />
     <Compile Include="ViewModels\FornecedorDetalhePageViewModel.cs" />
     <Compile Include="ViewModels\FornecedorMapaPageViewModel.cs" />
+    <Compile Include="ViewModels\InicialPage1ViewModel.cs" />
     <Compile Include="ViewModels\ListaFornecedorPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
@@ -78,6 +81,9 @@
     </Compile>
     <Compile Include="Views\FornecedorMapaPage.xaml.cs">
       <DependentUpon>FornecedorMapaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InicialPage1.xaml.cs">
+      <DependentUpon>InicialPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListaFornecedorPage.xaml.cs">
       <DependentUpon>ListaFornecedorPage.xaml</DependentUpon>
@@ -270,6 +276,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SobrePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InicialPage1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

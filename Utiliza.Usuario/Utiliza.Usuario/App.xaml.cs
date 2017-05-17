@@ -34,6 +34,7 @@ namespace Utiliza.Usuario
             Container.RegisterTypeForNavigation<ConfiguracaoPage>();
             Container.RegisterTypeForNavigation<MudaSenhaPage>();
             Container.RegisterTypeForNavigation<SobrePage>();
+            Container.RegisterTypeForNavigation<InicialPage1>();
         }
     }
 }
