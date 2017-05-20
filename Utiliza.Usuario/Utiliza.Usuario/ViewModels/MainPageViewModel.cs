@@ -14,9 +14,8 @@ namespace Utiliza.Usuario.ViewModels
 
 
 
-        public MainPageViewModel(INavigationService navigationService)
+        public MainPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            InicializaNavegacao(navigationService);
             Popula();
             Conversas = _conversas;
             Cidade = "Mairiporã";

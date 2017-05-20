@@ -11,8 +11,8 @@ namespace Utiliza.Usuario
         protected override void OnInitialized()
         {
             InitializeComponent();
-
-            NavigationService.NavigateAsync("NavigationPage/MainPage");
+            
+            NavigationService.NavigateAsync("/InicialPage/UtilizaNavigationPage/MainPage");
         }
 
         protected override void RegisterTypes()
@@ -34,7 +34,8 @@ namespace Utiliza.Usuario
             Container.RegisterTypeForNavigation<ConfiguracaoPage>();
             Container.RegisterTypeForNavigation<MudaSenhaPage>();
             Container.RegisterTypeForNavigation<SobrePage>();
-            Container.RegisterTypeForNavigation<InicialPage1>();
+            Container.RegisterTypeForNavigation<InicialPage>();
+            Container.RegisterTypeForNavigation<UtilizaNavigationPage>();
         }
     }
 }

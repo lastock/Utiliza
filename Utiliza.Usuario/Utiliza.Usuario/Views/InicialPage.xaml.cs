@@ -2,9 +2,9 @@
 
 namespace Utiliza.Usuario.Views
 {
-    public partial class InicialPage1 : MasterDetailPage
+    public partial class InicialPage : MasterDetailPage
     {
-        public InicialPage1()
+        public InicialPage()
         {
             InitializeComponent();
         }

@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace Utiliza.Usuario.ViewModels
 {
-    public class BaseViewModel : BindableBase
+    public class BaseViewModel : BindableBase, INavigationAware
     {
         protected INavigationService _navigationService;
         public DelegateCommand NavigateToMainPageCommand { get; private set; }
@@ -19,10 +19,9 @@ namespace Utiliza.Usuario.ViewModels
         public DelegateCommand NavigateToMudaSenhaPageCommand { get; private set; }
         public DelegateCommand NavigateToSobrePageCommand { get; private set; }
 
-        public void InicializaNavegacao(INavigationService navigationService)
+        public BaseViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-
             NavigateToMainPageCommand = new DelegateCommand(NavigateToMainPage);
             NavigateToCategoriaPageCommand = new DelegateCommand(NavigateToCategoriaPage);
             NavigateToProcuraPageCommand = new DelegateCommand(NavigateToProcuraPage);
@@ -31,7 +30,10 @@ namespace Utiliza.Usuario.ViewModels
             NavigateToConfiguracaoPageCommand = new DelegateCommand(NavigateToConfiguracaoPage);
             NavigateToMudaSenhaPageCommand = new DelegateCommand(NavigateToMudaSenhaPage);
             NavigateToSobrePageCommand = new DelegateCommand(NavigateToSobrePage);
+        }
 
+        public void InicializaNavegacao(INavigationService navigationService)
+        {
         }
 
 
@@ -80,6 +82,18 @@ namespace Utiliza.Usuario.ViewModels
         protected void NavigateToSobrePage()
         {
             _navigationService.NavigateAsync("SobrePage");
+        }
+
+        public virtual void OnNavigatedFrom(NavigationParameters parameters)
+        {
+        }
+
+        public virtual void OnNavigatedTo(NavigationParameters parameters)
+        {
+        }
+
+        public virtual void OnNavigatingTo(NavigationParameters parameters)
+        {
         }
         #endregion
 

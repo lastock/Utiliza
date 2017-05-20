@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace Utiliza.Usuario.ViewModels
 {
-    public class InicialPage1ViewModel : BindableBase
+    public class UtilizaNavigationPageViewModel : BindableBase
     {
-        public InicialPage1ViewModel()
+        public UtilizaNavigationPageViewModel()
         {
 
         }

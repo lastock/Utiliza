@@ -23,10 +23,9 @@ namespace Utiliza.Usuario.ViewModels
         }
 
 
-        public ListaFornecedorPageViewModel(INavigationService navigationService)
+        public ListaFornecedorPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             Title = "Fornecedores - Mairiporã";
-            InicializaNavegacao(navigationService);
         }
 
         private async void FornecedorSelected(Fornecedor fornecedor)

@@ -23,10 +23,9 @@ namespace Utiliza.Usuario.ViewModels
 
 
 
-        public SubCategoriaPageViewModel(INavigationService navigationService)
+        public SubCategoriaPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             Title = "Subcategorias - Mairiporã";
-            InicializaNavegacao(navigationService);
         }
 
         private async void SubCategoriaSelected(SubCategoria subcategoria)

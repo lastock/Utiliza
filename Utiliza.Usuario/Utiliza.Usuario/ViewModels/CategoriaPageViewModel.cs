@@ -27,10 +27,9 @@ namespace Utiliza.Usuario.ViewModels
             await _navigationService.NavigateAsync("SubCategoriaPage", p);
         }
 
-        public CategoriaPageViewModel(INavigationService navigationService)
+        public CategoriaPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             Title = "Categorias - Mairiporã";
-            InicializaNavegacao(navigationService);
             Popula();
         }
 
