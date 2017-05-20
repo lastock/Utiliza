@@ -53,15 +53,15 @@ namespace Utiliza.Usuario.ViewModels
         #region Metodos de Navegação
         protected void NavigateToMainPage()
         {
-            _navigationService.NavigateAsync("MainPage");
+            _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
         }
-        protected void NavigateToCategoriaPage()
+        protected async void NavigateToCategoriaPage()
         {
-            _navigationService.NavigateAsync("CategoriaPage");
+            await _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/CategoriaPage", UriKind.Absolute));
         }
         protected void NavigateToProcuraPage()
         {
-            _navigationService.NavigateAsync("ProcuraPage");
+            _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/ProcuraPage", UriKind.Relative));
         }
         protected void NavigateToLoginPage()
         {

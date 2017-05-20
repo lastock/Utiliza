@@ -5,6 +5,8 @@
                 prism:ViewModelLocator.AutowireViewModel="True"
                 x:Class="Utiliza.Usuario.Views.UtilizaNavigationPage"
                 Title="Navigation"
-                BackgroundColor="Red">
+                BackgroundColor="White"
+                BarBackgroundColor="DarkGreen"
+                BarTextColor="White">
   
 </NavigationPage>

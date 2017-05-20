@@ -109,6 +109,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\teste.png" />
+    <Content Include="chat32.png" />
+    <Content Include="cidade32.png" />
+    <Content Include="compartilhar32.png" />
+    <Content Include="config32.png" />
+    <Content Include="favorito32.png" />
+    <Content Include="favoritos32.png" />
+    <Content Include="home32.png" />
     <Content Include="icon.png" />
     <Content Include="icone_chat_32.png" />
     <Content Include="icone_localizacao_16.png" />
@@ -116,15 +123,20 @@
     <Content Include="icone_site_16.png" />
     <Content Include="icone_site_32.png" />
     <Content Include="icone_site_64.png" />
+    <Content Include="info32.png" />
+    <Content Include="location32.png" />
+    <Content Include="luis.jpg" />
     <Content Include="lupa16.png" />
     <Content Include="lupa32.png" />
     <Content Include="lupa64.png" />
     <Content Include="mail_icon_16.png" />
     <Content Include="mail_icon_32.png" />
     <Content Include="mail_icon_64.png" />
+    <Content Include="minhaconta32.png" />
     <Content Include="percentage_16.png" />
     <Content Include="percentage_32.png" />
     <Content Include="percentage_64.png" />
+    <Content Include="promocao32.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -133,6 +145,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="termos32.png" />
     <Content Include="teste.png" />
   </ItemGroup>
   <ItemGroup>

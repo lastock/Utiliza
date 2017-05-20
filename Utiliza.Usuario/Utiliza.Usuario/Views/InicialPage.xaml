@@ -9,39 +9,42 @@
                   Title="MasterDetail"
                   >
     <MasterDetailPage.Master>
-        <ContentPage Title="Inicial"
+        <ContentPage Title="Menu"
                      Icon="menu.png"
                      BackgroundColor="Green"
                      >
-            <StackLayout Margin="0,30,0,20" BackgroundColor="#0B3B0B" Spacing="0">
+            <StackLayout Margin="0,30,0,0" BackgroundColor="#0B3B0B" Spacing="0">
                 <controls:CircleImage Source="luis.jpg" Aspect="AspectFit" BorderColor="White" BorderThickness="2" Margin="0,20,0,0">
                     <controls:CircleImage.WidthRequest>
                         <OnPlatform x:TypeArguments="x:Double"
-                                    iOS="150"
-                                    Android="150"
-                                    WinPhone="75"/>
+                                    iOS="100"
+                                    Android="100"
+                                    WinPhone="125"/>
                     </controls:CircleImage.WidthRequest>
                     <controls:CircleImage.HeightRequest>
                         <OnPlatform x:TypeArguments="x:Double"
-                                    iOS="150"
-                                    Android="150"
-                                    WinPhone="75"/>
+                                    iOS="100"
+                                    Android="100"
+                                    WinPhone="125"/>
                     </controls:CircleImage.HeightRequest>
                 </controls:CircleImage>
                 <Label Text="Luis Alfredo Stockler Filho" TextColor="White" FontSize="Small" HorizontalOptions="Center"/>
-
-                <StackLayout BackgroundColor="DarkGreen" Margin="0,20,0,0">
-                    <ListView ItemsSource="{Binding ItensMenu}" 
-                              SeparatorColor="Green">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <control:CustomImageCell ImageSource="{Binding Icone}" 
-                                           Text="{Binding Item}" 
-                                           TextColor="White"/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                 </StackLayout>
+                <ListView ItemsSource="{Binding ItensMenu}" 
+                          ItemTapped="OnItemTapped"
+                          SeparatorColor="Green" 
+                          RowHeight="50"  
+                          Margin="0,20,0,0" 
+                          BackgroundColor="#0B3B0B" 
+                          
+                            >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <control:CustomImageCell ImageSource="{Binding Icone}" 
+                                        Text="{Binding Item}" 
+                                        TextColor="White" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
