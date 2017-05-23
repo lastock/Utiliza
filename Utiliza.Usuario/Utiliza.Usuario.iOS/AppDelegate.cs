@@ -23,6 +23,7 @@ namespace Utiliza.Usuario.iOS
         {
             new SfRatingRenderer();
             global::Xamarin.Forms.Forms.Init();
+            Xamarin.FormsMaps.Init();
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

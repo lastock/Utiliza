@@ -36,6 +36,9 @@ namespace Utiliza.Usuario
             Container.RegisterTypeForNavigation<SobrePage>();
             Container.RegisterTypeForNavigation<InicialPage>();
             Container.RegisterTypeForNavigation<UtilizaNavigationPage>();
+            Container.RegisterTypeForNavigation<AlteraCidadePage>();
+            Container.RegisterTypeForNavigation<MeusDadosPage>();
+            Container.RegisterTypeForNavigation<MapaEmpresaPage>();
         }
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="Servicos\PopulaListaConversas.cs" />
     <Compile Include="Servicos\PopulaListaFornecedores.cs" />
     <Compile Include="Servicos\PopulaListaSubCategorias.cs" />
+    <Compile Include="ViewModels\AlteraCidadePageViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CadastroUsuarioPageViewModel.cs" />
     <Compile Include="ViewModels\CategoriaPageViewModel.cs" />
@@ -62,6 +63,8 @@
     <Compile Include="ViewModels\ListaFornecedorPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\MapaEmpresaPageViewModel.cs" />
+    <Compile Include="ViewModels\MeusDadosPageViewModel.cs" />
     <Compile Include="ViewModels\MudaSenhaPageViewModel.cs" />
     <Compile Include="ViewModels\ProcuraPageViewModel.cs" />
     <Compile Include="ViewModels\ProximosMapaPageViewModel.cs" />
@@ -71,6 +74,9 @@
     <Compile Include="ViewModels\SpeakPageViewModel.cs" />
     <Compile Include="ViewModels\SubCategoriaPageViewModel.cs" />
     <Compile Include="ViewModels\UtilizaNavigationPageViewModel.cs" />
+    <Compile Include="Views\AlteraCidadePage.xaml.cs">
+      <DependentUpon>AlteraCidadePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CadastroUsuarioPage.xaml.cs">
       <DependentUpon>CadastroUsuarioPage.xaml</DependentUpon>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapaEmpresaPage.xaml.cs">
+      <DependentUpon>MapaEmpresaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MeusDadosPage.xaml.cs">
+      <DependentUpon>MeusDadosPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MudaSenhaPage.xaml.cs">
       <DependentUpon>MudaSenhaPage.xaml</DependentUpon>
@@ -183,6 +195,9 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.247\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
@@ -298,6 +313,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\UtilizaNavigationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AlteraCidadePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MeusDadosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MapaEmpresaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

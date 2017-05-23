@@ -17,7 +17,11 @@
     </ContentPage.ToolbarItems>
     <ScrollView>
         <StackLayout Padding="0" Margin="0,0,0,0" >
-            <Image Source="http://www.totaldog.com.br/images/galeria/hospedagem/big-1.jpg" Aspect="AspectFill"/>
+            <Image Source="http://www.totaldog.com.br/images/galeria/hospedagem/big-1.jpg" Aspect="AspectFill">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MostraImagemInteiraComand}" />
+                </Image.GestureRecognizers>
+            </Image>
             <Label Text="Total Dog - Seu cão mais feliz!" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
             <Label Text = "O melhor hotel para cães da grande São Paulo!" HorizontalTextAlignment="Center" TextColor="Gray" />
             <Label Text="(11)99935-1364 / (11)99935-4059" HorizontalTextAlignment="Center" TextColor="Navy"/>
@@ -32,7 +36,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" Image="icone_localizacao_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="15,0,0,0"/>
+                <Button Grid.Row="0" Grid.Column="0" Command="{Binding NavigateToMapaEmpresaPageCommand}" Image="icone_localizacao_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="15,0,0,0"/>
                 <Button Grid.Row="0" Grid.Column="1" Command="{Binding NavigateToSitePageCommand}" Image="icone_site_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="0,0,0,0"/>
                 <Button Grid.Row="0" Grid.Column="2" Image="icone_chat_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="0,0,0,0"/>
                 <Button Grid.Row="0" Grid.Column="3" Image="compartilhar32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="0,0,0,0"/>

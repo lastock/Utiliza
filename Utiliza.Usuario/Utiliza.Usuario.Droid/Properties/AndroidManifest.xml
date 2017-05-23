@@ -9,5 +9,10 @@
 	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	<application android:label="Utiliza.Usuario.Droid" android:theme="@style/MyTheme"></application>
+	<application android:label="Utiliza.Usuario.Droid" android:theme="@style/MyTheme">
+	  <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDGs5N442-XIWwoDjxePLV3P_9FoG7QFJ0" />
+	  <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDGs5N442-XIWwoDjxePLV3P_9FoG7QFJ0" />
+	  <meta-data android:name="com.google.android.gms.version" android:value="40" />
+
+  </application>
 </manifest>

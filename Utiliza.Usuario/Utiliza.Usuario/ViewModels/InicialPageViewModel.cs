@@ -24,6 +24,21 @@ namespace Utiliza.Usuario.ViewModels
             _itensMenu = new PopulaItensMenu().Popula();
         }
 
+        DelegateCommand _alteraCidadeCommand;
+        public DelegateCommand AlteraCidadeCommand => _alteraCidadeCommand != null ? _alteraCidadeCommand : (_alteraCidadeCommand = new DelegateCommand(AlteraCidade));
+
+        private void AlteraCidade()
+        {
+            _navigationService.NavigateAsync(new Uri("AlteraCidadePage", UriKind.Relative));
+        }
+        DelegateCommand _alteraMeusDadosComand;
+        public DelegateCommand AlteraMeusDadosComand => _alteraMeusDadosComand != null ? _alteraMeusDadosComand : (_alteraMeusDadosComand = new DelegateCommand(AlteraMeusDados));
+
+        private void AlteraMeusDados()
+        {
+            _navigationService.NavigateAsync(new Uri("MeusDadosPage", UriKind.Relative));
+        }
+
         DelegateCommand<Menu> _menuSelectedCommand;
         public DelegateCommand<Menu> MenuSelectedCommand => _menuSelectedCommand != null ? _menuSelectedCommand : (_menuSelectedCommand = new DelegateCommand<Menu>(MenuSelected));
 
@@ -65,7 +80,7 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Minha Conta
                 case 9:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MeusDadosPage", UriKind.Absolute));
                     break;
                 //Configurações
                 case 10:
