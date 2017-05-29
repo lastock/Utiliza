@@ -29,7 +29,7 @@ namespace Utiliza.Usuario.ViewModels
 
         public CategoriaPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Title = "Categorias - Mairiporã";
+            Title = "Categorias";
             Popula();
         }
 

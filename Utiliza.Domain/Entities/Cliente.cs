@@ -1,4 +1,4 @@
-﻿using GeoCoordinatePortable;
+﻿//using GeoCoordinatePortable;
 using System;
 using System.Collections.Generic;
 
@@ -20,7 +20,7 @@ namespace Utiliza.Domain.Entities
         public DateTime DataContrato { get; set; }
         public DateTime DataExpiracao { get; set; }
         public string Site { get; set; }
-        public GeoCoordinate Localizacao { get; set; }
+        //public GeoCoordinate Localizacao { get; set; }
         public virtual List<Telefone> Telefones { get; set; }
         public virtual List<Email> Emails { get; set; }
         public virtual List<Contato> Contatos { get; set; }

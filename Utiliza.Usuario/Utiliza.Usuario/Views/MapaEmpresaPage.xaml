@@ -2,18 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Utiliza.Usuario.Views.MapaEmpresaPage"
              Title ="Mapa Empresa">
              <!--xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"-->
 
-    <StackLayout VerticalOptions="StartAndExpand" Padding="30">
-        <Label Text="Teste"></Label>
-        <!--<maps:Map WidthRequest="320" HeightRequest="200"
-                  x:Name="MyMap"
-                  IsShowingUser="true"
-                  MapType="Hybrid"
-        />-->
+    <StackLayout>
+        <maps:Map x:Name="map" 
+                  InitialCameraUpdate="{Binding position}">
+        </maps:Map>
     </StackLayout>
 
 </ContentPage>

@@ -23,7 +23,7 @@ namespace Utiliza.Usuario.iOS
         {
             new SfRatingRenderer();
             global::Xamarin.Forms.Forms.Init();
-            Xamarin.FormsMaps.Init();
+            Xamarin.FormsGoogleMaps.Init(Variables.GOOGLE_MAPS_IOS_API_KEY);
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

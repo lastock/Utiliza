@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="br.com.utiliza.docs.android.dev">
 	<uses-sdk android:minSdkVersion="23" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.LOCATION_HARDWARE" />
@@ -9,10 +9,6 @@
 	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	<application android:label="Utiliza.Usuario.Droid" android:theme="@style/MyTheme">
-	  <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDGs5N442-XIWwoDjxePLV3P_9FoG7QFJ0" />
-	  <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDGs5N442-XIWwoDjxePLV3P_9FoG7QFJ0" />
-	  <meta-data android:name="com.google.android.gms.version" android:value="40" />
-
-  </application>
+	<uses-permission android:name="android.permission.INSTALL_LOCATION_PROVIDER" />
+	<application android:label="UtilizaDroid" android:theme="@style/MyTheme"></application>
 </manifest>

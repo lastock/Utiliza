@@ -2,7 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Utiliza.Usuario.Views.FornecedorMapaPage">
+             x:Class="Utiliza.Usuario.Views.FornecedorMapaPage"
+             Title ="Total Dog">
   
+    <StackLayout>
+        <maps:Map x:Name="map" 
+                  InitialCameraUpdate="{Binding position}">
+        </maps:Map>
+    </StackLayout>
 </ContentPage>
