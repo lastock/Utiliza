@@ -1829,6 +1829,9 @@ namespace Utiliza.Usuario.Droid
 			// aapt resource value: 0x7f0a0010
 			public const int abc_text_size_title_material_toolbar = 2131361808;
 			
+			// aapt resource value: 0x7f0a0094
+			public const int btn_Size = 2131361940;
+			
 			// aapt resource value: 0x7f0a0009
 			public const int cardview_compat_inset_shadow = 2131361801;
 			
@@ -1837,6 +1840,9 @@ namespace Utiliza.Usuario.Droid
 			
 			// aapt resource value: 0x7f0a000b
 			public const int cardview_default_radius = 2131361803;
+			
+			// aapt resource value: 0x7f0a0095
+			public const int conc_circle = 2131361941;
 			
 			// aapt resource value: 0x7f0a0076
 			public const int design_appbar_elevation = 2131361910;
@@ -1958,6 +1964,9 @@ namespace Utiliza.Usuario.Droid
 			// aapt resource value: 0x7f0a005b
 			public const int disabled_alpha_material_light = 2131361883;
 			
+			// aapt resource value: 0x7f0a0096
+			public const int dot_space = 2131361942;
+			
 			// aapt resource value: 0x7f0a005c
 			public const int highlight_alpha_material_colored = 2131361884;
 			
@@ -1978,6 +1987,9 @@ namespace Utiliza.Usuario.Droid
 			
 			// aapt resource value: 0x7f0a0062
 			public const int hint_pressed_alpha_material_light = 2131361890;
+			
+			// aapt resource value: 0x7f0a0097
+			public const int inner_circle = 2131361943;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int item_touch_helper_max_drag_scroll_per_frame = 2131361792;
@@ -2050,6 +2062,12 @@ namespace Utiliza.Usuario.Droid
 			
 			// aapt resource value: 0x7f0a006d
 			public const int notification_top_pad_large_text = 2131361901;
+			
+			// aapt resource value: 0x7f0a0098
+			public const int outerCircle = 2131361944;
+			
+			// aapt resource value: 0x7f0a0099
+			public const int thumb_padding = 2131361945;
 			
 			static Dimension()
 			{
@@ -2325,26 +2343,26 @@ namespace Utiliza.Usuario.Droid
 			// aapt resource value: 0x7f020056
 			public const int avd_hide_password = 2130837590;
 			
-			// aapt resource value: 0x7f020154
-			public const int avd_hide_password_1 = 2130837844;
+			// aapt resource value: 0x7f02015c
+			public const int avd_hide_password_1 = 2130837852;
 			
-			// aapt resource value: 0x7f020155
-			public const int avd_hide_password_2 = 2130837845;
+			// aapt resource value: 0x7f02015d
+			public const int avd_hide_password_2 = 2130837853;
 			
-			// aapt resource value: 0x7f020156
-			public const int avd_hide_password_3 = 2130837846;
+			// aapt resource value: 0x7f02015e
+			public const int avd_hide_password_3 = 2130837854;
 			
 			// aapt resource value: 0x7f020057
 			public const int avd_show_password = 2130837591;
 			
-			// aapt resource value: 0x7f020157
-			public const int avd_show_password_1 = 2130837847;
+			// aapt resource value: 0x7f02015f
+			public const int avd_show_password_1 = 2130837855;
 			
-			// aapt resource value: 0x7f020158
-			public const int avd_show_password_2 = 2130837848;
+			// aapt resource value: 0x7f020160
+			public const int avd_show_password_2 = 2130837856;
 			
-			// aapt resource value: 0x7f020159
-			public const int avd_show_password_3 = 2130837849;
+			// aapt resource value: 0x7f020161
+			public const int avd_show_password_3 = 2130837857;
 			
 			// aapt resource value: 0x7f020058
 			public const int belezaestetica = 2130837592;
@@ -2959,148 +2977,172 @@ namespace Utiliza.Usuario.Droid
 			public const int moda = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int mr_button_connected_dark = 2130837796;
+			public const int movie1 = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int mr_button_connected_light = 2130837797;
+			public const int movie2 = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int mr_button_connecting_dark = 2130837798;
+			public const int movie3 = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int mr_button_connecting_light = 2130837799;
+			public const int movie4 = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int mr_button_dark = 2130837800;
+			public const int movie5 = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int mr_button_light = 2130837801;
+			public const int movie6 = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int mr_dialog_close_dark = 2130837802;
+			public const int movie7 = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int mr_dialog_close_light = 2130837803;
+			public const int movie8 = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int mr_dialog_material_background_dark = 2130837804;
+			public const int mr_button_connected_dark = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int mr_dialog_material_background_light = 2130837805;
+			public const int mr_button_connected_light = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
-			public const int mr_group_collapse = 2130837806;
+			public const int mr_button_connecting_dark = 2130837806;
 			
 			// aapt resource value: 0x7f02012f
-			public const int mr_group_expand = 2130837807;
+			public const int mr_button_connecting_light = 2130837807;
 			
 			// aapt resource value: 0x7f020130
-			public const int mr_media_pause_dark = 2130837808;
+			public const int mr_button_dark = 2130837808;
 			
 			// aapt resource value: 0x7f020131
-			public const int mr_media_pause_light = 2130837809;
+			public const int mr_button_light = 2130837809;
 			
 			// aapt resource value: 0x7f020132
-			public const int mr_media_play_dark = 2130837810;
+			public const int mr_dialog_close_dark = 2130837810;
 			
 			// aapt resource value: 0x7f020133
-			public const int mr_media_play_light = 2130837811;
+			public const int mr_dialog_close_light = 2130837811;
 			
 			// aapt resource value: 0x7f020134
-			public const int mr_media_stop_dark = 2130837812;
+			public const int mr_dialog_material_background_dark = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int mr_media_stop_light = 2130837813;
+			public const int mr_dialog_material_background_light = 2130837813;
 			
 			// aapt resource value: 0x7f020136
-			public const int mr_vol_type_audiotrack_dark = 2130837814;
+			public const int mr_group_collapse = 2130837814;
 			
 			// aapt resource value: 0x7f020137
-			public const int mr_vol_type_audiotrack_light = 2130837815;
+			public const int mr_group_expand = 2130837815;
 			
 			// aapt resource value: 0x7f020138
-			public const int navigation_empty_icon = 2130837816;
+			public const int mr_media_pause_dark = 2130837816;
 			
 			// aapt resource value: 0x7f020139
-			public const int notification_action_background = 2130837817;
+			public const int mr_media_pause_light = 2130837817;
 			
 			// aapt resource value: 0x7f02013a
-			public const int notification_bg = 2130837818;
+			public const int mr_media_play_dark = 2130837818;
 			
 			// aapt resource value: 0x7f02013b
-			public const int notification_bg_low = 2130837819;
+			public const int mr_media_play_light = 2130837819;
 			
 			// aapt resource value: 0x7f02013c
-			public const int notification_bg_low_normal = 2130837820;
+			public const int mr_media_stop_dark = 2130837820;
 			
 			// aapt resource value: 0x7f02013d
-			public const int notification_bg_low_pressed = 2130837821;
+			public const int mr_media_stop_light = 2130837821;
 			
 			// aapt resource value: 0x7f02013e
-			public const int notification_bg_normal = 2130837822;
+			public const int mr_vol_type_audiotrack_dark = 2130837822;
 			
 			// aapt resource value: 0x7f02013f
-			public const int notification_bg_normal_pressed = 2130837823;
+			public const int mr_vol_type_audiotrack_light = 2130837823;
 			
 			// aapt resource value: 0x7f020140
-			public const int notification_icon_background = 2130837824;
-			
-			// aapt resource value: 0x7f020152
-			public const int notification_template_icon_bg = 2130837842;
-			
-			// aapt resource value: 0x7f020153
-			public const int notification_template_icon_low_bg = 2130837843;
+			public const int navigation_empty_icon = 2130837824;
 			
 			// aapt resource value: 0x7f020141
-			public const int notification_tile_bg = 2130837825;
+			public const int notification_action_background = 2130837825;
 			
 			// aapt resource value: 0x7f020142
-			public const int notify_panel_notification_icon_bg = 2130837826;
+			public const int notification_bg = 2130837826;
 			
 			// aapt resource value: 0x7f020143
-			public const int percentage_16 = 2130837827;
+			public const int notification_bg_low = 2130837827;
 			
 			// aapt resource value: 0x7f020144
-			public const int percentage_32 = 2130837828;
+			public const int notification_bg_low_normal = 2130837828;
 			
 			// aapt resource value: 0x7f020145
-			public const int percentage_64 = 2130837829;
+			public const int notification_bg_low_pressed = 2130837829;
 			
 			// aapt resource value: 0x7f020146
-			public const int produtos = 2130837830;
+			public const int notification_bg_normal = 2130837830;
 			
 			// aapt resource value: 0x7f020147
-			public const int produtos2 = 2130837831;
+			public const int notification_bg_normal_pressed = 2130837831;
 			
 			// aapt resource value: 0x7f020148
-			public const int promocao32 = 2130837832;
+			public const int notification_icon_background = 2130837832;
+			
+			// aapt resource value: 0x7f02015a
+			public const int notification_template_icon_bg = 2130837850;
+			
+			// aapt resource value: 0x7f02015b
+			public const int notification_template_icon_low_bg = 2130837851;
 			
 			// aapt resource value: 0x7f020149
-			public const int publicos = 2130837833;
+			public const int notification_tile_bg = 2130837833;
 			
 			// aapt resource value: 0x7f02014a
-			public const int reparos = 2130837834;
+			public const int notify_panel_notification_icon_bg = 2130837834;
 			
 			// aapt resource value: 0x7f02014b
-			public const int saude = 2130837835;
+			public const int percentage_16 = 2130837835;
 			
 			// aapt resource value: 0x7f02014c
-			public const int saudefitness = 2130837836;
+			public const int percentage_32 = 2130837836;
 			
 			// aapt resource value: 0x7f02014d
-			public const int servicos = 2130837837;
+			public const int percentage_64 = 2130837837;
 			
 			// aapt resource value: 0x7f02014e
-			public const int taxi = 2130837838;
+			public const int produtos = 2130837838;
 			
 			// aapt resource value: 0x7f02014f
-			public const int termos32 = 2130837839;
+			public const int produtos2 = 2130837839;
 			
 			// aapt resource value: 0x7f020150
-			public const int teste = 2130837840;
+			public const int promocao32 = 2130837840;
 			
 			// aapt resource value: 0x7f020151
-			public const int turismo = 2130837841;
+			public const int publicos = 2130837841;
+			
+			// aapt resource value: 0x7f020152
+			public const int reparos = 2130837842;
+			
+			// aapt resource value: 0x7f020153
+			public const int saude = 2130837843;
+			
+			// aapt resource value: 0x7f020154
+			public const int saudefitness = 2130837844;
+			
+			// aapt resource value: 0x7f020155
+			public const int servicos = 2130837845;
+			
+			// aapt resource value: 0x7f020156
+			public const int taxi = 2130837846;
+			
+			// aapt resource value: 0x7f020157
+			public const int termos32 = 2130837847;
+			
+			// aapt resource value: 0x7f020158
+			public const int teste = 2130837848;
+			
+			// aapt resource value: 0x7f020159
+			public const int turismo = 2130837849;
 			
 			static Drawable()
 			{
@@ -4079,6 +4121,9 @@ namespace Utiliza.Usuario.Droid
 			// aapt resource value: 0x7f080038
 			public const int abc_toolbar_collapse_description = 2131230776;
 			
+			// aapt resource value: 0x7f08004f
+			public const int app_name = 2131230799;
+			
 			// aapt resource value: 0x7f080047
 			public const int appbar_scrolling_view_behavior = 2131230791;
 			
@@ -4139,8 +4184,8 @@ namespace Utiliza.Usuario.Droid
 			// aapt resource value: 0x7f080010
 			public const int common_signin_button_text_long = 2131230736;
 			
-			// aapt resource value: 0x7f08004f
-			public const int library_name = 2131230799;
+			// aapt resource value: 0x7f080050
+			public const int library_name = 2131230800;
 			
 			// aapt resource value: 0x7f080011
 			public const int mr_button_content_description = 2131230737;

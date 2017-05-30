@@ -42,6 +42,7 @@
     <Compile Include="Model\Fornecedor.cs" />
     <Compile Include="Model\FornecedorSubCategoria.cs" />
     <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\Rotator.cs" />
     <Compile Include="Model\SubCategoria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\PopulaItensMenu.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="ViewModels\CadastroUsuarioPageViewModel.cs" />
     <Compile Include="ViewModels\CategoriaPageViewModel.cs" />
     <Compile Include="ViewModels\ConfiguracaoPageViewModel.cs" />
+    <Compile Include="ViewModels\ConversaIndividualPageViewModel.cs" />
     <Compile Include="ViewModels\ConversaPageViewModel.cs" />
     <Compile Include="ViewModels\EventToCommandBehavior.cs" />
     <Compile Include="ViewModels\FornecedorDetalhePageViewModel.cs" />
@@ -83,6 +85,9 @@
     </Compile>
     <Compile Include="Views\ConfiguracaoPage.xaml.cs">
       <DependentUpon>ConfiguracaoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConversaIndividualPage.xaml.cs">
+      <DependentUpon>ConversaIndividualPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ConversaPage.xaml.cs">
       <DependentUpon>ConversaPage.xaml</DependentUpon>
@@ -175,6 +180,9 @@
     </Reference>
     <Reference Include="Syncfusion.SfRating.XForms, Version=15.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.40\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.SfRating.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRotator.XForms, Version=15.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.40\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.SfRotator.XForms.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations">
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\System.ComponentModel.DataAnnotations.dll</HintPath>
@@ -320,6 +328,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MapaEmpresaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ConversaIndividualPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

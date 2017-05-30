@@ -56,7 +56,7 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Chat
                 case 3:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/ConversaPage", UriKind.Absolute));
                     break;
                 //Troca de Cidade
                 case 4:
@@ -72,7 +72,7 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Mapa
                 case 7:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/ProximosMapaPage", UriKind.Absolute));
                     break;
                 //Procurar
                 case 8:

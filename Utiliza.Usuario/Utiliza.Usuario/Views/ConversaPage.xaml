@@ -3,6 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Utiliza.Usuario.Views.ConversaPage">
-  
+             x:Class="Utiliza.Usuario.Views.ConversaPage"
+             Title="{Binding Title}"
+             BackgroundColor="White"
+>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding NavigateToMainPageCommand}" Order = "Primary" Icon="lupa32.png"  />
+        <ToolbarItem Text="Home" Command="{Binding NavigateToMainPageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Fornecedores" Command="{Binding NavigateToCategoriaPageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Sobre" Command="{Binding NavigateToSobrePageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Config" Command="{Binding NavigateToConfiguracaoPageCommand}" Order = "Secondary"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+        <ListView
+            HasUnevenRows="True" 
+            ItemsSource="{Binding Path=Conversas}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="{Binding UrlLogo}" />
+                            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="StartAndExpand" >
+                                <Label Text="{Binding NomeFornecedor}" FontAttributes="Bold" TextColor="Black" FontSize="Medium" Margin="0,0,0,0"/>
+                                <Label Text="{Binding DescricaoFornecedor}" FontSize="Small" TextColor="Gray" Margin="0,0,0,0"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Label Text="{Binding HoraUltimaMensagem}" TextColor="Green" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Small"/>
+                                <Label Text="{Binding MensagensNaoLidas}" TextColor="Red" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

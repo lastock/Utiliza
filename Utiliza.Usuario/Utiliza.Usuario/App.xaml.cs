@@ -39,6 +39,7 @@ namespace Utiliza.Usuario
             Container.RegisterTypeForNavigation<AlteraCidadePage>();
             Container.RegisterTypeForNavigation<MeusDadosPage>();
             Container.RegisterTypeForNavigation<MapaEmpresaPage>();
+            Container.RegisterTypeForNavigation<ConversaIndividualPage>();
         }
     }
 }

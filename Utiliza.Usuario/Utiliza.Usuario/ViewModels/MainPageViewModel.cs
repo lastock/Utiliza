@@ -8,27 +8,31 @@ namespace Utiliza.Usuario.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
+        private List<Rotator> imageCollection = new List<Rotator>();
 
-        private readonly ObservableCollection<Conversa> _conversas = new ObservableCollection<Conversa>();
-        public ObservableCollection<Conversa> Conversas { get; }
-
-
-
+        public List<Rotator> ImageCollection
+        {
+            get { return imageCollection; }
+            set { imageCollection = value; }
+        }
         public MainPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Popula();
-            Conversas = _conversas;
             Cidade = "Mairiporã";
             Title = "Utiliza - " + Cidade;
+            PopulaRotator();
         }
 
-        private void Popula()
+        private void PopulaRotator()
         {
-            var listaConversas = new PopulaListaConversas().Popula();
-            foreach (var conversa in listaConversas)
-            {
-                _conversas.Add(conversa);
-            }
+            ImageCollection.Add(new Rotator("movie1.jpg"));
+            ImageCollection.Add(new Rotator("movie2.jpg"));
+            ImageCollection.Add(new Rotator("movie3.jpg"));
+            ImageCollection.Add(new Rotator("movie4.jpg"));
+            ImageCollection.Add(new Rotator("movie5.jpg"));
+            ImageCollection.Add(new Rotator("movie6.jpg"));
+            ImageCollection.Add(new Rotator("movie7.jpg"));
+            ImageCollection.Add(new Rotator("movie8.jpg"));
         }
+
     }
 }

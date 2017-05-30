@@ -93,6 +93,15 @@
     <Reference Include="Syncfusion.SfRating.XForms.Android, Version=15.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.40\lib\MonoAndroid10\Syncfusion.SfRating.XForms.Android.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.SfRotator.Android, Version=15.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.Android.15.2.0.40\lib\MonoAndroid10\Syncfusion.SfRotator.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRotator.XForms, Version=15.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.40\lib\MonoAndroid10\Syncfusion.SfRotator.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRotator.XForms.Android, Version=15.2451.0.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.40\lib\MonoAndroid10\Syncfusion.SfRotator.XForms.Android.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -356,6 +365,30 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\produtos2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\movie8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\movie1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\movie2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\movie3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\movie4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\movie5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\movie6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\movie7.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

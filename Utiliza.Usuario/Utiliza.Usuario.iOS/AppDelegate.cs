@@ -3,6 +3,7 @@ using UIKit;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
 using Syncfusion.SfRating.XForms.iOS;
+using Syncfusion.SfRotator.XForms.iOS;
 
 namespace Utiliza.Usuario.iOS
 {
@@ -21,9 +22,11 @@ namespace Utiliza.Usuario.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            new SfRatingRenderer();
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsGoogleMaps.Init(Variables.GOOGLE_MAPS_IOS_API_KEY);
+            new SfRotatorRenderer();
+            new SfRatingRenderer();
+
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
