@@ -108,13 +108,22 @@
     <None Include="Utiliza.Usuario.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="alimentacao.png" />
+    <Content Include="animais.png" />
     <Content Include="Assets\teste.png" />
+    <Content Include="automoveis.png" />
+    <Content Include="belezaestetica.png" />
+    <Content Include="calcados.png" />
+    <Content Include="casadecoracao.png" />
     <Content Include="chat32.png" />
     <Content Include="cidade32.png" />
     <Content Include="compartilhar32.png" />
     <Content Include="config32.png" />
+    <Content Include="esporteslazer.png" />
+    <Content Include="farmacia.png" />
     <Content Include="favorito32.png" />
     <Content Include="favoritos32.png" />
+    <Content Include="festaseventos.png" />
     <Content Include="home32.png" />
     <Content Include="icon.png" />
     <Content Include="icone_chat_32.png" />
@@ -123,6 +132,7 @@
     <Content Include="icone_site_16.png" />
     <Content Include="icone_site_32.png" />
     <Content Include="icone_site_64.png" />
+    <Content Include="igrejas.png" />
     <Content Include="info32.png" />
     <Content Include="location32.png" />
     <Content Include="luis.jpg" />
@@ -133,9 +143,11 @@
     <Content Include="mail_icon_32.png" />
     <Content Include="mail_icon_64.png" />
     <Content Include="minhaconta32.png" />
+    <Content Include="moda.png" />
     <Content Include="percentage_16.png" />
     <Content Include="percentage_32.png" />
     <Content Include="percentage_64.png" />
+    <Content Include="produtos.png" />
     <Content Include="promocao32.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -145,8 +157,15 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="publicos.png" />
+    <Content Include="reparos.png" />
+    <Content Include="saude.png" />
+    <Content Include="saudefitness.png" />
+    <Content Include="servicos.png" />
+    <Content Include="taxi.png" />
     <Content Include="termos32.png" />
     <Content Include="teste.png" />
+    <Content Include="turismo.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

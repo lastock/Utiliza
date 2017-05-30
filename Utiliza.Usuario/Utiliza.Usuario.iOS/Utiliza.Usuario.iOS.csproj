@@ -281,6 +281,63 @@
       <InProject>false</InProject>
     </ImageAsset>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\alimentacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\animais.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\automoveis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\belezaestetica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\calcados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\casadecoracao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\esporteslazer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\farmacia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\festaseventos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\igrejas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\produtos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\publicos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\reparos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\saude.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\saudefitness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\servicos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\taxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\turismo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

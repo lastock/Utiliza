@@ -24,7 +24,7 @@
                 >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding UrlLogo}"
+                    <ImageCell ImageSource="{Binding UrlLogo}" 
                                Text="{Binding NomeCategoria}" 
                                TextColor="Navy" />
                 </DataTemplate>
