@@ -2977,19 +2977,19 @@ namespace Utiliza.Usuario.Droid
 			public const int moda = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int movie1 = 2130837796;
+			public const int movie1_1 = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int movie2 = 2130837797;
+			public const int movie2_12 = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int movie3 = 2130837798;
+			public const int movie3_123 = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int movie4 = 2130837799;
+			public const int movie4_1234 = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int movie5 = 2130837800;
+			public const int movie5_12345 = 2130837800;
 			
 			// aapt resource value: 0x7f020129
 			public const int movie6 = 2130837801;

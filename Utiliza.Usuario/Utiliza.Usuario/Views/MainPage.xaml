@@ -17,15 +17,33 @@
         <ToolbarItem Text="Config" Command="{Binding NavigateToConfiguracaoPageCommand}" Order = "Secondary"/>
     </ContentPage.ToolbarItems>
 
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
-        <Label Text="Estou aqui!" TextColor="Black"/>
-        <rotator:SfRotator x:Name="rotator"  NavigationDelay="2000" ItemsSource="{Binding ImageCollection}" SelectedIndex="2" NavigationDirection="Horizontal" NavigationStripMode="Dots" BackgroundColor="#ececec" NavigationStripPosition="Bottom">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="240"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <rotator:SfRotator x:Name="rotator"  
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           NavigationDelay="2000" 
+                           ItemsSource="{Binding ImageCollection}" 
+                           SelectedIndex="2" 
+                           NavigationDirection="Horizontal" 
+                           NavigationStripMode="Dots" 
+                           BackgroundColor="ForestGreen" 
+                           NavigationStripPosition="Bottom"
+                           VerticalOptions="Start">
             <rotator:SfRotator.ItemTemplate>
                 <DataTemplate>
-                    <Image  Source="{Binding Image}"/>
+                    <Image  Source="{Binding Image}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ImageTappedCommand}" CommandParameter="1"  Tapped="Handle_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
                 </DataTemplate>
             </rotator:SfRotator.ItemTemplate>
         </rotator:SfRotator>
-
-    </StackLayout>
+    </Grid>
 </ContentPage>

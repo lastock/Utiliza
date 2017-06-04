@@ -51,6 +51,7 @@
     <Compile Include="Servicos\PopulaListaConversas.cs" />
     <Compile Include="Servicos\PopulaListaFornecedores.cs" />
     <Compile Include="Servicos\PopulaListaSubCategorias.cs" />
+    <Compile Include="Servicos\ProcuraFornecedor.cs" />
     <Compile Include="Variables.cs" />
     <Compile Include="ViewModels\AlteraCidadePageViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />

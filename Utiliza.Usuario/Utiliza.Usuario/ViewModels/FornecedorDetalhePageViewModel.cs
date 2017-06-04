@@ -1,7 +1,8 @@
 ﻿using System;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
+using Utiliza.Usuario.Model;
+using Utiliza.Usuario.Servicos;
 
 namespace Utiliza.Usuario.ViewModels
 {
@@ -10,6 +11,12 @@ namespace Utiliza.Usuario.ViewModels
         public DelegateCommand NavigateToSitePageCommand { get; private set; }
         public DelegateCommand NavigateToMapaEmpresaPageCommand { get; private set; }
 
+        private Fornecedor _fornecedor;
+        public Fornecedor Fornecedor
+        {
+            get => _fornecedor;
+            set => SetProperty(ref _fornecedor, value);
+        }
 
         public FornecedorDetalhePageViewModel(INavigationService navigationService) : base(navigationService)
         {
@@ -26,6 +33,17 @@ namespace Utiliza.Usuario.ViewModels
         {
             _navigationService.NavigateAsync(new Uri("MapaEmpresaPage", UriKind.Relative));
         }
+
+        public override void OnNavigatingTo(NavigationParameters parameters)
+        {
+            if (!parameters.ContainsKey("id")) return;
+
+            var id = Int32.Parse(parameters.GetValue<string>("id"));
+            _fornecedor= new ProcuraFornecedor().GetFornecedor(id);
+
+        }
+
+
 
     }
 }

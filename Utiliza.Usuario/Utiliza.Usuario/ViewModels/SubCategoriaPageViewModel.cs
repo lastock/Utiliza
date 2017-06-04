@@ -9,7 +9,7 @@ using Prism.Commands;
 
 namespace Utiliza.Usuario.ViewModels
 {
-    public class SubCategoriaPageViewModel : BaseViewModel, INavigationAware
+    public class SubCategoriaPageViewModel : BaseViewModel
     {
         DelegateCommand<SubCategoria> _subcategoriaSelectedCommand;
         public DelegateCommand<SubCategoria> SubCategoriaSelectedCommand => _subcategoriaSelectedCommand != null ? _subcategoriaSelectedCommand : (_subcategoriaSelectedCommand = new DelegateCommand<SubCategoria>(SubCategoriaSelected));
@@ -38,15 +38,8 @@ namespace Utiliza.Usuario.ViewModels
 
 
 
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-        }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
-        {
-        }
-
-        public void OnNavigatingTo(NavigationParameters parameters)
+        public override void OnNavigatingTo(NavigationParameters parameters)
         {
             if (!parameters.ContainsKey("categoria")) return;
 
