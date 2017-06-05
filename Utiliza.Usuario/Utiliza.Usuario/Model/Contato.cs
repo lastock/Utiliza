@@ -13,5 +13,14 @@ namespace Utiliza.Usuario.Model
         public string Telefone { get; set; }
         public string NomeUsuario { get; set; }
         public string Email { get; set; }
+
+        public Contato(int idContato, int idFornecedor, string telefone, string nomeContato, string email)
+        {
+            IdUsuario = idContato;
+            IdFornecedor = idFornecedor;
+            Telefone = telefone;
+            NomeUsuario = nomeContato;
+            Email = email;
+        }
     }
 }

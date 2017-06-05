@@ -18,6 +18,10 @@ namespace Utiliza.Usuario.Servicos
 
         public Fornecedor GetFornecedor(int idFornecedor)
         {
+            IList<Telefone> _telefones = new List<Telefone>();
+            IList<Facilidade> _facilidades = new List<Facilidade>();
+            IList<Contato> _contatos = new List<Contato>();
+
             Fornecedor fornecedor = new Fornecedor();
             fornecedor.IdFornecedor = idFornecedor;
             fornecedor.Codigo = 123;
@@ -66,11 +70,24 @@ namespace Utiliza.Usuario.Servicos
                                                         <br />Na inscrição você deverá fornecer o nome, endereço e telefone do veterinário que atende seu cão. Em caso de necessidade, o nosso Veterinário Responsável entrará em contato para seguir suas instruções. Em caso de emergência, será imediatamente atendido aqui, para depois entrarmos em contato com o veterinário do seu cão.</p>
 	                                    </body>
                                     </html>";
-            fornecedor.Localizacao = Tuple.Create(-23.343091,-46.574892);
+            fornecedor.Localizacao.Latitude = -23.343091;
+            fornecedor.Localizacao.Longitude= -46.574892;
             fornecedor.Logo = "totaldog.png";
             fornecedor.DataCriacao = DateTime.Parse("15/01/2017", new CultureInfo("pt-br"));
             fornecedor.DataModificacao = DateTime.Now;
             fornecedor.Avaliacao = 4.95;
+            _telefones.Add(new Telefone(idFornecedor, "11", "99935-1364"));
+            _telefones.Add(new Telefone(idFornecedor, "11", "99935-4059"));
+            fornecedor.Telefones = _telefones;
+            fornecedor.Horario = "Todos os dias das 8:00 hs às 17:00 hs";
+            _facilidades.Add(new Facilidade(idFornecedor, "pet.png", "Cães são bem vindos"));
+            _facilidades.Add(new Facilidade(idFornecedor, "estacionamento.png", "Estacionamento no local"));
+            _facilidades.Add(new Facilidade(idFornecedor, "bitcoin.png", "Aceita-se pagamento em bitcoins"));
+            _facilidades.Add(new Facilidade(idFornecedor, "wifi.png", "Wifi disponível para clientes"));
+            fornecedor.Facilidades = _facilidades;
+            _contatos.Add(new Contato(1, idFornecedor, "(11) 99935-1364", "Luis Alfredo", "luis@totaldog.com.br"));
+            _contatos.Add(new Contato(2, idFornecedor, "(11) 99935-4059", "Lcindy", "cindy@totaldog.com.br"));
+            fornecedor.Contatos = _contatos;
             return fornecedor;
         }
     }

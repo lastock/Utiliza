@@ -25,12 +25,16 @@ namespace Utiliza.Usuario.Model
         public string Site { get; set; }
         public string Resumo { get; set; }
         public string Descricao { get; set; }
-        public Tuple <double, double> Localizacao { get; set; }
+        public Localizacao Localizacao { get; set; }
         public string Logo { get; set; }
         public DateTime DataCriacao { get; set; }
         public DateTime DataModificacao { get; set; }
         public int Subcategoria { get; set; }
         public double Avaliacao { get; set; }
+        public IList<Telefone> Telefones { get; set; }
+        public string Horario { get; set; }
+        public IList<Facilidade> Facilidades { get; set; }
+        public IList<Contato> Contatos { get; set; }
 
     }
 }

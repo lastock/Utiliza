@@ -39,11 +39,14 @@
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Contato.cs" />
     <Compile Include="Model\Conversa.cs" />
+    <Compile Include="Model\Facilidade.cs" />
     <Compile Include="Model\Fornecedor.cs" />
     <Compile Include="Model\FornecedorSubCategoria.cs" />
+    <Compile Include="Model\Localizacao.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\Rotator.cs" />
     <Compile Include="Model\SubCategoria.cs" />
+    <Compile Include="Model\Telefone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\PopulaItensMenu.cs" />
     <Compile Include="Servicos\PopulaListaCategorias.cs" />

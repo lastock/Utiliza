@@ -37,7 +37,7 @@ namespace Utiliza.Usuario.ViewModels
         }
 
 
-        private string _title;
+        protected string _title;
         public string Title
         {
             get { return _title; }
