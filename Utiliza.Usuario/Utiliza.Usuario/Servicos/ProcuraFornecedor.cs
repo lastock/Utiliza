@@ -70,8 +70,7 @@ namespace Utiliza.Usuario.Servicos
                                                         <br />Na inscrição você deverá fornecer o nome, endereço e telefone do veterinário que atende seu cão. Em caso de necessidade, o nosso Veterinário Responsável entrará em contato para seguir suas instruções. Em caso de emergência, será imediatamente atendido aqui, para depois entrarmos em contato com o veterinário do seu cão.</p>
 	                                    </body>
                                     </html>";
-            fornecedor.Localizacao.Latitude = -23.343091;
-            fornecedor.Localizacao.Longitude= -46.574892;
+            fornecedor.Localizacao=new Localizacao(idFornecedor, -23.343091, -46.574892);
             fornecedor.Logo = "totaldog.png";
             fornecedor.DataCriacao = DateTime.Parse("15/01/2017", new CultureInfo("pt-br"));
             fornecedor.DataModificacao = DateTime.Now;

@@ -28,7 +28,7 @@
                            Grid.Row="0"
                            Grid.Column="0"
                            NavigationDelay="5000" 
-                           EnableAutoPlay ="True"  
+                           EnableAutoPlay ="False"  
                            ItemsSource="{Binding ImageCollection}" 
                            SelectedIndex="0" 
                            NavigationDirection="Horizontal" 

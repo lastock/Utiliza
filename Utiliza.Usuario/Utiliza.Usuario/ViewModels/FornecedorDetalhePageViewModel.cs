@@ -116,8 +116,8 @@ namespace Utiliza.Usuario.ViewModels
             resumo = _fornecedor.Resumo;
             //descricao = _fornecedor.Descricao;
             horario = Fornecedor.Horario;
-            ListaDeContatos = _fornecedor.Contatos;
-            ListaDeFacilidades = _fornecedor.Facilidades;
+            _listaDeContatos = _fornecedor.Contatos;
+            _listaDeFacilidades = _fornecedor.Facilidades;
 
         }
         private void PopulaRotator()
