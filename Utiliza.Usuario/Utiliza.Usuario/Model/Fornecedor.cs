@@ -31,10 +31,10 @@ namespace Utiliza.Usuario.Model
         public DateTime DataModificacao { get; set; }
         public int Subcategoria { get; set; }
         public double Avaliacao { get; set; }
-        public IList<Telefone> Telefones { get; set; }
+        public List<Telefone> Telefones { get; set; }
         public string Horario { get; set; }
-        public IList<Facilidade> Facilidades { get; set; }
-        public IList<Contato> Contatos { get; set; }
+        public List<Facilidade> Facilidades { get; set; }
+        public List<Contato> Contatos { get; set; }
 
     }
 }

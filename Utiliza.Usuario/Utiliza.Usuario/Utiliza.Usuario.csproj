@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controls\CustomImageCell.cs" />
+    <Compile Include="Model\Avaliacao.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Contato.cs" />
     <Compile Include="Model\Conversa.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Servicos\PopulaListaFornecedores.cs" />
     <Compile Include="Servicos\PopulaListaSubCategorias.cs" />
     <Compile Include="Servicos\ProcuraFornecedor.cs" />
+    <Compile Include="Servicos\AvaliacoesService.cs" />
     <Compile Include="Variables.cs" />
     <Compile Include="ViewModels\AlteraCidadePageViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="ViewModels\ConversaPageViewModel.cs" />
     <Compile Include="ViewModels\EventToCommandBehavior.cs" />
     <Compile Include="ViewModels\FornecedorDetalhePageViewModel.cs" />
+    <Compile Include="ViewModels\FornecedoresAvaliacoesPageViewModel.cs" />
     <Compile Include="ViewModels\FornecedorMapaPageViewModel.cs" />
     <Compile Include="ViewModels\InicialPageViewModel.cs" />
     <Compile Include="ViewModels\ListaFornecedorPageViewModel.cs" />
@@ -80,6 +83,7 @@
     <Compile Include="ViewModels\SobrePageViewModel.cs" />
     <Compile Include="ViewModels\SpeakPageViewModel.cs" />
     <Compile Include="ViewModels\SubCategoriaPageViewModel.cs" />
+    <Compile Include="ViewModels\TestePageViewModel.cs" />
     <Compile Include="ViewModels\UtilizaNavigationPageViewModel.cs" />
     <Compile Include="Views\AlteraCidadePage.xaml.cs">
       <DependentUpon>AlteraCidadePage.xaml</DependentUpon>
@@ -98,6 +102,9 @@
     </Compile>
     <Compile Include="Views\FornecedorDetalhePage.xaml.cs">
       <DependentUpon>FornecedorDetalhePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FornecedoresAvaliacoesPage.xaml.cs">
+      <DependentUpon>FornecedoresAvaliacoesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FornecedorMapaPage.xaml.cs">
       <DependentUpon>FornecedorMapaPage.xaml</DependentUpon>
@@ -140,6 +147,9 @@
     </Compile>
     <Compile Include="Views\SubCategoriaPage.xaml.cs">
       <DependentUpon>SubCategoriaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestePage.xaml.cs">
+      <DependentUpon>TestePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UtilizaNavigationPage.xaml.cs">
       <DependentUpon>UtilizaNavigationPage.xaml</DependentUpon>
@@ -338,6 +348,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ConversaIndividualPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TestePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FornecedoresAvaliacoesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

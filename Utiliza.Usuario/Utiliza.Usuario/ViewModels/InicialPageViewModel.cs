@@ -68,7 +68,7 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Favoritos
                 case 6:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/TestePage", UriKind.Absolute));
                     break;
                 //Mapa
                 case 7:

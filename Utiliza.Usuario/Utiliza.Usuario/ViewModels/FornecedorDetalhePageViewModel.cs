@@ -24,15 +24,15 @@ namespace Utiliza.Usuario.ViewModels
             set { imageCollection = value; }
         }
 
-        private IList<Facilidade> _listaDeFacilidades = new List<Facilidade>();
-        public IList<Facilidade> ListaDeFacilidades
+        private List<Facilidade> _listaDeFacilidades = new List<Facilidade>();
+        public List<Facilidade> ListaDeFacilidades
         {
             get { return _listaDeFacilidades; }
             set { _listaDeFacilidades = value; }
         }
 
-        private IList<Contato> _listaDeContatos = new List<Contato>();
-        public IList<Contato> ListaDeContatos
+        private List<Contato> _listaDeContatos = new List<Contato>();
+        public List<Contato> ListaDeContatos
         {
             get { return _listaDeContatos; }
             set { _listaDeContatos = value; }
@@ -116,9 +116,19 @@ namespace Utiliza.Usuario.ViewModels
             resumo = _fornecedor.Resumo;
             //descricao = _fornecedor.Descricao;
             horario = Fornecedor.Horario;
-            _listaDeContatos = _fornecedor.Contatos;
-            _listaDeFacilidades = _fornecedor.Facilidades;
+            var facilidades = _fornecedor.Facilidades;
+            foreach (var facilidade in facilidades)
+            {
+                _listaDeFacilidades.Add(facilidade);
+            }
+            ListaDeFacilidades = _listaDeFacilidades;
 
+            var contatos = _fornecedor.Contatos;
+            foreach (var contato in contatos)
+            {
+                _listaDeContatos.Add(contato);
+            }
+            ListaDeContatos = _listaDeContatos;
         }
         private void PopulaRotator()
         {

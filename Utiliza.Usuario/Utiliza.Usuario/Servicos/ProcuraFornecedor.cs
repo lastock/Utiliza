@@ -18,9 +18,9 @@ namespace Utiliza.Usuario.Servicos
 
         public Fornecedor GetFornecedor(int idFornecedor)
         {
-            IList<Telefone> _telefones = new List<Telefone>();
-            IList<Facilidade> _facilidades = new List<Facilidade>();
-            IList<Contato> _contatos = new List<Contato>();
+            List<Telefone> _telefones = new List<Telefone>();
+            List<Facilidade> _facilidades = new List<Facilidade>();
+            List<Contato> _contatos = new List<Contato>();
 
             Fornecedor fornecedor = new Fornecedor();
             fornecedor.IdFornecedor = idFornecedor;
@@ -85,7 +85,7 @@ namespace Utiliza.Usuario.Servicos
             _facilidades.Add(new Facilidade(idFornecedor, "wifi.png", "Wifi disponível para clientes"));
             fornecedor.Facilidades = _facilidades;
             _contatos.Add(new Contato(1, idFornecedor, "(11) 99935-1364", "Luis Alfredo", "luis@totaldog.com.br"));
-            _contatos.Add(new Contato(2, idFornecedor, "(11) 99935-4059", "Lcindy", "cindy@totaldog.com.br"));
+            _contatos.Add(new Contato(2, idFornecedor, "(11) 99935-4059", "Cindy", "cindy@totaldog.com.br"));
             fornecedor.Contatos = _contatos;
             return fornecedor;
         }

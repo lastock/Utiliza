@@ -40,6 +40,8 @@ namespace Utiliza.Usuario
             Container.RegisterTypeForNavigation<MeusDadosPage>();
             Container.RegisterTypeForNavigation<MapaEmpresaPage>();
             Container.RegisterTypeForNavigation<ConversaIndividualPage>();
+            Container.RegisterTypeForNavigation<TestePage>();
+            Container.RegisterTypeForNavigation<FornecedoresAvaliacoesPage>();
         }
     }
 }
