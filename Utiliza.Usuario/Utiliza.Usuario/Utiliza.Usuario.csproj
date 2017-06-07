@@ -49,6 +49,7 @@
     <Compile Include="Model\SubCategoria.cs" />
     <Compile Include="Model\Telefone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\FornecedorServicos.cs" />
     <Compile Include="Servicos\PopulaItensMenu.cs" />
     <Compile Include="Servicos\PopulaListaCategorias.cs" />
     <Compile Include="Servicos\PopulaListaContatos.cs" />

@@ -17,11 +17,11 @@ namespace Utiliza.Usuario.ViewModels
             get { return _listaDeAvaliacoes; }
             set { _listaDeAvaliacoes = value; }
         }
-        private string _fornecedor;
-        public string Fornecedor
+        private string _nomeFornecedor;
+        public string NomeFornecedor
         {
-            get { return _fornecedor; }
-            set { _fornecedor = value; }
+            get { return _nomeFornecedor; }
+            set { _nomeFornecedor = value; }
         }
 
         public FornecedoresAvaliacoesPageViewModel(INavigationService navigationService) : base(navigationService)
@@ -32,10 +32,9 @@ namespace Utiliza.Usuario.ViewModels
         public override void OnNavigatingTo(NavigationParameters parameters)
         {
             if (!parameters.ContainsKey("id")) return;
-            var id = Int32.Parse(parameters.GetValue<string>("id"));
-            var _fornecedor = new ProcuraFornecedor().GetFornecedor(id);
-            Fornecedor = _fornecedor.NomeFantasia;
-            var avaliacoes = new AvaliacoesService().RetornaAvaliacoes(id);
+            var idfornecedor = parameters.GetValue<int>("id");
+            NomeFornecedor = new FornecedorServicos().NomeFornecedor(idfornecedor);
+            var avaliacoes = new AvaliacoesService().RetornaAvaliacoes(idfornecedor);
             foreach (var avaliacao in avaliacoes)
             {
                 _listaDeAvaliacoes.Add(avaliacao);

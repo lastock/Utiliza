@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using Utiliza.Usuario.Model;
+using Utiliza.Usuario.ViewModels;
+using Xamarin.Forms;
 
 namespace Utiliza.Usuario.Views
 {

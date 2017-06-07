@@ -23,7 +23,7 @@ namespace Utiliza.Usuario.Servicos
             avaliacoes.Add(new Avaliacao(4, idFornecedor, 5, "Levo sempre meu cão lá. É ótimo e mau cão adora ficar lá."));
             avaliacoes.Add(new Avaliacao(5, idFornecedor, 4, "Os proprieários são muito prestativos e meu cão ficou muito bem lá."));
             avaliacoes.Add(new Avaliacao(6, idFornecedor, 5, "Nunca imaginei que pudesse ter um local como esse tão perto de São Paulo."));
-            return null;
+            return avaliacoes;
         }
     }
 }

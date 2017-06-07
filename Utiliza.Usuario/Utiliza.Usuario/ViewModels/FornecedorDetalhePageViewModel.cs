@@ -16,49 +16,59 @@ namespace Utiliza.Usuario.ViewModels
         #region Inicialização de variáveis
         //Variável para mostrar alerts do prism
         //private IPageDialogService _dialogService;
+        private int _idFornecedor;
+        #endregion
+
+        #region Construtor
+        // Construtor da classe
+        public FornecedorDetalhePageViewModel(INavigationService navigationService) : base(navigationService)
+        {
+            PopulaRotator(_idFornecedor);
+            NavigateToSitePageCommand = new DelegateCommand(NavigateToSitePage);
+            NavigateToMapaEmpresaPageCommand = new DelegateCommand(NavigateToMapaEmpresaPage);
+            MostraAvaliacoesCommand = new DelegateCommand(MostraAvaliacoesSelected);
+        }
+
         #endregion
 
         #region Propriedades Command
         ////Botão para mostrar o site (precisa implementar o parâmetro com o id do fornecedor para a qual vai navegar)
-        //DelegateCommand<int> _navigateToSitePageCommand;
-        //public DelegateCommand<int> NavigateToSitePageCommand => _navigateToSitePageCommand != null ? _navigateToSitePageCommand : (_navigateToSitePageCommand = new DelegateCommand<int>(NavigateToSitePage));
+        public DelegateCommand NavigateToSitePageCommand { get; private set; }
 
         ////Botão para mostrar o mapa da empresa (precisa implementar o parâmetro com o id do fornecedor que vai mostrar o mapa)
-        //DelegateCommand<int> _navigateToMapaEmpresaPageCommand;
-        //public DelegateCommand<int> NavigateToMapaEmpresaPageCommand => _navigateToMapaEmpresaPageCommand != null ? _navigateToMapaEmpresaPageCommand : (_navigateToMapaEmpresaPageCommand = new DelegateCommand<int>(NavigateToMapaEmpresaPage));
+        public DelegateCommand NavigateToMapaEmpresaPageCommand { get; private set; }
 
         ////Botão para mostrar a página com todas as avaliações do fornecedor por parte dos usuários
-        //DelegateCommand<int> _mostraAvaliacoesCommand;
-        //public DelegateCommand<int> MostraAvaliacoesCommand => _mostraAvaliacoesCommand != null ? _mostraAvaliacoesCommand : (_mostraAvaliacoesCommand = new DelegateCommand<int>(MostraAvaliacoesSelected));
+        public DelegateCommand MostraAvaliacoesCommand { get; private set; }
 
         #endregion
 
         #region Metodos de navegação
         //Navega para o site da empresa (precisa implementar o parâmetrao com o id do fornecedor para o qual vai navegar)
-        protected void NavigateToSitePage(int idFornecedor)
+        protected void NavigateToSitePage()
         {
             var p = new NavigationParameters();
-            p.Add("id", idFornecedor);
+            p.Add("id", _idFornecedor);
 
             _navigationService.NavigateAsync(new Uri("SitePage", UriKind.Relative));
         }
 
         //Navega para página com o mapa da empresa (precisa implementar o parâmetrao com o id do fornecedor que vai mostrar o mapa)
-        protected void NavigateToMapaEmpresaPage(int idFornecedor)
+        protected void NavigateToMapaEmpresaPage()
         {
             var p = new NavigationParameters();
-            p.Add("id", idFornecedor);
+            p.Add("id", _idFornecedor);
 
             _navigationService.NavigateAsync(new Uri("MapaEmpresaPage", UriKind.Relative));
         }
 
         //Navega para página que mostra todas as avaliações do fornecedor
-        private void MostraAvaliacoesSelected(int idFornecedor)
+        private void MostraAvaliacoesSelected()
         {
             var p = new NavigationParameters();
-            p.Add("id", idFornecedor);
+            p.Add("id", _idFornecedor);
 
-            _navigationService.NavigateAsync("FornecedorAvaliacoesPage", p);
+            _navigationService.NavigateAsync("FornecedoresAvaliacoesPage", p);
         }
 
         #endregion
@@ -101,12 +111,6 @@ namespace Utiliza.Usuario.ViewModels
             get => _nomeFantasia;
             set => SetProperty(ref _nomeFantasia, value);
         }
-        private int _idFornecedor;
-        public int idFornecedor
-        {
-            get => _idFornecedor;
-            set => SetProperty(ref _idFornecedor, value);
-        }
         private string _chamada;
         public string chamada
         {
@@ -142,18 +146,6 @@ namespace Utiliza.Usuario.ViewModels
 
 
 
-        #region Construtor
-        /// <summary>
-        /// Construtor da classe
-        /// </summary>
-        /// <param name="navigationService"></param>
-        public FornecedorDetalhePageViewModel(INavigationService navigationService) : base(navigationService)
-        {
-            PopulaRotator();
-
-        }
-
-        #endregion
 
 
         #region Método para recuperar parâmetros
@@ -162,7 +154,7 @@ namespace Utiliza.Usuario.ViewModels
             if (!parameters.ContainsKey("id")) return;
 
             var id = Int32.Parse(parameters.GetValue<string>("id"));
-            idFornecedor = id;
+            _idFornecedor = id;
 
             _fornecedor = new ProcuraFornecedor().GetFornecedor(id);
             nomeFantasia = _fornecedor.NomeFantasia;
@@ -191,7 +183,8 @@ namespace Utiliza.Usuario.ViewModels
         #endregion
 
         #region Metodos auxiliares
-        private void PopulaRotator()
+        //Popula lista de fotos do fornecedor
+        private void PopulaRotator(int idFornecedor)
         {
             ImageCollection.Add(new Rotator("big1.jpg"));
             ImageCollection.Add(new Rotator("big2.jpg"));
@@ -199,6 +192,7 @@ namespace Utiliza.Usuario.ViewModels
             ImageCollection.Add(new Rotator("big4.jpg"));
         }
 
+        //Monta a linha dos telefonos do fornecedor
         private string MontaStringTelefones(Fornecedor forn)
         {
             StringBuilder _tels = new StringBuilder();
