@@ -89,7 +89,7 @@
                     <rating:SfRatingSettings RatedFill="Gold" UnRatedFill="White" RatedStroke="Black" UnRatedStroke="Black" />
                         </rating:SfRating.RatingSettings>
                     </rating:SfRating>
-                    <Button Text="Todas as avaliações" TextColor="Black" FontSize="Small" HorizontalOptions="Center"/>
+                    <Button Text="Todas as avaliações" Command="{Binding MostraAvaliacoesCommand}" CommandParameter="{Binding IdFornecedor}" TextColor="Black" FontSize="Small" HorizontalOptions="Center"/>
                  
                      <!--Resumo-->
                      <Label Text="Resumo" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>

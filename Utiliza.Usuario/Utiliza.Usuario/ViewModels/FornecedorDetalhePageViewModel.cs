@@ -12,11 +12,68 @@ namespace Utiliza.Usuario.ViewModels
 {
     public class FornecedorDetalhePageViewModel : BaseViewModel
     {
-        public DelegateCommand NavigateToSitePageCommand { get; private set; }
-        public DelegateCommand NavigateToMapaEmpresaPageCommand { get; private set; }
 
-        private IPageDialogService _dialogService;
+        #region Inicialização de variáveis
+        //Variável para mostrar alerts do prism
+        //private IPageDialogService _dialogService;
+        #endregion
 
+        #region Propriedades Command
+        ////Botão para mostrar o site (precisa implementar o parâmetro com o id do fornecedor para a qual vai navegar)
+        //DelegateCommand<int> _navigateToSitePageCommand;
+        //public DelegateCommand<int> NavigateToSitePageCommand => _navigateToSitePageCommand != null ? _navigateToSitePageCommand : (_navigateToSitePageCommand = new DelegateCommand<int>(NavigateToSitePage));
+
+        ////Botão para mostrar o mapa da empresa (precisa implementar o parâmetro com o id do fornecedor que vai mostrar o mapa)
+        //DelegateCommand<int> _navigateToMapaEmpresaPageCommand;
+        //public DelegateCommand<int> NavigateToMapaEmpresaPageCommand => _navigateToMapaEmpresaPageCommand != null ? _navigateToMapaEmpresaPageCommand : (_navigateToMapaEmpresaPageCommand = new DelegateCommand<int>(NavigateToMapaEmpresaPage));
+
+        ////Botão para mostrar a página com todas as avaliações do fornecedor por parte dos usuários
+        //DelegateCommand<int> _mostraAvaliacoesCommand;
+        //public DelegateCommand<int> MostraAvaliacoesCommand => _mostraAvaliacoesCommand != null ? _mostraAvaliacoesCommand : (_mostraAvaliacoesCommand = new DelegateCommand<int>(MostraAvaliacoesSelected));
+
+        #endregion
+
+        #region Metodos de navegação
+        //Navega para o site da empresa (precisa implementar o parâmetrao com o id do fornecedor para o qual vai navegar)
+        protected void NavigateToSitePage(int idFornecedor)
+        {
+            var p = new NavigationParameters();
+            p.Add("id", idFornecedor);
+
+            _navigationService.NavigateAsync(new Uri("SitePage", UriKind.Relative));
+        }
+
+        //Navega para página com o mapa da empresa (precisa implementar o parâmetrao com o id do fornecedor que vai mostrar o mapa)
+        protected void NavigateToMapaEmpresaPage(int idFornecedor)
+        {
+            var p = new NavigationParameters();
+            p.Add("id", idFornecedor);
+
+            _navigationService.NavigateAsync(new Uri("MapaEmpresaPage", UriKind.Relative));
+        }
+
+        //Navega para página que mostra todas as avaliações do fornecedor
+        private void MostraAvaliacoesSelected(int idFornecedor)
+        {
+            var p = new NavigationParameters();
+            p.Add("id", idFornecedor);
+
+            _navigationService.NavigateAsync("FornecedorAvaliacoesPage", p);
+        }
+
+        #endregion
+
+
+        #region Propriedades do Fornecedor
+        /// <summary>
+        /// Propriedades dos fornecedor que serão utilizadas na página
+        /// </summary>
+        private Fornecedor _fornecedor;
+        public Fornecedor Fornecedor
+        {
+            get => _fornecedor;
+            set => SetProperty(ref _fornecedor, value);
+        }
         private List<Rotator> imageCollection = new List<Rotator>();
         public List<Rotator> ImageCollection
         {
@@ -38,19 +95,17 @@ namespace Utiliza.Usuario.ViewModels
             set { _listaDeContatos = value; }
         }
 
-
-        private Fornecedor _fornecedor;
-        public Fornecedor Fornecedor
-        {
-            get => _fornecedor;
-            set => SetProperty(ref _fornecedor, value);
-        }
-
         private string _nomeFantasia;
         public string nomeFantasia
         {
             get => _nomeFantasia;
             set => SetProperty(ref _nomeFantasia, value);
+        }
+        private int _idFornecedor;
+        public int idFornecedor
+        {
+            get => _idFornecedor;
+            set => SetProperty(ref _idFornecedor, value);
         }
         private string _chamada;
         public string chamada
@@ -83,30 +138,32 @@ namespace Utiliza.Usuario.ViewModels
             set => SetProperty(ref _horario, value);
         }
 
+        #endregion
 
 
+
+        #region Construtor
+        /// <summary>
+        /// Construtor da classe
+        /// </summary>
+        /// <param name="navigationService"></param>
         public FornecedorDetalhePageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            NavigateToSitePageCommand = new DelegateCommand(NavigateToSitePage);
-            NavigateToMapaEmpresaPageCommand = new DelegateCommand(NavigateToMapaEmpresaPage);
             PopulaRotator();
 
         }
 
-        protected void NavigateToSitePage()
-        {
-            _navigationService.NavigateAsync(new Uri("SitePage", UriKind.Relative));
-        }
-        protected void NavigateToMapaEmpresaPage()
-        {
-            _navigationService.NavigateAsync(new Uri("MapaEmpresaPage", UriKind.Relative));
-        }
+        #endregion
 
+
+        #region Método para recuperar parâmetros
         public override void OnNavigatingTo(NavigationParameters parameters)
         {
             if (!parameters.ContainsKey("id")) return;
 
             var id = Int32.Parse(parameters.GetValue<string>("id"));
+            idFornecedor = id;
+
             _fornecedor = new ProcuraFornecedor().GetFornecedor(id);
             nomeFantasia = _fornecedor.NomeFantasia;
             _title = _fornecedor.NomeRazaoSocial;
@@ -130,6 +187,10 @@ namespace Utiliza.Usuario.ViewModels
             }
             ListaDeContatos = _listaDeContatos;
         }
+
+        #endregion
+
+        #region Metodos auxiliares
         private void PopulaRotator()
         {
             ImageCollection.Add(new Rotator("big1.jpg"));
@@ -152,6 +213,8 @@ namespace Utiliza.Usuario.ViewModels
 
             return _tels.ToString().Substring(0, _tels.ToString().Length - 3);
         }
+
+        #endregion
 
     }
 }
