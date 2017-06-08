@@ -60,7 +60,10 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Troca de Cidade
                 case 4:
-                     _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    var p = new NavigationParameters();
+                    p.Add("id", 1);
+
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/FornecedoresAvaliacoesPage", UriKind.Absolute));
                     break;
                 //Promoções
                 case 5:

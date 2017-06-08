@@ -21,11 +21,17 @@ namespace Utiliza.Usuario.ViewModels
             set => SetProperty(ref _subcategorias, value);
         }
 
+        private string _nomeFor;
+        public string nomeFor
+        {
+            get { return _nomeFor; }
+            set { _nomeFor = value; }
+        }
 
 
         public SubCategoriaPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Title = "Subcategorias - Mairiporã";
+            //Title = "Subcategorias - Mairiporã";
         }
 
         private async void SubCategoriaSelected(SubCategoria subcategoria)
@@ -44,6 +50,10 @@ namespace Utiliza.Usuario.ViewModels
             if (!parameters.ContainsKey("categoria")) return;
 
             var categoria = parameters.GetValue<Categoria>("categoria");
+
+            Title = "Subcategorias - Mairiporã";
+            nomeFor = "Total Dog";
+
             var subcategorias = new PopulaListaSubCategorias().Popula(categoria.IdCategoria);
             foreach (var subcategoria in subcategorias)
             {
