@@ -31,7 +31,7 @@
                 </Grid.ColumnDefinitions>
                  
                 <!--Foto-->
-                 <rotator:SfRotator x:Name="rotator"  
+                 <!--<rotator:SfRotator x:Name="rotator"  
                                     Grid.Row="0"
                                     Grid.Column="0"
                                     NavigationDelay="5000" 
@@ -48,7 +48,8 @@
                              <Image  Source="{Binding Image}" />
                          </DataTemplate>
                      </rotator:SfRotator.ItemTemplate>
-                 </rotator:SfRotator>
+                 </rotator:SfRotator>-->
+                <Image Source="{Binding imagem}"/>
                 <StackLayout Grid.Row="1" Grid.Column="0">
                      <!--Nome Fantasia-->
                     <Label Text="{Binding nomeFantasia}" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="Large" />
@@ -110,52 +111,7 @@
                      <Label Text="Horário de funcionamento" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
                      <Label Text="{Binding horario}" TextColor="Black" Margin="20"/>
 
-                     <!--Facilidades-->
-                     <Label Text="Facilidades" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
-                    <ListView ItemsSource="{Binding ListaDeFacilidades}" 
-                              VerticalOptions="StartAndExpand"
-                              Margin="20,0,0,0"
-                              HeightRequest="200"
-                              >
-                         <ListView.ItemTemplate>
-                             <DataTemplate>
-                                 <ViewCell>
-                                     <StackLayout Orientation="Vertical" VerticalOptions="Center">
-                                         <StackLayout Orientation="Horizontal">
-                                            <Image Source="{Binding IconFacilidade}" VerticalOptions="Center"/>
-                                            <Label Text=" - " TextColor="Navy" VerticalOptions="Center"/>
-                                            <Label Text="{Binding DescricaoFacilidade}"
-                                                    TextColor="Navy" VerticalOptions="Center"/>
-                                         </StackLayout>
-                                     </StackLayout>
-                                 </ViewCell>
-                             </DataTemplate>
-                         </ListView.ItemTemplate>
-                     </ListView>
 
-                    <!--Contatos-->
-                    <Label Text="Contatos" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
-                    <ListView ItemsSource="{Binding ListaDeContatos}" 
-                              VerticalOptions="StartAndExpand"
-                              Margin="20,0,0,0" HeightRequest="100"
-                              >
-                         <ListView.ItemTemplate>
-                             <DataTemplate>
-                                 <ViewCell>
-                                     <StackLayout Orientation="Vertical" VerticalOptions="Center">
-                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding NomeUsuario}"
-                                                    TextColor="Navy" VerticalOptions="Center" />
-                                            <Label Text="{Binding Telefone}"
-                                                    TextColor="Navy" VerticalOptions="Center"/>
-                                            <Label Text="{Binding Email}"
-                                                    TextColor="Navy" VerticalOptions="Center"/>
-                                         </StackLayout>
-                                     </StackLayout>
-                                 </ViewCell>
-                             </DataTemplate>
-                         </ListView.ItemTemplate>
-                     </ListView>
 
                      <Label Text="Sua Avaliação" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
                      <StackLayout>

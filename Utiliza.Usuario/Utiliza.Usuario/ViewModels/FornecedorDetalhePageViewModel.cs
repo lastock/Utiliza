@@ -23,7 +23,7 @@ namespace Utiliza.Usuario.ViewModels
         // Construtor da classe
         public FornecedorDetalhePageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            PopulaRotator(_idFornecedor);
+            //PopulaRotator(_idFornecedor);
             NavigateToSitePageCommand = new DelegateCommand(NavigateToSitePage);
             NavigateToMapaEmpresaPageCommand = new DelegateCommand(NavigateToMapaEmpresaPage);
             MostraAvaliacoesCommand = new DelegateCommand(MostraAvaliacoesSelected);
@@ -75,21 +75,26 @@ namespace Utiliza.Usuario.ViewModels
 
 
         #region Propriedades do Fornecedor
-        /// <summary>
-        /// Propriedades dos fornecedor que serão utilizadas na página
-        /// </summary>
+        // Propriedades dos fornecedor que serão utilizadas na página
         private Fornecedor _fornecedor;
         public Fornecedor Fornecedor
         {
             get => _fornecedor;
             set => SetProperty(ref _fornecedor, value);
         }
-        private List<Rotator> imageCollection = new List<Rotator>();
-        public List<Rotator> ImageCollection
+        //private List<Rotator> imageCollection = new List<Rotator>();
+        //public List<Rotator> ImageCollection
+        //{
+        //    get { return imageCollection; }
+        //    set { imageCollection = value; }
+        //}
+        private string _imagem;
+        public string imagem
         {
-            get { return imageCollection; }
-            set { imageCollection = value; }
+            get => _imagem;
+            set => SetProperty(ref _imagem, value);
         }
+
 
         private List<Facilidade> _listaDeFacilidades = new List<Facilidade>();
         public List<Facilidade> ListaDeFacilidades
@@ -98,12 +103,6 @@ namespace Utiliza.Usuario.ViewModels
             set { _listaDeFacilidades = value; }
         }
 
-        private List<Contato> _listaDeContatos = new List<Contato>();
-        public List<Contato> ListaDeContatos
-        {
-            get { return _listaDeContatos; }
-            set { _listaDeContatos = value; }
-        }
 
         private string _nomeFantasia;
         public string nomeFantasia
@@ -156,7 +155,8 @@ namespace Utiliza.Usuario.ViewModels
             var id = Int32.Parse(parameters.GetValue<string>("id"));
             _idFornecedor = id;
 
-            _fornecedor = new ProcuraFornecedor().GetFornecedor(id);
+            _fornecedor = new FornecedorServicos().GetFornecedor(id);
+            imagem = _fornecedor.Logo;
             nomeFantasia = _fornecedor.NomeFantasia;
             _title = _fornecedor.NomeRazaoSocial;
             chamada = _fornecedor.Chamada;
@@ -184,13 +184,13 @@ namespace Utiliza.Usuario.ViewModels
 
         #region Metodos auxiliares
         //Popula lista de fotos do fornecedor
-        private void PopulaRotator(int idFornecedor)
-        {
-            ImageCollection.Add(new Rotator("big1.jpg"));
-            ImageCollection.Add(new Rotator("big2.jpg"));
-            ImageCollection.Add(new Rotator("big3.jpg"));
-            ImageCollection.Add(new Rotator("big4.jpg"));
-        }
+        //private void PopulaRotator(int idFornecedor)
+        //{
+        //    ImageCollection.Add(new Rotator("big1.jpg"));
+        //    ImageCollection.Add(new Rotator("big2.jpg"));
+        //    ImageCollection.Add(new Rotator("big3.jpg"));
+        //    ImageCollection.Add(new Rotator("big4.jpg"));
+        //}
 
         //Monta a linha dos telefonos do fornecedor
         private string MontaStringTelefones(Fornecedor forn)

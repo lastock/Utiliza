@@ -2368,16 +2368,16 @@ namespace Utiliza.Usuario.Droid
 			public const int belezaestetica = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int big1 = 2130837593;
+			public const int big_1 = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int big2 = 2130837594;
+			public const int big_2 = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int big3 = 2130837595;
+			public const int big_3 = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int big4 = 2130837596;
+			public const int big_4 = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
 			public const int bitcoin = 2130837597;

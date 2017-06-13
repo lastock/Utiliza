@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            xmlns:local="clr-namespace:Utiliza.Usuario.Views"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            x:Class="Utiliza.Usuario.Views.FornecedorTabbedPage">
+    <TabbedPage.Children>
+        <local:FornecedorDetalhePage Title="Detalhes" />
+        <local:ContatosPage Title="Contatos" />
+        <local:FacilidadesPage Title="Facilidades" />
+    </TabbedPage.Children>
+
+</TabbedPage>

@@ -391,16 +391,16 @@
     <AndroidResource Include="Resources\drawable\movie4_1234.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\big4.jpg" />
+    <AndroidResource Include="Resources\drawable\big_4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\big1.jpg" />
+    <AndroidResource Include="Resources\drawable\big_1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\big2.jpg" />
+    <AndroidResource Include="Resources\drawable\big_2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\big3.jpg" />
+    <AndroidResource Include="Resources\drawable\big_3.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\bitcoin.png" />

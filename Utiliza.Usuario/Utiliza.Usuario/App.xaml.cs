@@ -42,6 +42,9 @@ namespace Utiliza.Usuario
             Container.RegisterTypeForNavigation<ConversaIndividualPage>();
             Container.RegisterTypeForNavigation<TestePage>();
             Container.RegisterTypeForNavigation<FornecedoresAvaliacoesPage>();
+            Container.RegisterTypeForNavigation<FornecedorTabbedPage>();
+            Container.RegisterTypeForNavigation<ContatosPage>();
+            Container.RegisterTypeForNavigation<FacilidadesPage>();
         }
     }
 }

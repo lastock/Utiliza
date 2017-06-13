@@ -66,7 +66,7 @@ namespace Utiliza.Usuario.Servicos
 	                                    </body>
                                     </html>";
             fornecedor.Localizacao = new Localizacao(idFornecedor, -23.343091, -46.574892);
-            fornecedor.Logo = "totaldog.png";
+            fornecedor.Logo = "big_1.jpg";
             fornecedor.DataCriacao = DateTime.Parse("15/01/2017", new CultureInfo("pt-br"));
             fornecedor.DataModificacao = DateTime.Now;
             fornecedor.Avaliacao = 4.95;

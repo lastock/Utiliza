@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Utiliza.Usuario.Views.ContatosPage">
+
+    <StackLayout>
+        <!--Contatos-->
+        <Label Text="Contatos" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
+        <ListView ItemsSource="{Binding ListaDeContatos}" 
+                              VerticalOptions="StartAndExpand"
+                              Margin="20,0,0,0" HeightRequest="100"
+                              >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding NomeUsuario}"
+                                                    TextColor="Navy" VerticalOptions="Center" />
+                                <Label Text="{Binding Telefone}"
+                                                    TextColor="Navy" VerticalOptions="Center"/>
+                                <Label Text="{Binding Email}"
+                                                    TextColor="Navy" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

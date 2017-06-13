@@ -20,6 +20,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="240"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -46,5 +47,6 @@
                 </DataTemplate>
             </rotator:SfRotator.ItemTemplate>
         </rotator:SfRotator>
+        
     </Grid>
 </ContentPage>

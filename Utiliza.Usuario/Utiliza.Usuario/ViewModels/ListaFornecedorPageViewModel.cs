@@ -30,10 +30,11 @@ namespace Utiliza.Usuario.ViewModels
 
         private async void FornecedorSelected(Fornecedor fornecedor)
         {
+            var id = fornecedor.IdFornecedor;
             var p = new NavigationParameters();
-            p.Add("fornecedor", fornecedor);
+            p.Add("id", id);
 
-            await _navigationService.NavigateAsync("FornecedorDetalhePage", p);
+            await _navigationService.NavigateAsync("/InicialPage/UtilizaNavigationPage/MainPage/FornecedorTabbedPage/FornecedorDetalhePage", p, false);
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

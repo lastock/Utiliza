@@ -5,6 +5,7 @@ using Prism.Commands;
 using Prism.Services;
 using Utiliza.Usuario.Model;
 using Utiliza.Usuario.Servicos;
+using System;
 
 namespace Utiliza.Usuario.ViewModels
 {
@@ -31,23 +32,34 @@ namespace Utiliza.Usuario.ViewModels
             PopulaRotator();
         }
 
-        private async void ImageTapped(string id)
+        private async void ImageTapped(string nomeArquivo)
         {
             //await _dialogService.DisplayAlertAsync("Id Empresa",id,"OK");
             var p = new NavigationParameters();
+            string idStr;
+            int id;
+            idStr = nomeArquivo.Substring(nomeArquivo.IndexOf("_")+1);
+            if(!Int32.TryParse(idStr,out id))
+            {
+                await _dialogService.DisplayAlertAsync("Nome do arquivo", $"Não achei o id da empresa no arquivo {nomeArquivo}", "OK");
+            }
+
+            //mudar a linha seguinte para pegar o id da empresa a partir do nome do arquivo
+            //id = "12";
+
+
             p.Add("id", id);
 
-            await _navigationService.NavigateAsync("FornecedorDetalhePage", p);
+            await _navigationService.NavigateAsync("/InicialPage/UtilizaNavigationPage/MainPage/FornecedorTabbedPage/FornecedorDetalhePage", p,false);
         }
 
 
         private void PopulaRotator()
         {
-            ImageCollection.Add(new Rotator("movie1_1.png"));
-            ImageCollection.Add(new Rotator("movie2_12.png"));
-            ImageCollection.Add(new Rotator("movie3_123.png"));
-            ImageCollection.Add(new Rotator("movie4_1234.png"));
-            ImageCollection.Add(new Rotator("movie5_12345.png"));
+            ImageCollection.Add(new Rotator("big_1.jpg"));
+            ImageCollection.Add(new Rotator("big_2.jpg"));
+            ImageCollection.Add(new Rotator("big_3.jpg"));
+            ImageCollection.Add(new Rotator("big_4.jpg"));
         }
 
     }

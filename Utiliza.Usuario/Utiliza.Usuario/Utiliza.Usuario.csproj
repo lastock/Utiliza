@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Controls\CustomImageCell.cs" />
+    <Compile Include="Eventos\InitializeTabbedChildrenEvent.cs" />
     <Compile Include="Model\Avaliacao.cs" />
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Contato.cs" />
@@ -56,7 +57,6 @@
     <Compile Include="Servicos\PopulaListaConversas.cs" />
     <Compile Include="Servicos\PopulaListaFornecedores.cs" />
     <Compile Include="Servicos\PopulaListaSubCategorias.cs" />
-    <Compile Include="Servicos\ProcuraFornecedor.cs" />
     <Compile Include="Servicos\AvaliacoesService.cs" />
     <Compile Include="Variables.cs" />
     <Compile Include="ViewModels\AlteraCidadePageViewModel.cs" />
@@ -64,12 +64,15 @@
     <Compile Include="ViewModels\CadastroUsuarioPageViewModel.cs" />
     <Compile Include="ViewModels\CategoriaPageViewModel.cs" />
     <Compile Include="ViewModels\ConfiguracaoPageViewModel.cs" />
+    <Compile Include="ViewModels\ContatosPageViewModel.cs" />
     <Compile Include="ViewModels\ConversaIndividualPageViewModel.cs" />
     <Compile Include="ViewModels\ConversaPageViewModel.cs" />
     <Compile Include="ViewModels\EventToCommandBehavior.cs" />
+    <Compile Include="ViewModels\FacilidadesPageViewModel.cs" />
     <Compile Include="ViewModels\FornecedorDetalhePageViewModel.cs" />
     <Compile Include="ViewModels\FornecedoresAvaliacoesPageViewModel.cs" />
     <Compile Include="ViewModels\FornecedorMapaPageViewModel.cs" />
+    <Compile Include="ViewModels\FornecedorTabbedPageViewModel.cs" />
     <Compile Include="ViewModels\InicialPageViewModel.cs" />
     <Compile Include="ViewModels\ListaFornecedorPageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
@@ -95,11 +98,17 @@
     <Compile Include="Views\ConfiguracaoPage.xaml.cs">
       <DependentUpon>ConfiguracaoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ContatosPage.xaml.cs">
+      <DependentUpon>ContatosPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ConversaIndividualPage.xaml.cs">
       <DependentUpon>ConversaIndividualPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ConversaPage.xaml.cs">
       <DependentUpon>ConversaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FacilidadesPage.xaml.cs">
+      <DependentUpon>FacilidadesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FornecedorDetalhePage.xaml.cs">
       <DependentUpon>FornecedorDetalhePage.xaml</DependentUpon>
@@ -109,6 +118,9 @@
     </Compile>
     <Compile Include="Views\FornecedorMapaPage.xaml.cs">
       <DependentUpon>FornecedorMapaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FornecedorTabbedPage.xaml.cs">
+      <DependentUpon>FornecedorTabbedPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\InicialPage.xaml.cs">
       <DependentUpon>InicialPage.xaml</DependentUpon>
@@ -361,6 +373,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\FornecedoresAvaliacoesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FornecedorTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ContatosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FacilidadesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

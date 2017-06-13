@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Utiliza.Usuario.Views.FacilidadesPage">
+    <StackLayout>
+        <!--Facilidades-->
+        <Label Text="Facilidades" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
+        <ListView ItemsSource="{Binding ListaDeFacilidades}" 
+                              VerticalOptions="StartAndExpand"
+                              Margin="20,0,0,0"
+                              HeightRequest="200"
+                              >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding IconFacilidade}" VerticalOptions="Center"/>
+                                <Label Text=" - " TextColor="Navy" VerticalOptions="Center"/>
+                                <Label Text="{Binding DescricaoFacilidade}"
+                                                    TextColor="Navy" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

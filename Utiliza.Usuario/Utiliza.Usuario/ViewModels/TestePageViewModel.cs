@@ -35,7 +35,7 @@ namespace Utiliza.Usuario.ViewModels
         public override void OnNavigatingTo(NavigationParameters parameters)
         {
             var id = 1;
-            _fornecedor = new ProcuraFornecedor().GetFornecedor(id);
+            _fornecedor = new FornecedorServicos().GetFornecedor(id);
             _title = _fornecedor.NomeRazaoSocial;
             //_listaDeContatos = _fornecedor.Contatos;
             var contatos = _fornecedor.Contatos;
