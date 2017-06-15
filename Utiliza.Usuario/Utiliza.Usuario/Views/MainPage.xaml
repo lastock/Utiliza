@@ -47,6 +47,6 @@
                 </DataTemplate>
             </rotator:SfRotator.ItemTemplate>
         </rotator:SfRotator>
-        
+        <Label Grid.Row="1" Grid.Column="0" Text="Main page" TextColor="Black" HorizontalOptions="Center"/>
     </Grid>
 </ContentPage>

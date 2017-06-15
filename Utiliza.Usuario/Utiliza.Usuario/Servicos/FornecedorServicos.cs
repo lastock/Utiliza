@@ -32,7 +32,7 @@ namespace Utiliza.Usuario.Servicos
             fornecedor.CnpjCpf = "123.123.123/0001-00";
             fornecedor.DataContrato = DateTime.Parse("20/02/2017", new CultureInfo("pt-br"));
             fornecedor.DataExpiracao = DateTime.Parse("20/02/2018", new CultureInfo("pt-br"));
-            fornecedor.Site = "http:\\www.totaldog.com.br";
+            fornecedor.Site = "http:\\www.uol.com.br";
             fornecedor.Resumo = "Hotel para cães, adestramento e agility, com 6.500 m2 de área verde a 20 min de São Paulo pela Fernão Dias, com total segurança e área totalmente murada. Administrado por pessoas que são apaixonados por cães. Aqui nós prezamos em primeiro lugar a felicidade do seu melhor amigo. Temos uma infraestrutura voltada para seu cão, muito próxima da natureza mas com toda a segurança e conforto que seu amigo merece. Esperamos ter você como novo membro da nossa família usufruindo do nosso paraíso canino. Equipe especializada no tratamento com cães de todas as raças e preparada para tornar a estadia aqui na Total Dog a mais feliz e agradável possível.";
             fornecedor.Descricao = @"<html>
 	                                    <body>

@@ -36,6 +36,8 @@ namespace Utiliza.Usuario.ViewModels
         {
             //await _dialogService.DisplayAlertAsync("Id Empresa",id,"OK");
             var p = new NavigationParameters();
+
+            //Pega o id da empresa a partir do nome do Arquivo da imagem. O nome do arquivo da imagem deve ter o id da empresa que deve estar no final logo depois de um underscore "_" 
             string idStr;
             int id;
             idStr = nomeArquivo.Substring(nomeArquivo.IndexOf("_")+1);
@@ -44,13 +46,11 @@ namespace Utiliza.Usuario.ViewModels
                 await _dialogService.DisplayAlertAsync("Nome do arquivo", $"Não achei o id da empresa no arquivo {nomeArquivo}", "OK");
             }
 
-            //mudar a linha seguinte para pegar o id da empresa a partir do nome do arquivo
-            //id = "12";
 
 
             p.Add("id", id);
 
-            await _navigationService.NavigateAsync("/InicialPage/UtilizaNavigationPage/MainPage/FornecedorTabbedPage/FornecedorDetalhePage", p,false);
+            await _navigationService.NavigateAsync("/InicialPage/UtilizaNavigationPage/MainPage/FornecedorTabbedPage/FornecedorDetalhePage", p,false,true);
         }
 
 

@@ -4,7 +4,8 @@
             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
             xmlns:local="clr-namespace:Utiliza.Usuario.Views"
             prism:ViewModelLocator.AutowireViewModel="True"
-            x:Class="Utiliza.Usuario.Views.FornecedorTabbedPage">
+            x:Class="Utiliza.Usuario.Views.FornecedorTabbedPage"
+            Title="{Binding Title}">
     <TabbedPage.Children>
         <local:FornecedorDetalhePage Title="Detalhes" />
         <local:ContatosPage Title="Contatos" />

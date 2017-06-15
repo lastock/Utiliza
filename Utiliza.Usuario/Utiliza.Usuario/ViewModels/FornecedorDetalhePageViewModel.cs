@@ -172,12 +172,6 @@ namespace Utiliza.Usuario.ViewModels
             }
             ListaDeFacilidades = _listaDeFacilidades;
 
-            var contatos = _fornecedor.Contatos;
-            foreach (var contato in contatos)
-            {
-                _listaDeContatos.Add(contato);
-            }
-            ListaDeContatos = _listaDeContatos;
         }
 
         #endregion
