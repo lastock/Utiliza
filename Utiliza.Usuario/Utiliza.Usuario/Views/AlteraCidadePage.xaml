@@ -3,6 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Utiliza.Usuario.Views.AlteraCidadePage">
+             x:Class="Utiliza.Usuario.Views.AlteraCidadePage"
+             Title="{Binding Title}">
+    <StackLayout>
+        <ListView ItemsSource="{Binding Cidades}" 
+                ItemTapped="OnItemTapped"
+                BackgroundColor="White" 
+                SeparatorVisibility="Default" 
+                SeparatorColor="Red" 
+                >
+           
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding NomeCidade}"
+                              TextColor="Navy"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </StackLayout>
   
 </ContentPage>

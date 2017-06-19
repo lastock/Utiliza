@@ -3,6 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Utiliza.Usuario.Views.SobrePage">
-  
+             x:Class="Utiliza.Usuario.Views.SobrePage"
+             Title="{Binding Title}">
+    <StackLayout>
+        <Image Source="{Binding Logo}" HorizontalOptions="Center" Margin="0,30,0,30"/>
+        <Label Text="{Binding TextoGuia}" TextColor="Black" Margin="20,0,10,0"/>
+        <Label Text="{Binding Disclaimer}" TextColor="ForestGreen" FontAttributes="Bold" Margin="20,0,10,0"/>
+        <Label Text="{Binding Site}" TextColor="Black" Margin="20,0,10,0"/>
+        <Label Text="{Binding Tel1}" TextColor="Black" Margin="20,0,10,0"/>
+        <Label Text="{Binding Tel2}" TextColor="Black" Margin="20,0,10,0"/>
+        <Label Text="{Binding Tel3}" TextColor="Black" Margin="20,0,10,0"/>
+        <Label Text="{Binding Email}" TextColor="Black" Margin="20,0,10,0"/>
+
+    </StackLayout>
 </ContentPage>

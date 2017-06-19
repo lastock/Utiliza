@@ -50,7 +50,7 @@ namespace Utiliza.Usuario.ViewModels
 
             p.Add("id", id);
 
-            await _navigationService.NavigateAsync("/InicialPage/UtilizaNavigationPage/MainPage/FornecedorTabbedPage/FornecedorDetalhePage", p,false,true);
+            await _navigationService.NavigateAsync("/InicialPage/UtilizaNavigationPage/FornecedorTabbedPage/FornecedorDetalhePage", p,false,true);
         }
 
 

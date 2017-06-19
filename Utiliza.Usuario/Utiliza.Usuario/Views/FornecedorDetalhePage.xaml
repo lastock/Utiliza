@@ -31,7 +31,7 @@
                 </Grid.ColumnDefinitions>
                  
                 <!--Foto-->
-                 <!--<rotator:SfRotator x:Name="rotator"  
+                 <rotator:SfRotator x:Name="rotator"  
                                     Grid.Row="0"
                                     Grid.Column="0"
                                     NavigationDelay="5000" 
@@ -48,8 +48,8 @@
                              <Image  Source="{Binding Image}" />
                          </DataTemplate>
                      </rotator:SfRotator.ItemTemplate>
-                 </rotator:SfRotator>-->
-                <Image Source="{Binding imagem}"/>
+                 </rotator:SfRotator>
+                <!--<Image Source="{Binding imagem}"/>-->
                 <StackLayout Grid.Row="1" Grid.Column="0">
                      <!--Nome Fantasia-->
                     <Label Text="{Binding nomeFantasia}" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="Large" />

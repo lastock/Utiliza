@@ -23,7 +23,7 @@ namespace Utiliza.Usuario.ViewModels
         // Construtor da classe
         public FornecedorDetalhePageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            //PopulaRotator(_idFornecedor);
+            PopulaRotator(_idFornecedor);
             NavigateToSitePageCommand = new DelegateCommand(NavigateToSitePage);
             NavigateToMapaEmpresaPageCommand = new DelegateCommand(NavigateToMapaEmpresaPage);
             MostraAvaliacoesCommand = new DelegateCommand(MostraAvaliacoesSelected);
@@ -82,12 +82,12 @@ namespace Utiliza.Usuario.ViewModels
             get => _fornecedor;
             set => SetProperty(ref _fornecedor, value);
         }
-        //private List<Rotator> imageCollection = new List<Rotator>();
-        //public List<Rotator> ImageCollection
-        //{
-        //    get { return imageCollection; }
-        //    set { imageCollection = value; }
-        //}
+        private List<Rotator> imageCollection = new List<Rotator>();
+        public List<Rotator> ImageCollection
+        {
+            get { return imageCollection; }
+            set { imageCollection = value; }
+        }
         private string _imagem;
         public string imagem
         {
@@ -178,13 +178,13 @@ namespace Utiliza.Usuario.ViewModels
 
         #region Metodos auxiliares
         //Popula lista de fotos do fornecedor
-        //private void PopulaRotator(int idFornecedor)
-        //{
-        //    ImageCollection.Add(new Rotator("big1.jpg"));
-        //    ImageCollection.Add(new Rotator("big2.jpg"));
-        //    ImageCollection.Add(new Rotator("big3.jpg"));
-        //    ImageCollection.Add(new Rotator("big4.jpg"));
-        //}
+        private void PopulaRotator(int idFornecedor)
+        {
+            ImageCollection.Add(new Rotator("big_1.jpg"));
+            ImageCollection.Add(new Rotator("big_2.jpg"));
+            ImageCollection.Add(new Rotator("big_3.jpg"));
+            ImageCollection.Add(new Rotator("big_4.jpg"));
+        }
 
         //Monta a linha dos telefonos do fornecedor
         private string MontaStringTelefones(Fornecedor forn)

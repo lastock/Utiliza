@@ -60,10 +60,7 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Troca de Cidade
                 case 4:
-                    var p = new NavigationParameters();
-                    p.Add("id", 1);
-
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/FornecedoresAvaliacoesPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/AlteraCidadePage", UriKind.Absolute));
                     break;
                 //Promoções
                 case 5:
@@ -91,7 +88,7 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Sobre o Utiliza
                 case 11:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/SobrePage", UriKind.Absolute));
                     break;
                 //Termos de Uso
                 case 12:

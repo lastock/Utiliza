@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using Utiliza.Usuario.Model;
+using Utiliza.Usuario.ViewModels;
+using Xamarin.Forms;
 
 namespace Utiliza.Usuario.Views
 {
@@ -8,5 +10,10 @@ namespace Utiliza.Usuario.Views
         {
             InitializeComponent();
         }
+        private void OnItemTapped(object sender, ItemTappedEventArgs args)
+        {
+            ((AlteraCidadePageViewModel)this.BindingContext).CidadeSelectedCommand.Execute((Cidade)args.Item);
+        }
+
     }
 }

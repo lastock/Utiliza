@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Utiliza.Usuario.Model;
 using Utiliza.Usuario.Servicos;
@@ -9,8 +10,8 @@ namespace Utiliza.Usuario.ViewModels
 
     public class CategoriaPageViewModel : BaseViewModel
     {
-        private ObservableCollection<Categoria> _categorias = new ObservableCollection<Categoria>();
-        public ObservableCollection<Categoria> Categorias
+        private List<Categoria> _categorias = new List<Categoria>();
+        public List<Categoria> Categorias
         {
             get => _categorias;
             set => SetProperty(ref _categorias, value);

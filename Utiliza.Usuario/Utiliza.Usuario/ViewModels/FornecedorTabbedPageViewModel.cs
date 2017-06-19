@@ -12,11 +12,11 @@ namespace Utiliza.Usuario.ViewModels
 
     public class FornecedorTabbedPageViewModel : BaseViewModel
     {
-        IEventAggregator _ea { get; }
+        //IEventAggregator _ea { get; }
 
         public FornecedorTabbedPageViewModel(INavigationService navigationService, IEventAggregator eventAggregator) : base(navigationService)
         {
-            _ea = eventAggregator;
+            //_ea = eventAggregator;
             Title = "Fornecedor";
         }
         public override void OnNavigatingTo(NavigationParameters parameters)
@@ -26,7 +26,7 @@ namespace Utiliza.Usuario.ViewModels
             var id = Int32.Parse(parameters.GetValue<string>("id"));
 
             //System.Diagnostics.Debug.WriteLine($"{Title} OnNavigatingTo");
-            _ea.GetEvent<InitializeTabbedChildrenEvent>().Publish(parameters);
+            //_ea.GetEvent<InitializeTabbedChildrenEvent>().Publish(parameters);
         }
 
     }

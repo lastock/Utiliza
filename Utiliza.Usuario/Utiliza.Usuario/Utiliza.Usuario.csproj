@@ -39,6 +39,7 @@
     <Compile Include="Eventos\InitializeTabbedChildrenEvent.cs" />
     <Compile Include="Model\Avaliacao.cs" />
     <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\Cidade.cs" />
     <Compile Include="Model\Contato.cs" />
     <Compile Include="Model\Conversa.cs" />
     <Compile Include="Model\Facilidade.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Model\SubCategoria.cs" />
     <Compile Include="Model\Telefone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\CidadeServicos.cs" />
     <Compile Include="Servicos\FornecedorServicos.cs" />
     <Compile Include="Servicos\PopulaItensMenu.cs" />
     <Compile Include="Servicos\PopulaListaCategorias.cs" />
