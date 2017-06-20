@@ -8,8 +8,9 @@ namespace Utiliza.Usuario.Model
 {
     public class Promocao
     {
-        public int idPromocao { get; set; }
-        public int idFornecedor { get; set; }
+        public int IdPromocao { get; set; }
+        public int IdFornecedor { get; set; }
+        public string Logo { get; set; }
         public string DescricaoPromocao { get; set; }
         public string NomeEmpresa { get; set; }
         public int QuantidadeTotal { get; set; }

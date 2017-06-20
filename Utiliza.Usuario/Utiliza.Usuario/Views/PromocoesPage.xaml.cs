@@ -12,7 +12,7 @@ namespace Utiliza.Usuario.Views
         }
         private void OnItemTapped(object sender, ItemTappedEventArgs args)
         {
-            ((PromocoesPageViewModel)this.BindingContext).ListaPromocaoSelectedCommand.Execute((Fornecedor)args.Item);
+            ((PromocoesPageViewModel)this.BindingContext).ListaPromocaoSelectedCommand.Execute((Promocao)args.Item);
         }
 
     }

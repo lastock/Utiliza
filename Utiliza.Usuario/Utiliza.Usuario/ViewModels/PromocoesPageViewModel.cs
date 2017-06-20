@@ -17,11 +17,11 @@ namespace Utiliza.Usuario.ViewModels
             PopulaPromocoes();
         }
 
-        DelegateCommand<Fornecedor> _listaPromocaoSelectedCommand;
-        public DelegateCommand<Fornecedor> ListaPromocaoSelectedCommand => _listaPromocaoSelectedCommand != null ? _listaPromocaoSelectedCommand : (_listaPromocaoSelectedCommand = new DelegateCommand<Fornecedor>(PromocaoSelected));
+        DelegateCommand<Promocao> _listaPromocaoSelectedCommand;
+        public DelegateCommand<Promocao> ListaPromocaoSelectedCommand => _listaPromocaoSelectedCommand != null ? _listaPromocaoSelectedCommand : (_listaPromocaoSelectedCommand = new DelegateCommand<Promocao>(PromocaoSelected));
 
-        private List<Fornecedor> _promocoes = new List<Fornecedor>();
-        public List<Fornecedor> Promocoes
+        private List<Promocao> _promocoes = new List<Promocao>();
+        public List<Promocao> Promocoes
         {
             get => _promocoes;
             set => SetProperty(ref _promocoes, value);
@@ -29,9 +29,9 @@ namespace Utiliza.Usuario.ViewModels
 
 
 
-        private async void PromocaoSelected(Fornecedor fornecedor)
+        private async void PromocaoSelected(Promocao promocao)
         {
-            var id = fornecedor.IdFornecedor;
+            var id = promocao.IdFornecedor;
             var p = new NavigationParameters();
             p.Add("id", id);
 
@@ -40,11 +40,10 @@ namespace Utiliza.Usuario.ViewModels
 
         private void PopulaPromocoes()
         {
-            int idUsuário = 1;
-            var fornecedores = new FornecedorServicos().FornecedoresFavoritos(idUsuário);
-            foreach (var fornecedor in fornecedores)
+            var promocoes = new FornecedorServicos().Promocoes();
+            foreach (var promocao in promocoes)
             {
-                _promocoes.Add(fornecedor);
+                _promocoes.Add(promocao);
             }
 
             Promocoes = _promocoes;
