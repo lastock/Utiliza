@@ -64,11 +64,11 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Promoções
                 case 5:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/PromocoesPage", UriKind.Absolute));
                     break;
                 //Favoritos
                 case 6:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/TestePage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/FavoritosPage", UriKind.Absolute));
                     break;
                 //Mapa
                 case 7:
@@ -76,7 +76,7 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Procurar
                 case 8:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/ProcuraPage", UriKind.Absolute));
                     break;
                 //Minha Conta
                 case 9:
@@ -84,7 +84,7 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Configurações
                 case 10:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/ConfiguracaoPage", UriKind.Absolute));
                     break;
                 //Sobre o Utiliza
                 case 11:
@@ -92,7 +92,7 @@ namespace Utiliza.Usuario.ViewModels
                     break;
                 //Termos de Uso
                 case 12:
-                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
+                    _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/TermosDeUsoPage", UriKind.Absolute));
                     break;
             }
 

@@ -30,6 +30,9 @@ namespace Utiliza.Usuario.ViewModels
             NavigateToConfiguracaoPageCommand = new DelegateCommand(NavigateToConfiguracaoPage);
             NavigateToMudaSenhaPageCommand = new DelegateCommand(NavigateToMudaSenhaPage);
             NavigateToSobrePageCommand = new DelegateCommand(NavigateToSobrePage);
+
+            Cidade = RetornaCidade();
+
         }
 
         public void InicializaNavegacao(INavigationService navigationService)
@@ -43,7 +46,7 @@ namespace Utiliza.Usuario.ViewModels
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
-        private string _cidade;
+        protected string _cidade;
         public string Cidade
         {
             get { return _cidade; }
@@ -65,24 +68,25 @@ namespace Utiliza.Usuario.ViewModels
         }
         protected void NavigateToLoginPage()
         {
-            _navigationService.NavigateAsync("LoginPage");
+            _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/LoginPage", UriKind.Absolute));
         }
         protected void NavigateToCadastroUsuarioPage()
         {
-            _navigationService.NavigateAsync("CadastroUsuarioPage");
+            _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/CadastroUsuarioPage", UriKind.Absolute));
         }
         protected void NavigateToConfiguracaoPage()
         {
-            _navigationService.NavigateAsync("ConfiguracaoPage");
+            _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/ConfiguracaoPage", UriKind.Absolute));
         }
         protected void NavigateToMudaSenhaPage()
         {
-            _navigationService.NavigateAsync("MudaSenhaPage");
+            _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MudaSenhaPage", UriKind.Absolute));
         }
         protected void NavigateToSobrePage()
         {
-            _navigationService.NavigateAsync("SobrePage");
+            _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/SobrePage", UriKind.Absolute));
         }
+        #endregion
 
         public virtual void OnNavigatedFrom(NavigationParameters parameters)
         {
@@ -95,7 +99,12 @@ namespace Utiliza.Usuario.ViewModels
         public virtual void OnNavigatingTo(NavigationParameters parameters)
         {
         }
-        #endregion
+
+        protected string RetornaCidade()
+        {
+            var cidade = "Mairiporã";
+            return cidade;
+        }
 
         //public event PropertyChangedEventHandler PropertyChanged;
 

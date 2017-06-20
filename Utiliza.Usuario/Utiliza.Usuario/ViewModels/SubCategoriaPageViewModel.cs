@@ -14,18 +14,11 @@ namespace Utiliza.Usuario.ViewModels
         DelegateCommand<SubCategoria> _subcategoriaSelectedCommand;
         public DelegateCommand<SubCategoria> SubCategoriaSelectedCommand => _subcategoriaSelectedCommand != null ? _subcategoriaSelectedCommand : (_subcategoriaSelectedCommand = new DelegateCommand<SubCategoria>(SubCategoriaSelected));
 
-        private ObservableCollection<SubCategoria> _subcategorias = new ObservableCollection<SubCategoria>();
-        public ObservableCollection<SubCategoria> SubCategorias
+        private List<SubCategoria> _subcategorias = new List<SubCategoria>();
+        public List<SubCategoria> SubCategorias
         {
             get => _subcategorias;
             set => SetProperty(ref _subcategorias, value);
-        }
-
-        private string _nomeFor;
-        public string nomeFor
-        {
-            get { return _nomeFor; }
-            set { _nomeFor = value; }
         }
 
 
@@ -51,8 +44,7 @@ namespace Utiliza.Usuario.ViewModels
 
             var categoria = parameters.GetValue<Categoria>("categoria");
 
-            Title = "Subcategorias - Mairiporã";
-            nomeFor = "Total Dog";
+            Title = "Subcategorias";
 
             var subcategorias = new PopulaListaSubCategorias().Popula(categoria.IdCategoria);
             foreach (var subcategoria in subcategorias)

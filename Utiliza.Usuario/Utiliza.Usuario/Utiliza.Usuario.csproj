@@ -47,6 +47,7 @@
     <Compile Include="Model\FornecedorSubCategoria.cs" />
     <Compile Include="Model\Localizacao.cs" />
     <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\Promocao.cs" />
     <Compile Include="Model\Rotator.cs" />
     <Compile Include="Model\SubCategoria.cs" />
     <Compile Include="Model\Telefone.cs" />
@@ -57,7 +58,6 @@
     <Compile Include="Servicos\PopulaListaCategorias.cs" />
     <Compile Include="Servicos\PopulaListaContatos.cs" />
     <Compile Include="Servicos\PopulaListaConversas.cs" />
-    <Compile Include="Servicos\PopulaListaFornecedores.cs" />
     <Compile Include="Servicos\PopulaListaSubCategorias.cs" />
     <Compile Include="Servicos\AvaliacoesService.cs" />
     <Compile Include="Variables.cs" />
@@ -71,6 +71,7 @@
     <Compile Include="ViewModels\ConversaPageViewModel.cs" />
     <Compile Include="ViewModels\EventToCommandBehavior.cs" />
     <Compile Include="ViewModels\FacilidadesPageViewModel.cs" />
+    <Compile Include="ViewModels\FavoritosPageViewModel.cs" />
     <Compile Include="ViewModels\FornecedorDetalhePageViewModel.cs" />
     <Compile Include="ViewModels\FornecedoresAvaliacoesPageViewModel.cs" />
     <Compile Include="ViewModels\FornecedorMapaPageViewModel.cs" />
@@ -83,12 +84,14 @@
     <Compile Include="ViewModels\MeusDadosPageViewModel.cs" />
     <Compile Include="ViewModels\MudaSenhaPageViewModel.cs" />
     <Compile Include="ViewModels\ProcuraPageViewModel.cs" />
+    <Compile Include="ViewModels\PromocoesPageViewModel.cs" />
     <Compile Include="ViewModels\ProximosMapaPageViewModel.cs" />
     <Compile Include="ViewModels\ProximosPageViewModel.cs" />
     <Compile Include="ViewModels\SitePageViewModel.cs" />
     <Compile Include="ViewModels\SobrePageViewModel.cs" />
     <Compile Include="ViewModels\SpeakPageViewModel.cs" />
     <Compile Include="ViewModels\SubCategoriaPageViewModel.cs" />
+    <Compile Include="ViewModels\TermosDeUsoPageViewModel.cs" />
     <Compile Include="ViewModels\TestePageViewModel.cs" />
     <Compile Include="ViewModels\UtilizaNavigationPageViewModel.cs" />
     <Compile Include="Views\AlteraCidadePage.xaml.cs">
@@ -111,6 +114,9 @@
     </Compile>
     <Compile Include="Views\FacilidadesPage.xaml.cs">
       <DependentUpon>FacilidadesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FavoritosPage.xaml.cs">
+      <DependentUpon>FavoritosPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\FornecedorDetalhePage.xaml.cs">
       <DependentUpon>FornecedorDetalhePage.xaml</DependentUpon>
@@ -145,6 +151,9 @@
     <Compile Include="Views\ProcuraPage.xaml.cs">
       <DependentUpon>ProcuraPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PromocoesPage.xaml.cs">
+      <DependentUpon>PromocoesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProximosMapaPage.xaml.cs">
       <DependentUpon>ProximosMapaPage.xaml</DependentUpon>
     </Compile>
@@ -162,6 +171,9 @@
     </Compile>
     <Compile Include="Views\SubCategoriaPage.xaml.cs">
       <DependentUpon>SubCategoriaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TermosDeUsoPage.xaml.cs">
+      <DependentUpon>TermosDeUsoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TestePage.xaml.cs">
       <DependentUpon>TestePage.xaml</DependentUpon>
@@ -393,6 +405,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\FacilidadesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PromocoesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FavoritosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TermosDeUsoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

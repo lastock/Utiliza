@@ -45,6 +45,9 @@ namespace Utiliza.Usuario
             Container.RegisterTypeForNavigation<FornecedorTabbedPage>();
             Container.RegisterTypeForNavigation<ContatosPage>();
             Container.RegisterTypeForNavigation<FacilidadesPage>();
+            Container.RegisterTypeForNavigation<PromocoesPage>();
+            Container.RegisterTypeForNavigation<FavoritosPage>();
+            Container.RegisterTypeForNavigation<TermosDeUsoPage>();
         }
     }
 }
