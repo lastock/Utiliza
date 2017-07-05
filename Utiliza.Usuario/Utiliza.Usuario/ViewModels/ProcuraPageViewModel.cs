@@ -45,6 +45,12 @@ namespace Utiliza.Usuario.ViewModels
         {
             string mensagem = $"String procura = {procura.StringProcura} / Procura por distancia = {procura.ProcuraPorDistancia.ToString()} / Kms = {procura.Kilometros.ToString()} / Categoria = {procura.Categoria}";
             await _dialogService.DisplayAlertAsync("Procura", mensagem, "OK");
+
+            var p = new NavigationParameters();
+            p.Add("procura", procura);
+
+            await _navigationService.NavigateAsync("ListaFornecedorPage", p);
+
         }
 
     }

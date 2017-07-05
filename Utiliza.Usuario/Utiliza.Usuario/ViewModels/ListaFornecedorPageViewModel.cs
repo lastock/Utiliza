@@ -41,14 +41,30 @@ namespace Utiliza.Usuario.ViewModels
 
         public override void OnNavigatingTo(NavigationParameters parameters)
         {
-            if (!parameters.ContainsKey("subcategoria")) return;
-
-            var subcategoria = parameters.GetValue<SubCategoria>("subcategoria");
-            var fornecedores = new FornecedorServicos().FornecedoresDeUmaSubCategoria(subcategoria.IdSubCategoria);
-            foreach (var fornecedor in fornecedores)
+            if (parameters.ContainsKey("subcategoria"))
             {
-                _fornecedores.Add(fornecedor);
+                var subcategoria = parameters.GetValue<SubCategoria>("subcategoria");
+                var fornecedores = new FornecedorServicos().FornecedoresDeUmaSubCategoria(subcategoria.IdSubCategoria);
+                foreach (var fornecedor in fornecedores)
+                {
+                    _fornecedores.Add(fornecedor);
+                }
             }
+            else if (parameters.ContainsKey("procura"))
+            {
+                var procura = parameters.GetValue<Procura>("procura");
+                var fornecedores = new FornecedorServicos().FornecedoresDaProcura(procura);
+                foreach (var fornecedor in fornecedores)
+                {
+                    _fornecedores.Add(fornecedor);
+                }
+            }
+
+            else
+            {
+                return;
+            }
+
 
             Fornecedores = _fornecedores;
 

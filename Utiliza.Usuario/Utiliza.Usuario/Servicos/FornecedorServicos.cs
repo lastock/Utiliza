@@ -10,6 +10,21 @@ namespace Utiliza.Usuario.Servicos
 {
     public class FornecedorServicos
     {
+        private List<Fornecedor> fornecedores = new List<Fornecedor>();
+        public FornecedorServicos()
+        {
+            PopulaListafornecedores();
+        }
+
+        private void PopulaListafornecedores()
+        {
+            fornecedores.Add(new Fornecedor { IdFornecedor = 1, NomeFantasia = "TotalDog", Resumo = "O melhor hotel para cães da grande São Paulo", Logo = "teste.png", Subcategoria = 35 });
+            fornecedores.Add(new Fornecedor { IdFornecedor = 2, NomeFantasia = "Pizzaria do Zé", Resumo = "A melhor pizza de Mairiporã", Logo = "teste.png", Subcategoria = 2 });
+            fornecedores.Add(new Fornecedor { IdFornecedor = 3, NomeFantasia = "Cidade Bonita", Resumo = "A melhor piza com a melhor vista da cidade.", Logo = "teste.png", Subcategoria = 2 });
+            fornecedores.Add(new Fornecedor { IdFornecedor = 4, NomeFantasia = "Restaurante do Pipo", Resumo = "Coma a vontade e pague quando puder.", Logo = "teste.png", Subcategoria = 1 });
+            fornecedores.Add(new Fornecedor { IdFornecedor = 5, NomeFantasia = "Kilo da Chepa", Resumo = "Vale quanto pesa.", Logo = "teste.png", Subcategoria = 1 });
+
+        }
 
         public Fornecedor GetFornecedor(int idFornecedor)
         {
@@ -92,24 +107,28 @@ namespace Utiliza.Usuario.Servicos
 
         public List<Fornecedor> FornecedoresDeUmaSubCategoria(int subcategoria)
         {
-            var _fornecedores = new List<Fornecedor>();
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 1, NomeFantasia = "TotalDog", Resumo = "O melhor hotel para cães da grande São Paulo", Logo = "teste.png", Subcategoria = 35 });
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 2, NomeFantasia = "Pizzaria do Zé", Resumo = "A melhor pizza de Mairiporã", Logo = "teste.png", Subcategoria = 2 });
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 3, NomeFantasia = "Cidade Bonita", Resumo = "A melhor piza com a melhor vista da cidade.", Logo = "teste.png", Subcategoria = 2 });
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 4, NomeFantasia = "Restaurante do Pipo", Resumo = "Coma a vontade e pague quando puder.", Logo = "teste.png", Subcategoria = 1 });
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 5, NomeFantasia = "Kilo da Chepa", Resumo = "Vale quanto pesa.", Logo = "teste.png", Subcategoria = 1 });
-            return _fornecedores.Where(x => x.Subcategoria == subcategoria).ToList();
+            return fornecedores.Where(x => x.Subcategoria == subcategoria).ToList();
+        }
+
+        public List<Fornecedor> FornecedoresDaProcura(Procura procura)
+        {
+            var fornecedoresProcura = fornecedores;
+            if (procura.StringProcura != "")
+            {
+                fornecedoresProcura = fornecedoresProcura.Where(x => x.NomeFantasia.Contains(procura.StringProcura)).ToList();
+            }
+
+            //if (procura.Categoria != "")
+            //{
+            //    fornecedoresProcura = fornecedoresProcura.Where(x => x.).ToList();
+            //}
+
+            return fornecedoresProcura;
         }
 
         public List<Fornecedor> FornecedoresFavoritos(int idUsuario)
         {
-            var _fornecedores = new List<Fornecedor>();
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 1, NomeFantasia = "TotalDog", Resumo = "O melhor hotel para cães da grande São Paulo", Logo = "teste.png", Subcategoria = 35 });
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 2, NomeFantasia = "Pizzaria do Zé", Resumo = "A melhor pizza de Mairiporã", Logo = "teste.png", Subcategoria = 2 });
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 3, NomeFantasia = "Cidade Bonita", Resumo = "A melhor piza com a melhor vista da cidade.", Logo = "teste.png", Subcategoria = 2 });
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 4, NomeFantasia = "Restaurante do Pipo", Resumo = "Coma a vontade e pague quando puder.", Logo = "teste.png", Subcategoria = 1 });
-            _fornecedores.Add(new Fornecedor { IdFornecedor = 5, NomeFantasia = "Kilo da Chepa", Resumo = "Vale quanto pesa.", Logo = "teste.png", Subcategoria = 1 });
-            return _fornecedores;
+            return fornecedores;
         }
 
         public List<Promocao> PromocoesDoFornecedor(int idFornecedor)

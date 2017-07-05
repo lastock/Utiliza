@@ -16,37 +16,154 @@
         <ToolbarItem Text="Sobre" Command="{Binding NavigateToSobrePageCommand}" Order = "Secondary"/>
         <ToolbarItem Text="Config" Command="{Binding NavigateToConfiguracaoPageCommand}" Order = "Secondary"/>
     </ContentPage.ToolbarItems>
+    <ScrollView>
+        <Grid BackgroundColor="DarkGreen">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <rotator:SfRotator x:Name="rotator"  
+                               Grid.Row="0"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="6"
+                               NavigationDelay="5000" 
+                               EnableAutoPlay ="True"  
+                               ItemsSource="{Binding ImageCollection}" 
+                               SelectedIndex="0" 
+                               NavigationDirection="Horizontal" 
+                               NavigationStripMode="Dots" 
+                               NavigationStripPosition="Bottom"
+                               VerticalOptions="Start"
+                               BackgroundColor="DarkGreen"
+                               >07/2017 19:18
+                <rotator:SfRotator.ItemTemplate>
+                    <DataTemplate>
+                        <Image  Source="{Binding Image}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Handle_Tapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </DataTemplate>
+                </rotator:SfRotator.ItemTemplate>
+            </rotator:SfRotator>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="240"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <rotator:SfRotator x:Name="rotator"  
-                           Grid.Row="0"
-                           Grid.Column="0"
-                           NavigationDelay="5000" 
-                           EnableAutoPlay ="False"  
-                           ItemsSource="{Binding ImageCollection}" 
-                           SelectedIndex="0" 
-                           NavigationDirection="Horizontal" 
-                           NavigationStripMode="Dots" 
-                           BackgroundColor="ForestGreen" 
-                           NavigationStripPosition="Bottom"
-                           VerticalOptions="Start">
-            <rotator:SfRotator.ItemTemplate>
-                <DataTemplate>
-                    <Image  Source="{Binding Image}">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Handle_Tapped" />
-                        </Image.GestureRecognizers>
-                    </Image>
-                </DataTemplate>
-            </rotator:SfRotator.ItemTemplate>
-        </rotator:SfRotator>
-        <Label Grid.Row="1" Grid.Column="0" Text="Main page" TextColor="Black" HorizontalOptions="Center"/>
-    </Grid>
+            <Image x:Name="favoritos"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Source="favoritos32.png"
+                   HorizontalOptions="Center"
+                   >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="FavoritosTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="mapa"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Source="location32.png"
+                   HorizontalOptions="Center"
+                   >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MapaTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="procurar"
+                   Grid.Row="1"
+                   Grid.Column="2"
+                   Source="lupa32.png"
+                   HorizontalOptions="Center"
+                   >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ProcuraTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="categorias"
+                   Grid.Row="1"
+                   Grid.Column="3"
+                   Source="lista32.png"
+                   HorizontalOptions="Center"
+                   >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="CategoriasTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="promocoes"
+                   Grid.Row="1"
+                   Grid.Column="4"
+                   Source="promocao32.png"
+                   HorizontalOptions="Center"
+                   >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="PromocoesTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="chat"
+                   Grid.Row="1"
+                   Grid.Column="5"
+                   Source="chat32.png"
+                   HorizontalOptions="Center"
+                   >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ChatTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label Text="Favoritos"
+                   Grid.Row="2"
+                   Grid.Column="0"
+                   TextColor="White"
+                   FontSize="Micro"
+                   HorizontalOptions="Center"/>
+            <Label Text="Mapa"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   TextColor="White"
+                   FontSize="Micro"
+                   HorizontalOptions="Center"/>
+            <Label Text="Procurar"
+                   Grid.Row="2"
+                   Grid.Column="2"
+                   TextColor="White"
+                   FontSize="Micro"
+                   HorizontalOptions="Center"/>
+            <Label Text="Categorias"
+                   Grid.Row="2"
+                   Grid.Column="3"
+                   TextColor="White"
+                   FontSize="Micro"
+                   HorizontalOptions="Center"/>
+            <Label Text="Promoções"
+                   Grid.Row="2"
+                   Grid.Column="4"
+                   TextColor="White"
+                   FontSize="Micro"
+                   HorizontalOptions="Center"/>
+            <Label Text="Mensagens"
+                   Grid.Row="2"
+                   Grid.Column="5"
+                   TextColor="White"
+                   FontSize="Micro"
+                   HorizontalOptions="Center"/>
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+        </Grid>
+        
+    </ScrollView>
 </ContentPage>

@@ -53,6 +53,30 @@ namespace Utiliza.Usuario.Views
                 isHandled = true;
             }
         }
+        void FavoritosTapped(object sender, System.EventArgs e)
+        {
+
+        }
+        void MapaTapped(object sender, System.EventArgs e)
+        {
+
+        }
+        void ProcuraTapped(object sender, System.EventArgs e)
+        {
+
+        }
+        void CategoriasTapped(object sender, System.EventArgs e)
+        {
+
+        }
+        void PromocoesTapped(object sender, System.EventArgs e)
+        {
+
+        }
+        void ChatTapped(object sender, System.EventArgs e)
+        {
+
+        }
 
 
     }
