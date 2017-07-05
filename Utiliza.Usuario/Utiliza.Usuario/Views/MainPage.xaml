@@ -22,6 +22,7 @@
                 <RowDefinition Height="240"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="200"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -153,7 +154,10 @@
                    TextColor="White"
                    FontSize="Micro"
                    HorizontalOptions="Center"/>
-            <Grid BackgroundColor="White">
+            <Grid BackgroundColor="White"
+                  Grid.Row="3"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="6">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
@@ -161,6 +165,11 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                <Label Text="Teste"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       />
             </Grid>
 
         </Grid>
