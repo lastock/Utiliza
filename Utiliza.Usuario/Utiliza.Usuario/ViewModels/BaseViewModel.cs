@@ -9,15 +9,7 @@ namespace Utiliza.Usuario.ViewModels
 {
     public class BaseViewModel : BindableBase, INavigationAware
     {
-        protected INavigationService _navigationService;
-        public DelegateCommand NavigateToMainPageCommand { get; private set; }
-        public DelegateCommand NavigateToCategoriaPageCommand { get; private set; }
-        public DelegateCommand NavigateToProcuraPageCommand { get; private set; }
-        public DelegateCommand NavigateToLoginPageCommand { get; private set; }
-        public DelegateCommand NavigateToCadastroUsuarioPageCommand { get; private set; }
-        public DelegateCommand NavigateToConfiguracaoPageCommand { get; private set; }
-        public DelegateCommand NavigateToMudaSenhaPageCommand { get; private set; }
-        public DelegateCommand NavigateToSobrePageCommand { get; private set; }
+        #region Construtor
 
         public BaseViewModel(INavigationService navigationService)
         {
@@ -35,9 +27,26 @@ namespace Utiliza.Usuario.ViewModels
 
         }
 
-        public void InicializaNavegacao(INavigationService navigationService)
-        {
-        }
+        #endregion
+
+        #region Inicialização de variáveis
+
+        protected INavigationService _navigationService;
+        public DelegateCommand NavigateToMainPageCommand { get; private set; }
+        public DelegateCommand NavigateToCategoriaPageCommand { get; private set; }
+        public DelegateCommand NavigateToProcuraPageCommand { get; private set; }
+        public DelegateCommand NavigateToLoginPageCommand { get; private set; }
+        public DelegateCommand NavigateToCadastroUsuarioPageCommand { get; private set; }
+        public DelegateCommand NavigateToConfiguracaoPageCommand { get; private set; }
+        public DelegateCommand NavigateToMudaSenhaPageCommand { get; private set; }
+        public DelegateCommand NavigateToSobrePageCommand { get; private set; }
+
+        #endregion
+
+
+        //public void InicializaNavegacao(INavigationService navigationService)
+        //{
+        //}
 
 
         protected string _title;
@@ -54,40 +63,58 @@ namespace Utiliza.Usuario.ViewModels
         }
 
         #region Metodos de Navegação
+
+        //Navega para MainPage
         protected void NavigateToMainPage()
         {
             _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MainPage", UriKind.Absolute));
         }
+
+        //Navega para Categorias
         protected async void NavigateToCategoriaPage()
         {
             await _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/CategoriaPage", UriKind.Absolute));
         }
+
+        //Navega para Procura
         protected void NavigateToProcuraPage()
         {
             _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/ProcuraPage", UriKind.Relative));
         }
+
+        //Navega para Login
         protected void NavigateToLoginPage()
         {
             _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/LoginPage", UriKind.Absolute));
         }
+
+        //Navega para Cadastro de Usuário
         protected void NavigateToCadastroUsuarioPage()
         {
             _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/CadastroUsuarioPage", UriKind.Absolute));
         }
+
+        //Navega para Configuração
         protected void NavigateToConfiguracaoPage()
         {
             _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/ConfiguracaoPage", UriKind.Absolute));
         }
+
+        //Navega para Mudar Senha
         protected void NavigateToMudaSenhaPage()
         {
             _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/MudaSenhaPage", UriKind.Absolute));
         }
+
+        //Navega para Sobre
         protected void NavigateToSobrePage()
         {
             _navigationService.NavigateAsync(new Uri("/InicialPage/UtilizaNavigationPage/SobrePage", UriKind.Absolute));
         }
+
         #endregion
 
+        #region Metodos - eventos - interface INavigationAware
         public virtual void OnNavigatedFrom(NavigationParameters parameters)
         {
         }
@@ -100,18 +127,18 @@ namespace Utiliza.Usuario.ViewModels
         {
         }
 
+
+        #endregion
+
+        #region Metodos auxiliares
+
         protected string RetornaCidade()
         {
             var cidade = "Mairiporã";
             return cidade;
         }
 
-        //public event PropertyChangedEventHandler PropertyChanged;
+        #endregion
 
-        //public void SetProperty<T>(ref T backValue, T value, [CallerMemberName] String propertyName = "")
-        //{
-        //    backValue = value;
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
     }
 }

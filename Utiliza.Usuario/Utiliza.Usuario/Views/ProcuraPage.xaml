@@ -3,6 +3,87 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Utiliza.Usuario.Views.ProcuraPage">
-  
+             x:Class="Utiliza.Usuario.Views.ProcuraPage"
+             Title="{Binding Title}"
+             BackgroundColor="White">
+
+    <ContentPage.Content>
+        <StackLayout Padding="5,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"  />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Editor x:Name="procura" 
+                        Grid.Row="0" 
+                        Grid.Column="0" 
+                        Grid.ColumnSpan="2" 
+                        Text="Procurar" 
+                        TextColor="DarkGray" 
+                        Focused="OnGotFocus" />
+
+                <Label Text="Procura ao redor:" 
+                       FontSize="Medium" 
+                       TextColor="Black" 
+                       Grid.Row="1" 
+                       Grid.Column="0"/>
+                <Switch x:Name="habilitaProcuraPorDistancia"  
+                        Grid.Row="1" 
+                        Grid.Column="1"  
+                        IsToggled="False" 
+                        PropertyChanged="OnHabilitaProcuraPorDistanciaChanged" 
+                        HorizontalOptions="Start"/>
+
+
+                <Label x:Name="valorSlider" 
+                       Text="Raio: 0 Km"
+                       FontSize="Medium" 
+                       TextColor="Black" 
+                       Grid.Row="2" 
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"/>
+                
+                <Slider x:Name="sliderSimples" 
+                        Grid.Row="3" 
+                        Grid.Column="0" 
+                        Grid.ColumnSpan="2" 
+                        IsEnabled="False" 
+                        Maximum="100" 
+                        Minimum="0" 
+                        ValueChanged="OnSliderValueChange"/>
+                
+                <Label Grid.Row="4" 
+                       Grid.Column="0" 
+                       Text="Categoria:" 
+                       FontSize="Medium" 
+                       TextColor="Black" 
+                       VerticalOptions="Center"/>
+                <Picker x:Name="categoria"
+                        Grid.Row="4" 
+                        Grid.Column="1"  
+                        VerticalOptions="Center"
+                        Title="Selecione uma categoria"
+                        ItemsSource="{Binding Categorias}"
+                        ItemDisplayBinding="{Binding NomeCategoria}"
+                        SelectedItem="{Binding SelectedCategoria}"/>
+                
+                <Button Grid.Row="5" 
+                        Grid.Column="0" 
+                        Grid.ColumnSpan="2" 
+                        Text="Procurar" 
+                        TextColor="White" 
+                        BackgroundColor="DarkGreen" 
+                        Clicked="OnProcuraClicked" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

@@ -10,7 +10,7 @@
              >
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding NavigateToMainPageCommand}" Order = "Primary" Icon="lupa32.png"  />
+        <ToolbarItem Command="{Binding NavigateToProcuraPageCommand}" Order = "Primary" Icon="lupa32.png"  />
         <ToolbarItem Text="Home" Command="{Binding NavigateToMainPageCommand}" Order = "Secondary"/>
         <ToolbarItem Text="Fornecedores" Command="{Binding NavigateToCategoriaPageCommand}" Order = "Secondary"/>
         <ToolbarItem Text="Sobre" Command="{Binding NavigateToSobrePageCommand}" Order = "Secondary"/>
@@ -41,7 +41,7 @@
                 <DataTemplate>
                     <Image  Source="{Binding Image}">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ImageTappedCommand}" CommandParameter="1"  Tapped="Handle_Tapped" />
+                            <TapGestureRecognizer Tapped="Handle_Tapped" />
                         </Image.GestureRecognizers>
                     </Image>
                 </DataTemplate>

@@ -35,9 +35,15 @@ namespace Utiliza.Usuario.Views
                 int id = fileName.IndexOf("_", StringComparison.Ordinal)+1;
                 string sid = fileName.Substring(id, fileName.Length - id - 4);
 
+                if (!Int32.TryParse(sid, out id))
+                {
+                    _dialogService.DisplayAlertAsync("Nome do arquivo", $"Não achei o id da empresa no arquivo {fileName}", "OK");
+                }
+
+
                 //_dialogService.DisplayAlertAsync("Id da Empresa", sid, "OK");
 
-                ((MainPageViewModel)this.BindingContext).ImageTappedCommand.Execute(sid);
+                ((MainPageViewModel)this.BindingContext).ImageTappedCommand.Execute(id);
 
                 //Debug.WriteLine($"Tapped Event Called Sender = {sender.ToString()}");
                 //Debug.WriteLine(e.ToString());

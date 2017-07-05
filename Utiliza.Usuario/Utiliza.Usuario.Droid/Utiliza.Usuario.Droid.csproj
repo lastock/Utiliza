@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -69,11 +69,11 @@
     <Reference Include="Plugin.CurrentActivity, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.CurrentActivity.1.0.1\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Permissions, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.Permissions.1.2.1\lib\MonoAndroid10\Plugin.Permissions.dll</HintPath>
+    <Reference Include="Plugin.Permissions, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.0.1\lib\MonoAndroid10\Plugin.Permissions.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Permissions.Abstractions, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.Permissions.1.2.1\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.2.0.1\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Prism, Version=6.3.0.0, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Prism.Core.6.3.0\lib\MonoAndroid10\Prism.dll</HintPath>
@@ -84,23 +84,23 @@
     <Reference Include="Prism.Unity.Forms, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Prism.Unity.Forms.6.3.0\lib\MonoAndroid1.0\Prism.Unity.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRating.Android, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.43\lib\MonoAndroid10\Syncfusion.SfRating.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfRating.Android, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRating.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRating.XForms, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.43\lib\MonoAndroid10\Syncfusion.SfRating.XForms.dll</HintPath>
+    <Reference Include="Syncfusion.SfRating.XForms, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRating.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRating.XForms.Android, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.43\lib\MonoAndroid10\Syncfusion.SfRating.XForms.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfRating.XForms.Android, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRating.XForms.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRotator.Android, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.43\lib\MonoAndroid10\Syncfusion.SfRotator.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfRotator.Android, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRotator.Android.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRotator.XForms, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.43\lib\MonoAndroid10\Syncfusion.SfRotator.XForms.dll</HintPath>
+    <Reference Include="Syncfusion.SfRotator.XForms, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRotator.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRotator.XForms.Android, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.43\lib\MonoAndroid10\Syncfusion.SfRotator.XForms.Android.dll</HintPath>
+    <Reference Include="Syncfusion.SfRotator.XForms.Android, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.46\lib\MonoAndroid10\Syncfusion.SfRotator.XForms.Android.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -440,8 +440,8 @@
     <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.v7.AppCompat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.v7.AppCompat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.Design.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.Design.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Android.Support.v7.MediaRouter.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Android.Support.v7.MediaRouter.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets'))" />
   </Target>
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Import Project="..\..\packages\Xamarin.GooglePlayServices.Basement.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\..\packages\Xamarin.GooglePlayServices.Basement.42.1021.1\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets')" />
@@ -464,7 +464,7 @@
   <Import Project="..\..\packages\Xamarin.Android.Support.v7.AppCompat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.v7.AppCompat.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets')" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Design.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Design.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets')" />
   <Import Project="..\..\packages\Xamarin.Android.Support.v7.MediaRouter.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.v7.MediaRouter.25.3.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets')" />
-  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

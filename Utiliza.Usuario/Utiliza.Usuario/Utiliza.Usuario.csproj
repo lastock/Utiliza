@@ -47,6 +47,7 @@
     <Compile Include="Model\FornecedorSubCategoria.cs" />
     <Compile Include="Model\Localizacao.cs" />
     <Compile Include="Model\Menu.cs" />
+    <Compile Include="Model\Procura.cs" />
     <Compile Include="Model\Promocao.cs" />
     <Compile Include="Model\Rotator.cs" />
     <Compile Include="Model\SubCategoria.cs" />
@@ -219,11 +220,23 @@
     <Reference Include="Prism.Unity.Forms, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Prism.Unity.Forms.6.3.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Prism.Unity.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRating.XForms, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.43\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.SfRating.XForms.dll</HintPath>
+    <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\sqlite-net-pcl.1.3.3\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRotator.XForms, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.43\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.SfRotator.XForms.dll</HintPath>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.1.7\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.1.7\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLitePCLRaw.core.1.1.7\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRating.XForms, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.SfRating.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRotator.XForms, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.46\lib\portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Syncfusion.SfRotator.XForms.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations">
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\System.ComponentModel.DataAnnotations.dll</HintPath>

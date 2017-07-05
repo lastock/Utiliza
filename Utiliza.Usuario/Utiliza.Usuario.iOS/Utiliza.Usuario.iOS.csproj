@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -145,23 +145,23 @@
     <Reference Include="Prism.Unity.Forms, Version=6.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Prism.Unity.Forms.6.3.0\lib\Xamarin.iOS1.0\Prism.Unity.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRating.iOS, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.43\lib\Xamarin.iOS10\Syncfusion.SfRating.iOS.dll</HintPath>
+    <Reference Include="Syncfusion.SfRating.iOS, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\Xamarin.iOS10\Syncfusion.SfRating.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRating.XForms, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.43\lib\Xamarin.iOS10\Syncfusion.SfRating.XForms.dll</HintPath>
+    <Reference Include="Syncfusion.SfRating.XForms, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\Xamarin.iOS10\Syncfusion.SfRating.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRating.XForms.iOS, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.43\lib\Xamarin.iOS10\Syncfusion.SfRating.XForms.iOS.dll</HintPath>
+    <Reference Include="Syncfusion.SfRating.XForms.iOS, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRating.15.2.0.46\lib\Xamarin.iOS10\Syncfusion.SfRating.XForms.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRotator.iOS, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.43\lib\Xamarin.iOS10\Syncfusion.SfRotator.iOS.dll</HintPath>
+    <Reference Include="Syncfusion.SfRotator.iOS, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.46\lib\Xamarin.iOS10\Syncfusion.SfRotator.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRotator.XForms, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.43\lib\Xamarin.iOS10\Syncfusion.SfRotator.XForms.dll</HintPath>
+    <Reference Include="Syncfusion.SfRotator.XForms, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.46\lib\Xamarin.iOS10\Syncfusion.SfRotator.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRotator.XForms.iOS, Version=15.2451.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.43\lib\Xamarin.iOS10\Syncfusion.SfRotator.XForms.iOS.dll</HintPath>
+    <Reference Include="Syncfusion.SfRotator.XForms.iOS, Version=15.2451.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfRotator.15.2.0.46\lib\Xamarin.iOS10\Syncfusion.SfRotator.XForms.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -355,9 +355,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
     <Error Condition="!Exists('..\..\packages\Xamarin.Google.iOS.Maps.2.1.0.1\build\Xamarin.Google.iOS.Maps.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Google.iOS.Maps.2.1.0.1\build\Xamarin.Google.iOS.Maps.targets'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.props'))" />
-    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.props'))" />
+    <Error Condition="!Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets'))" />
   </Target>
   <Import Project="..\..\packages\Xamarin.Google.iOS.Maps.2.1.0.1\build\Xamarin.Google.iOS.Maps.targets" Condition="Exists('..\..\packages\Xamarin.Google.iOS.Maps.2.1.0.1\build\Xamarin.Google.iOS.Maps.targets')" />
-  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.5\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets" Condition="Exists('..\..\packages\Xamarin.Build.Download.0.4.6\build\Xamarin.Build.Download.targets')" />
 </Project>

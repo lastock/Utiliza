@@ -41,6 +41,7 @@ namespace Utiliza.Usuario.ViewModels
             {
                 _categorias.Add(categoria);
             }
+            Categorias = _categorias;
         }
 
     }

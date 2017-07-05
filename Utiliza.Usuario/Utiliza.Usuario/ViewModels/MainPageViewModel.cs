@@ -20,8 +20,8 @@ namespace Utiliza.Usuario.ViewModels
             set { imageCollection = value; }
         }
 
-        DelegateCommand<string> _imageTappedCommand;
-        public DelegateCommand<string> ImageTappedCommand => _imageTappedCommand != null ? _imageTappedCommand : (_imageTappedCommand = new DelegateCommand<string>(ImageTapped));
+        DelegateCommand<int> _imageTappedCommand;
+        public DelegateCommand<int> ImageTappedCommand => _imageTappedCommand != null ? _imageTappedCommand : (_imageTappedCommand = new DelegateCommand<int>(ImageTapped));
 
 
         public MainPageViewModel(INavigationService navigationService, IPageDialogService dialogService) : base(navigationService)
@@ -32,23 +32,10 @@ namespace Utiliza.Usuario.ViewModels
             PopulaRotator();
         }
 
-        private async void ImageTapped(string nomeArquivo)
+        private async void ImageTapped(int idFornecedor)
         {
-            //await _dialogService.DisplayAlertAsync("Id Empresa",id,"OK");
             var p = new NavigationParameters();
-
-            //Pega o id da empresa a partir do nome do Arquivo da imagem. O nome do arquivo da imagem deve ter o id da empresa que deve estar no final logo depois de um underscore "_" 
-            string idStr;
-            int id;
-            idStr = nomeArquivo.Substring(nomeArquivo.IndexOf("_")+1);
-            if(!Int32.TryParse(idStr,out id))
-            {
-                await _dialogService.DisplayAlertAsync("Nome do arquivo", $"Não achei o id da empresa no arquivo {nomeArquivo}", "OK");
-            }
-
-
-
-            p.Add("id", id);
+            p.Add("id", idFornecedor);
 
             await _navigationService.NavigateAsync("/InicialPage/UtilizaNavigationPage/FornecedorTabbedPage/FornecedorDetalhePage", p,false,true);
         }
