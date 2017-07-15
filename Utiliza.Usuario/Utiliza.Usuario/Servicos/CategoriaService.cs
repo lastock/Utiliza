@@ -1,39 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Utiliza.Usuario.Model;
 using Utiliza.Usuario.Repositories;
 
 namespace Utiliza.Usuario.Servicos
 {
-    public class PopulaListaCategorias
+    public class CategoriaService
     {
-        public PopulaListaCategorias()
+        public void PopulaCategoria()
         {
-            
-        }
-
-        public void Popula()
-        {
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Alimentação", 1, "alimentacao.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Moda", 2, "moda.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Serviços", 3, "servicos.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Saúde", 4, "saude.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Beleza e Estética", 5, "belezaestetica.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Produtos", 6, "produtos.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Casa e Decoração", 7, "casadecoracao.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Festas e Eventos", 8, "festaseventos.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Esportes e Lazer", 9, "esporteslazer.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Automóveis", 10, "automoveis.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Turismo", 11, "turismo.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Animais", 12, "animais.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Taxi", 13, "taxi.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Calçados", 14, "calcados.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Igrejas", 15, "igrejas.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Farmácias", 16, "farmacia.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Reparos", 17, "reparos.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Saúde e Fitness", 18, "saudefitness.png");
-            //await CategoriaRepository.Instance.AddNewCategoriaAsync("Serviços Públicos", 19, "publicos.png");
-
             var _categorias = new List<Categoria>();
             _categorias.Add(new Categoria { IdCategoria = 1, NomeCategoria = "Alimentação", Ordem = 1, UrlLogo = "alimentacao.png" });
             _categorias.Add(new Categoria { IdCategoria = 2, NomeCategoria = "Moda", Ordem = 2, UrlLogo = "moda.png" });
@@ -57,16 +36,22 @@ namespace Utiliza.Usuario.Servicos
 
             foreach (var categoria in _categorias)
             {
-                if (CategoriaRepository.Instance.GetCategoria(categoria.IdCategoria) == null)
-                {
-                    CategoriaRepository.Instance.AddNewCategoria(categoria.IdCategoria, categoria.NomeCategoria, categoria.Ordem, categoria.UrlLogo);
-                }
-                else
+                if ( CategoriaRepository.Instance.ExisteCategoria(categoria.IdCategoria))
                 {
                     CategoriaRepository.Instance.UpdateCategoria(categoria);
                 }
+                else
+                {
+                    CategoriaRepository.Instance.AddNewCategoria(categoria.IdCategoria, categoria.NomeCategoria, categoria.Ordem, categoria.UrlLogo);
+                }
             }
+
         }
 
+        public List<Categoria> GetAllCategorias()
+        {
+            PopulaCategoria();
+            return CategoriaRepository.Instance.GetAllCategorias();
+        }
     }
 }

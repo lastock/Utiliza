@@ -16,8 +16,10 @@
         <ToolbarItem Text="Sobre" Command="{Binding NavigateToSobrePageCommand}" Order = "Secondary"/>
         <ToolbarItem Text="Config" Command="{Binding NavigateToConfiguracaoPageCommand}" Order = "Secondary"/>
     </ContentPage.ToolbarItems>
+    
     <ScrollView>
         <Grid BackgroundColor="DarkGreen">
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="240"/>
                 <RowDefinition Height="Auto"/>
@@ -32,6 +34,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            
             <rotator:SfRotator x:Name="rotator"  
                                Grid.Row="0"
                                Grid.Column="0"
@@ -154,6 +157,7 @@
                    TextColor="White"
                    FontSize="Micro"
                    HorizontalOptions="Center"/>
+ 
             <Grid BackgroundColor="White"
                   Grid.Row="3"
                   Grid.Column="0"

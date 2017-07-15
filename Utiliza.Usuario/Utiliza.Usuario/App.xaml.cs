@@ -1,4 +1,5 @@
-﻿using Prism.Unity;
+﻿ using Prism.Unity;
+using Utiliza.Usuario.Repositories;
 using Utiliza.Usuario.Views;
 using Xamarin.Forms;
 
@@ -6,7 +7,11 @@ namespace Utiliza.Usuario
 {
     public partial class App : PrismApplication
     {
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+        public App(string dbFileName, IPlatformInitializer initializer = null) : base(initializer)
+        {
+            CategoriaRepository.Initialize(dbFileName);
+            SubCategoriaRepository.Initialize(dbFileName);
+        }
 
         protected override void OnInitialized()
         {

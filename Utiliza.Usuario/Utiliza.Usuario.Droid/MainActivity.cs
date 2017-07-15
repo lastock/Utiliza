@@ -17,8 +17,8 @@ namespace Utiliza.Usuario.Droid
             base.OnCreate(bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Xamarin.FormsGoogleMaps.Init(this, bundle);
-
-            LoadApplication(new App(new AndroidInitializer()));
+            string dbPath = DatabaseAccessHelper.GetLocalFilePath("guiacomercial.db3");
+            LoadApplication(new App(dbPath, new AndroidInitializer()));
         }
     }
 

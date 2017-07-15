@@ -26,8 +26,8 @@ namespace Utiliza.Usuario.iOS
             Xamarin.FormsGoogleMaps.Init(Variables.GOOGLE_MAPS_IOS_API_KEY);
             new SfRotatorRenderer();
             new SfRatingRenderer();
-
-            LoadApplication(new App(new iOSInitializer()));
+            string dbPath = DatabaseAccessHelper.GetLocalFilePath("guiacomercial.db3");
+            LoadApplication(new App(dbPath, new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
         }

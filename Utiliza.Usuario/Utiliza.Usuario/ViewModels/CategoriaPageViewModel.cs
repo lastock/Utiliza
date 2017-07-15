@@ -2,6 +2,7 @@
 using Prism.Navigation;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Utiliza.Usuario.Model;
 using Utiliza.Usuario.Servicos;
 
@@ -10,8 +11,14 @@ namespace Utiliza.Usuario.ViewModels
 
     public class CategoriaPageViewModel : BaseViewModel
     {
-        private List<Categoria> _categorias = new List<Categoria>();
-        public List<Categoria> Categorias
+        public CategoriaPageViewModel(INavigationService navigationService) : base(navigationService)
+        {
+            Title = "Categorias";
+            Popula();
+        }
+
+        private ObservableCollection<Categoria> _categorias = new ObservableCollection<Categoria>();
+        public ObservableCollection<Categoria> Categorias
         {
             get => _categorias;
             set => SetProperty(ref _categorias, value);
@@ -28,15 +35,10 @@ namespace Utiliza.Usuario.ViewModels
             await _navigationService.NavigateAsync("SubCategoriaPage", p);
         }
 
-        public CategoriaPageViewModel(INavigationService navigationService) : base(navigationService)
-        {
-            Title = "Categorias";
-            Popula();
-        }
 
         private void Popula()
         {
-            var categorias = new PopulaListaCategorias().Popula();
+           var categorias = new CategoriaService().GetAllCategorias();
             foreach (var categoria in categorias)
             {
                 _categorias.Add(categoria);

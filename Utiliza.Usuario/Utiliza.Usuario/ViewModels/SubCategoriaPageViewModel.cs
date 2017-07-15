@@ -6,6 +6,7 @@ using Utiliza.Usuario.Servicos;
 using Xamarin.Forms;
 using System.Linq;
 using Prism.Commands;
+using System.Threading.Tasks;
 
 namespace Utiliza.Usuario.ViewModels
 {
@@ -14,8 +15,8 @@ namespace Utiliza.Usuario.ViewModels
         DelegateCommand<SubCategoria> _subcategoriaSelectedCommand;
         public DelegateCommand<SubCategoria> SubCategoriaSelectedCommand => _subcategoriaSelectedCommand != null ? _subcategoriaSelectedCommand : (_subcategoriaSelectedCommand = new DelegateCommand<SubCategoria>(SubCategoriaSelected));
 
-        private List<SubCategoria> _subcategorias = new List<SubCategoria>();
-        public List<SubCategoria> SubCategorias
+        private ObservableCollection<SubCategoria> _subcategorias = new ObservableCollection<SubCategoria>();
+        public ObservableCollection<SubCategoria> SubCategorias
         {
             get => _subcategorias;
             set => SetProperty(ref _subcategorias, value);
@@ -46,7 +47,7 @@ namespace Utiliza.Usuario.ViewModels
 
             Title = "Subcategorias";
 
-            var subcategorias = new PopulaListaSubCategorias().Popula(categoria.IdCategoria);
+            var subcategorias =  new SubCategoriaService().GetSubCategoriasDeUmaCategoria(categoria.IdCategoria);
             foreach (var subcategoria in subcategorias)
             {
                 _subcategorias.Add(subcategoria);
