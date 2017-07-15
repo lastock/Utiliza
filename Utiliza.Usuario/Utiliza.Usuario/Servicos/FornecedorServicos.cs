@@ -34,7 +34,6 @@ namespace Utiliza.Usuario.Servicos
 
             Fornecedor fornecedor = new Fornecedor();
             fornecedor.IdFornecedor = idFornecedor;
-            fornecedor.Codigo = 123;
             fornecedor.NomeRazaoSocial = "Total Dog Ltda";
             fornecedor.NomeFantasia = "Total Dog - Seu cão mais feliz!";
             fornecedor.Chamada = "O melhor hotel para cães da grande São Paulo";
@@ -45,8 +44,6 @@ namespace Utiliza.Usuario.Servicos
             fornecedor.Estado = "SP";
             fornecedor.TipoDePessoa = "J";
             fornecedor.CnpjCpf = "123.123.123/0001-00";
-            fornecedor.DataContrato = DateTime.Parse("20/02/2017", new CultureInfo("pt-br"));
-            fornecedor.DataExpiracao = DateTime.Parse("20/02/2018", new CultureInfo("pt-br"));
             fornecedor.Site = "http:\\www.uol.com.br";
             fornecedor.Resumo = "Hotel para cães, adestramento e agility, com 6.500 m2 de área verde a 20 min de São Paulo pela Fernão Dias, com total segurança e área totalmente murada. Administrado por pessoas que são apaixonados por cães. Aqui nós prezamos em primeiro lugar a felicidade do seu melhor amigo. Temos uma infraestrutura voltada para seu cão, muito próxima da natureza mas com toda a segurança e conforto que seu amigo merece. Esperamos ter você como novo membro da nossa família usufruindo do nosso paraíso canino. Equipe especializada no tratamento com cães de todas as raças e preparada para tornar a estadia aqui na Total Dog a mais feliz e agradável possível.";
             fornecedor.Descricao = @"<html>
@@ -80,7 +77,8 @@ namespace Utiliza.Usuario.Servicos
                                                         <br />Na inscrição você deverá fornecer o nome, endereço e telefone do veterinário que atende seu cão. Em caso de necessidade, o nosso Veterinário Responsável entrará em contato para seguir suas instruções. Em caso de emergência, será imediatamente atendido aqui, para depois entrarmos em contato com o veterinário do seu cão.</p>
 	                                    </body>
                                     </html>";
-            fornecedor.Localizacao = new Localizacao(idFornecedor, -23.343091, -46.574892);
+            fornecedor.Latitude = -23.343091;
+            fornecedor.Longitude = -46.574892;
             fornecedor.Logo = "big_1.jpg";
             fornecedor.DataCriacao = DateTime.Parse("15/01/2017", new CultureInfo("pt-br"));
             fornecedor.DataModificacao = DateTime.Now;
@@ -136,6 +134,7 @@ namespace Utiliza.Usuario.Servicos
             var _promocoes = Promocoes();
             return _promocoes.Where(x => x.IdFornecedor == idFornecedor).ToList();
         }
+
         public List<Promocao> Promocoes()
         {
             var _promocoes = new List<Promocao>();
@@ -145,6 +144,12 @@ namespace Utiliza.Usuario.Servicos
             _promocoes.Add(new Promocao { IdPromocao = 4, IdFornecedor = 4, Logo = "percentage_64.png", NomeEmpresa = "Restaurante do Pipo", DescricaoPromocao = "Na apresentação deste cupom o seu acompanhante não paga!", PorcentagemDesconto = 0, QuantidadeRestante = 8, QuantidadeTotal = 15 });
             _promocoes.Add(new Promocao { IdPromocao = 5, IdFornecedor = 5, Logo = "percentage_64.png", NomeEmpresa = "Kilo da Chepa", DescricaoPromocao = "Desconto de 50% para os primeiros 20 clientes que apresentarem este cupom!", PorcentagemDesconto = 50, QuantidadeRestante = 17, QuantidadeTotal = 20 });
             return _promocoes;
+        }
+
+        public int DistanciaDoLocal(double latitude, double longitude)
+        {
+            
+            return 5;
         }
     }
 }

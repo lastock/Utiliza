@@ -87,20 +87,6 @@ namespace Utiliza.Usuario.Repositories
 
         }
 
-        //Retorna todas as categorias síncrono
-        //public List<Categoria> GetAllCategorias()
-        //{
-        //    try
-        //    {
-        //        return connSync.Table<Categoria>().OrderBy(c => c.Ordem).ToList();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
-        //    }
-
-        //    return null;
-        //}
 
         //Adiciona uma categoria ao Banco
         public void AddNewCategoria(int idCategoria, string nomeCategoria, int ordem, string urlLogo)

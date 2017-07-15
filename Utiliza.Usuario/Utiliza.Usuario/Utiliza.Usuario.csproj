@@ -54,6 +54,7 @@
     <Compile Include="Model\Telefone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CategoriaRepository.cs" />
+    <Compile Include="Repositories\FornecedorRepository.cs" />
     <Compile Include="Repositories\SubCategoriaRepository.cs" />
     <Compile Include="Servicos\CategoriaService.cs" />
     <Compile Include="Servicos\CidadeServicos.cs" />
