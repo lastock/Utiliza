@@ -9,8 +9,9 @@ namespace Utiliza.Usuario.Model
     public class Procura
     {
         public string StringProcura { get; set; }
-        public int Kilometros { get; set; }
+        public int Distancia { get; set; }
         public bool ProcuraPorDistancia { get; set; }
-        public string Categoria { get; set; }
+        public int IdCategoria { get; set; }
+        public int IdSubCategoria { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace Utiliza.Usuario.Model
         [PrimaryKey]
         public int IdFornecedor { get; set; }
 
-        [Unique, NotNull,MaxLength(250)]
+        [Unique, MaxLength(250)]
         public string NomeRazaoSocial { get; set; }
 
         [Unique, NotNull, MaxLength(150)]
@@ -70,6 +70,8 @@ namespace Utiliza.Usuario.Model
         public double AvaliacaoUsuario { get; set; }
 
         public string Horario { get; set; }
+
+        public bool Favorito { get; set; }
 
         [Ignore]
         public List<Telefone> Telefones { get; set; }

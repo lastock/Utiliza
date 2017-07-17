@@ -43,7 +43,6 @@ namespace Utiliza.Usuario.Repositories
         #endregion
 
         #region Métodos
-
         public static void Initialize(string filename)
         {
             if (filename == null)
@@ -52,6 +51,8 @@ namespace Utiliza.Usuario.Repositories
             dbFile = filename;
             instance = new FornecedorRepository();
         }
+
+        #region Métodos Fornecedor
 
         //Verifica se um fornecedor existe no banco
         public bool ExisteFornecedor(int idFornecedor)
@@ -79,7 +80,7 @@ namespace Utiliza.Usuario.Repositories
         }
 
         //Faz update de um fornecedor
-        public bool UpdateSubCategoria(Fornecedor fornecedor)
+        public bool UpdateFornecedor(Fornecedor fornecedor)
         {
             int result = 0;
             try
@@ -177,6 +178,7 @@ namespace Utiliza.Usuario.Repositories
                 //throw ex;
             }
         }
+
         //Método que retorna todos os fornecedores de uma subcategoria
         public List<Fornecedor> GetFornecedoresDeUmaSubCategoria(int idSubCategoria)
         {
@@ -195,28 +197,15 @@ namespace Utiliza.Usuario.Repositories
             }
         }
 
-        //Retorna um fornecedor
-        public Fornecedor GetCategoria(int idFornecedor)
-        {
-            try
-            {
-                using (var conn = new SQLiteConnection(dbFile))
-                {
-                    return conn.Find<Fornecedor>(c => c.IdFornecedor == idFornecedor);
-                }
-            }
-            catch (Exception ex)
-            {
-                StatusMessage = string.Format($"Não encontrei o fornecedor com id = {idFornecedor}. Erro: {ex.Message}.");
-                Debug.WriteLine(StatusMessage);
-                return null;
-            }
-
-        }
 
         //Retorna procura de fornecedores
-        public List<Fornecedor> GetProcuraFornecedores(string procura, bool procuraPorDistancia, int distancia = 0, int subCategoria = 0, int categoria = 0)
+        public List<Fornecedor> GetProcuraFornecedores(Procura _procura)
         {
+            var procura = _procura.StringProcura ;
+            var procuraPorDistancia = _procura.ProcuraPorDistancia;
+            var distancia = _procura.Distancia;
+            var subCategoria = _procura.IdSubCategoria;
+            var categoria = _procura.IdCategoria;
             try
             {
                 var fornecedores = new List<Fornecedor>();
@@ -283,6 +272,471 @@ namespace Utiliza.Usuario.Repositories
                 //throw ex;
             }
         }
+
+        //Retorna um fornecedor
+        public Fornecedor GetFornecedorById(int idFornecedor)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Find<Fornecedor>(c => c.IdFornecedor == idFornecedor);
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Não encontrei o fornecedor com id = {0}. Erro: {1}.", idFornecedor, ex.Message);
+                Debug.WriteLine(StatusMessage);
+                return null;
+            }
+
+        }
+
+        //Retorna fornecedores favoritos
+        public List<Fornecedor> GetFornecedoresFavoritos()
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Table<Fornecedor>().Where(c => c.Favorito == true).OrderBy(s => s.NomeFantasia).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+        #endregion
+
+        #region Metodos Contato
+
+        //Retorna contatos de um fornecedor
+        public List<Contato> GetContatosDeUmFornecedor(int idFornecedor)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Table<Contato>().Where(c => c.IdFornecedor == idFornecedor).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+
+        //Atualiza contato
+        public bool UpdateContato(Contato contato)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Update(contato);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar o telefone {contato.NomeContato}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Deleta contato
+        public bool DeletaContato(Contato contato)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Delete(contato);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco para deletar o telefone {contato.NomeContato}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Adiciona contato
+        public bool AddTelefone(Contato contato)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Insert(contato);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar o telefone {contato.NomeContato}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region metodos Telefone
+
+        //Retorna telefones de um fornecedor
+        public List<Telefone> GetTelefonesDeUmFornecedor(int idFornecedor)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Table<Telefone>().Where(c => c.IdFornecedor == idFornecedor).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+
+        //Atualiza telefone
+        public bool UpdateTelefone(Telefone telefone)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Update(telefone);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar o telefone {telefone.NumeroTelefone}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Deleta telefone
+        public bool DeletaTelefone(Telefone telefone)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Delete(telefone);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco para deletar o telefone {telefone.NumeroTelefone}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Adiciona telefone
+        public bool AddTelefone(Telefone telefone)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Insert(telefone);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar o telefone {telefone.NumeroTelefone}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region metodos Facilidades
+
+        //Retorna facilidades de um fornecedor
+        public List<Facilidade> GetFacilidadesDeUmFornecedor(int idFornecedor)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Table<Facilidade>().Where(c => c.IdFornecedor == idFornecedor).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+
+        //Atualiza facilidade
+        public bool UpdateFacilidade(Facilidade facilidade)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Update(facilidade);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar o telefone {facilidade.DescricaoFacilidade}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Deleta facilidade
+        public bool DeletaFacilidade(Facilidade facilidade)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Delete(facilidade);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco para deletar o facilidade {facilidade.DescricaoFacilidade}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Adiciona facilidade
+        public bool AddFacilidade(Facilidade facilidade)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Insert(facilidade);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar o telefone {facilidade.DescricaoFacilidade}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region metodos Imagens
+
+        //Retorna imagens de um fornecedor
+        public List<ImagemFornecedor> GetImagensDeUmFornecedor(int idFornecedor)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Table<ImagemFornecedor>().Where(c => c.IdFornecedor == idFornecedor).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+
+        //Atualiza ImagemFornecedor
+        public bool UpdateImagemFornecedor(ImagemFornecedor imagem)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Update(imagem);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar a imagem {imagem.NomeArquivo}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Deleta ImagemFornecedor
+        public bool DeletaFacilidade(ImagemFornecedor imagem)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Delete(imagem);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco para deletar a imagem {imagem.NomeArquivo}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Adiciona facilidade
+        public bool AddImagemFornecedor(ImagemFornecedor imagem)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Insert(imagem);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao adicionar a imagem {imagem.NomeArquivo}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region metodos promoções
+
+        //Retorna imagens de um fornecedor
+        public List<Promocao> GetPromocoesDeUmFornecedor(int idFornecedor)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Table<Promocao>().Where(c => c.IdFornecedor == idFornecedor && c.StatusPromocao == true).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+
+        public List<Promocao> GetTodasPromocoes()
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Table<Promocao>().Where(c => c.StatusPromocao == true).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+
+        //Atualiza ImagemFornecedor
+        public bool UpdatePromocao(Promocao promocao)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Update(promocao);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar a promocao {promocao.DescricaoPromocao}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Deleta ImagemFornecedor
+        public bool DeletaPromocao(Promocao promocao)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Delete(promocao);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco para deletar a promocao {promocao.DescricaoPromocao}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Adiciona facilidade
+        public bool AddPromocao(Promocao promocao)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Insert(promocao);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao adicionar a promocao {promocao.DescricaoPromocao}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        #endregion
 
         #endregion
     }

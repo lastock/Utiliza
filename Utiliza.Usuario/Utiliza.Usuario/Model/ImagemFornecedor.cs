@@ -7,17 +7,15 @@ using System.Threading.Tasks;
 
 namespace Utiliza.Usuario.Model
 {
-    [Table("facilidade")]
-    public class Facilidade
+    [Table("imagemfornecedor")]
+    public class ImagemFornecedor
     {
         [PrimaryKey]
-        public int IdFacilidade { get; set; }
+        public int IdImagem { get; set; }
         [NotNull]
         public int IdFornecedor { get; set; }
         [NotNull]
-        public string IconFacilidade { get; set; }
-        [NotNull,MaxLength(50)]
-        public string DescricaoFacilidade { get; set; }
+        public string NomeArquivo { get; set; }
 
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="Model\Facilidade.cs" />
     <Compile Include="Model\Fornecedor.cs" />
     <Compile Include="Model\FornecedorSubCategoria.cs" />
+    <Compile Include="Model\ImagemFornecedor.cs" />
     <Compile Include="Model\Localizacao.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\Procura.cs" />
