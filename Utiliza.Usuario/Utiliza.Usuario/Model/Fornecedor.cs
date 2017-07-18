@@ -47,8 +47,10 @@ namespace Utiliza.Usuario.Model
         [MaxLength(255)]
         public string Site { get; set; }
 
+        [MaxLength(255)]
         public string Resumo { get; set; }
 
+        [MaxLength(255)]
         public string Descricao { get; set; }
 
         public double Latitude { get; set; }
@@ -67,19 +69,9 @@ namespace Utiliza.Usuario.Model
 
         public double Avaliacao { get; set; }
 
-        public double AvaliacaoUsuario { get; set; }
-
+        [MaxLength(150)]
         public string Horario { get; set; }
 
         public bool Favorito { get; set; }
-
-        [Ignore]
-        public List<Telefone> Telefones { get; set; }
-
-        [Ignore]
-        public List<Facilidade> Facilidades { get; set; }
-
-        [Ignore]
-        public List<Contato> Contatos { get; set; }
     }
 }

@@ -53,20 +53,24 @@
     <Compile Include="Model\Rotator.cs" />
     <Compile Include="Model\SubCategoria.cs" />
     <Compile Include="Model\Telefone.cs" />
+    <Compile Include="Model\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CategoriaRepository.cs" />
     <Compile Include="Repositories\FornecedorRepository.cs" />
     <Compile Include="Repositories\SubCategoriaRepository.cs" />
     <Compile Include="Servicos\CategoriaService.cs" />
-    <Compile Include="Servicos\CidadeServicos.cs" />
-    <Compile Include="Servicos\FornecedorServicos.cs" />
+    <Compile Include="Servicos\CidadeService.cs" />
+    <Compile Include="Servicos\ContatoService.cs" />
+    <Compile Include="Servicos\FacilidadeService.cs" />
+    <Compile Include="Servicos\FornecedorService.cs" />
+    <Compile Include="Servicos\ImagemService.cs" />
     <Compile Include="Servicos\PopulaItensMenu.cs" />
     <Compile Include="Servicos\PopulaListaCategorias.cs" />
-    <Compile Include="Servicos\PopulaListaContatos.cs" />
     <Compile Include="Servicos\PopulaListaConversas.cs" />
     <Compile Include="Servicos\PopulaListaSubCategorias.cs" />
-    <Compile Include="Servicos\AvaliacoesService.cs" />
+    <Compile Include="Servicos\AvaliacaoService.cs" />
     <Compile Include="Servicos\SubCategoriaService.cs" />
+    <Compile Include="Servicos\TelefoneService.cs" />
     <Compile Include="Variables.cs" />
     <Compile Include="ViewModels\AlteraCidadePageViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -99,7 +103,6 @@
     <Compile Include="ViewModels\SpeakPageViewModel.cs" />
     <Compile Include="ViewModels\SubCategoriaPageViewModel.cs" />
     <Compile Include="ViewModels\TermosDeUsoPageViewModel.cs" />
-    <Compile Include="ViewModels\TestePageViewModel.cs" />
     <Compile Include="ViewModels\UtilizaNavigationPageViewModel.cs" />
     <Compile Include="Views\AlteraCidadePage.xaml.cs">
       <DependentUpon>AlteraCidadePage.xaml</DependentUpon>

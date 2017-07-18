@@ -40,7 +40,7 @@ namespace Utiliza.Usuario.ViewModels
 
         private void PopulaPromocoes()
         {
-            var promocoes = new FornecedorServicos().Promocoes();
+            var promocoes = new FornecedorService().Promocoes();
             foreach (var promocao in promocoes)
             {
                 _promocoes.Add(promocao);

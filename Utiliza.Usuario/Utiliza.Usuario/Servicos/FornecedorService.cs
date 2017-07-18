@@ -9,10 +9,10 @@ using Utiliza.Usuario.Repositories;
 
 namespace Utiliza.Usuario.Servicos
 {
-    public class FornecedorServicos
+    public class FornecedorService
     {
         //private List<Fornecedor> fornecedores = new List<Fornecedor>();
-        public FornecedorServicos()
+        public FornecedorService()
         {
             PopulaListafornecedores();
         }
@@ -210,25 +210,29 @@ namespace Utiliza.Usuario.Servicos
 
         public List<Promocao> PromocoesDoFornecedor(int idFornecedor)
         {
-            var _promocoes = Promocoes();
-            return _promocoes.Where(x => x.IdFornecedor == idFornecedor).ToList();
+            return FornecedorRepository.Instance.GetPromocoesDeUmFornecedor(idFornecedor);
         }
 
         public List<Promocao> Promocoes()
         {
-            var _promocoes = new List<Promocao>();
-            _promocoes.Add(new Promocao { IdPromocao = 1, IdFornecedor = 1, Logo = "percentage_64.png", NomeEmpresa = "Total Dog", DescricaoPromocao = "Hospede seu cão no final de semana 2 pague somente uma diária!", PorcentagemDesconto = 0, QuantidadeRestante = 10, QuantidadeTotal = 15 });
-            _promocoes.Add(new Promocao { IdPromocao = 2, IdFornecedor = 2, Logo = "percentage_64.png", NomeEmpresa = "Pizzaria do Zé", DescricaoPromocao = "Desconto de 70% para os primeiros 10 clientes que apresentarem este cupom!", PorcentagemDesconto = 70, QuantidadeRestante = 3, QuantidadeTotal = 10 });
-            _promocoes.Add(new Promocao { IdPromocao = 3, IdFornecedor = 3, Logo = "percentage_64.png", NomeEmpresa = "Cidade Bonita", DescricaoPromocao = "Desconto de 60% para os primeiros 10 clientes que apresentarem este cupom!", PorcentagemDesconto = 60, QuantidadeRestante = 5, QuantidadeTotal = 10 });
-            _promocoes.Add(new Promocao { IdPromocao = 4, IdFornecedor = 4, Logo = "percentage_64.png", NomeEmpresa = "Restaurante do Pipo", DescricaoPromocao = "Na apresentação deste cupom o seu acompanhante não paga!", PorcentagemDesconto = 0, QuantidadeRestante = 8, QuantidadeTotal = 15 });
-            _promocoes.Add(new Promocao { IdPromocao = 5, IdFornecedor = 5, Logo = "percentage_64.png", NomeEmpresa = "Kilo da Chepa", DescricaoPromocao = "Desconto de 50% para os primeiros 20 clientes que apresentarem este cupom!", PorcentagemDesconto = 50, QuantidadeRestante = 17, QuantidadeTotal = 20 });
-            return _promocoes;
+            //var _promocoes = new List<Promocao>();
+            //_promocoes.Add(new Promocao { IdPromocao = 1, IdFornecedor = 1, Logo = "percentage_64.png", NomeEmpresa = "Total Dog", DescricaoPromocao = "Hospede seu cão no final de semana 2 pague somente uma diária!", PorcentagemDesconto = 0, QuantidadeRestante = 10, QuantidadeTotal = 15 });
+            //_promocoes.Add(new Promocao { IdPromocao = 2, IdFornecedor = 2, Logo = "percentage_64.png", NomeEmpresa = "Pizzaria do Zé", DescricaoPromocao = "Desconto de 70% para os primeiros 10 clientes que apresentarem este cupom!", PorcentagemDesconto = 70, QuantidadeRestante = 3, QuantidadeTotal = 10 });
+            //_promocoes.Add(new Promocao { IdPromocao = 3, IdFornecedor = 3, Logo = "percentage_64.png", NomeEmpresa = "Cidade Bonita", DescricaoPromocao = "Desconto de 60% para os primeiros 10 clientes que apresentarem este cupom!", PorcentagemDesconto = 60, QuantidadeRestante = 5, QuantidadeTotal = 10 });
+            //_promocoes.Add(new Promocao { IdPromocao = 4, IdFornecedor = 4, Logo = "percentage_64.png", NomeEmpresa = "Restaurante do Pipo", DescricaoPromocao = "Na apresentação deste cupom o seu acompanhante não paga!", PorcentagemDesconto = 0, QuantidadeRestante = 8, QuantidadeTotal = 15 });
+            //_promocoes.Add(new Promocao { IdPromocao = 5, IdFornecedor = 5, Logo = "percentage_64.png", NomeEmpresa = "Kilo da Chepa", DescricaoPromocao = "Desconto de 50% para os primeiros 20 clientes que apresentarem este cupom!", PorcentagemDesconto = 50, QuantidadeRestante = 17, QuantidadeTotal = 20 });
+            //return _promocoes;
+            return FornecedorRepository.Instance.GetTodasPromocoes();
+
         }
 
         public int DistanciaDoLocal(double latitude, double longitude)
         {
-            
             return 5;
         }
+
+
+
+
     }
 }

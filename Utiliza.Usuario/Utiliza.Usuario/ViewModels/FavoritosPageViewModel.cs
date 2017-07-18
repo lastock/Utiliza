@@ -40,7 +40,7 @@ namespace Utiliza.Usuario.ViewModels
         private void PopulaFavoritos()
         {
             int idUsuário = 1;
-            var fornecedores = new FornecedorServicos().FornecedoresFavoritos(idUsuário);
+            var fornecedores = new FornecedorService().FornecedoresFavoritos();
             foreach (var fornecedor in fornecedores)
             {
                 _favoritos.Add(fornecedor);

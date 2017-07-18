@@ -2,6 +2,8 @@
 using Utiliza.Usuario.ViewModels;
 using Xamarin.Forms;
 using Utiliza.Usuario.Model;
+using Utiliza.Usuario.Servicos;
+
 namespace Utiliza.Usuario.Views
 {
     public partial class ProcuraPage : ContentPage
@@ -32,11 +34,11 @@ namespace Utiliza.Usuario.Views
             {
                 _categoria = categoria.Items[selectedIndex];
             }
-
+            var categ = new CategoriaService().GetCategoria(_categoria);
             Procura _procura = new Procura();
-            _procura.Categoria = _categoria;
+            _procura.IdCategoria = categ.IdCategoria;
             _procura.StringProcura = procura.Text;
-            _procura.Kilometros = (int)sliderSimples.Value;
+            _procura.Distancia = (int)sliderSimples.Value;
             _procura.ProcuraPorDistancia = habilitaProcuraPorDistancia.IsToggled;
             ((ProcuraPageViewModel)this.BindingContext).ProcuraClickedCommand.Execute(_procura);
         }

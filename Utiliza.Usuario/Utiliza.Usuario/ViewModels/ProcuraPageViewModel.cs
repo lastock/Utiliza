@@ -55,7 +55,7 @@ namespace Utiliza.Usuario.ViewModels
 
         private async void ProcuraClicked(Procura procura)
         {
-            string mensagem = $"String procura = {procura.StringProcura} / Procura por distancia = {procura.ProcuraPorDistancia.ToString()} / Kms = {procura.Kilometros.ToString()} / Categoria = {procura.Categoria}";
+            string mensagem = $"String procura = {procura.StringProcura} / Procura por distancia = {procura.ProcuraPorDistancia.ToString()} / Kms = {procura.Distancia.ToString()} / Categoria = {procura.IdCategoria}";
             await _dialogService.DisplayAlertAsync("Procura", mensagem, "OK");
 
             var p = new NavigationParameters();

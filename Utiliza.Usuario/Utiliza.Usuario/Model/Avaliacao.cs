@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,19 +7,24 @@ using System.Threading.Tasks;
 
 namespace Utiliza.Usuario.Model
 {
+    [Table("avaliacao")]
     public class Avaliacao
     {
+        [PrimaryKey]
         public int IdAvaliacao { get; set; }
-        public int IdFornecedor { get; set; }
-        public double ValorAvaliacao { get; set; }
-        public string Comentario { get; set; }
 
-        public Avaliacao(int idAvaliacao, int idFornecedor, double valorAvaliacao, string comentario)
-        {
-            IdAvaliacao = idAvaliacao;
-            IdFornecedor = idFornecedor;
-            ValorAvaliacao = valorAvaliacao;
-            Comentario = comentario;
-        }
+        [NotNull]
+        public int IdFornecedor { get; set; }
+
+        [NotNull]
+        public string UserName { get; set; }
+
+        public string Nome { get; set; }
+
+        [NotNull]
+        public double ValorAvaliacao { get; set; }
+
+        [MaxLength(255)]
+        public string Comentario { get; set; }
     }
 }

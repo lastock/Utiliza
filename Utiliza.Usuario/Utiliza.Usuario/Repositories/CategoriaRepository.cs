@@ -127,6 +127,24 @@ namespace Utiliza.Usuario.Repositories
             }
 
         }
+        public Categoria GetCategoria(string categoria)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Find<Categoria>(c => c.NomeCategoria == categoria);
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Não encontrei a categoria  {0}. Erro: {1}.", categoria, ex.Message);
+                Debug.WriteLine(StatusMessage);
+                return null;
+            }
+
+        }
+
 
         //Verifica se uma dada categoria existe no banco
         public bool ExisteCategoria(int idCategoria)

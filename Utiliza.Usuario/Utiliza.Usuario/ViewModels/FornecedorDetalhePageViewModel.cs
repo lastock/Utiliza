@@ -155,22 +155,22 @@ namespace Utiliza.Usuario.ViewModels
             var id = Int32.Parse(parameters.GetValue<string>("id"));
             _idFornecedor = id;
 
-            _fornecedor = new FornecedorServicos().GetFornecedor(id);
+            _fornecedor = new FornecedorService().GetFornecedor(id);
             imagem = _fornecedor.Logo;
             nomeFantasia = _fornecedor.NomeFantasia;
             _title = _fornecedor.NomeRazaoSocial;
             chamada = _fornecedor.Chamada;
-            telefones = MontaStringTelefones(_fornecedor);
+            telefones = MontaStringTelefones(_fornecedor.IdFornecedor);
             avaliacao = _fornecedor.Avaliacao;
             resumo = _fornecedor.Resumo;
             //descricao = _fornecedor.Descricao;
             horario = Fornecedor.Horario;
-            var facilidades = _fornecedor.Facilidades;
-            foreach (var facilidade in facilidades)
-            {
-                _listaDeFacilidades.Add(facilidade);
-            }
-            ListaDeFacilidades = _listaDeFacilidades;
+            //var facilidades = _fornecedor.Facilidades;
+            //foreach (var facilidade in facilidades)
+            //{
+            //    _listaDeFacilidades.Add(facilidade);
+            //}
+            //ListaDeFacilidades = _listaDeFacilidades;
 
         }
 
@@ -180,17 +180,20 @@ namespace Utiliza.Usuario.ViewModels
         //Popula lista de fotos do fornecedor
         private void PopulaRotator(int idFornecedor)
         {
-            ImageCollection.Add(new Rotator("big_1.jpg"));
-            ImageCollection.Add(new Rotator("big_2.jpg"));
-            ImageCollection.Add(new Rotator("big_3.jpg"));
-            ImageCollection.Add(new Rotator("big_4.jpg"));
+            var imagens = new ImagemService().ImagensDoFornecedor(idFornecedor);
+
+            foreach (var imagem in imagens)
+            {
+                ImageCollection.Add(new Rotator(imagem.NomeArquivo));
+            }
         }
 
         //Monta a linha dos telefonos do fornecedor
-        private string MontaStringTelefones(Fornecedor forn)
+        private string MontaStringTelefones(int idFornecedor)
         {
+            var telefones = new TelefoneService().TelefonesDoFornecedor(idFornecedor);
             StringBuilder _tels = new StringBuilder();
-            foreach (var tel in forn.Telefones)
+            foreach (var tel in telefones)
             {
                 _tels.Append("(");
                 _tels.Append(tel.CodigoArea);

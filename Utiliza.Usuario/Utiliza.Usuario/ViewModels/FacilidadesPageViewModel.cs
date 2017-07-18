@@ -36,12 +36,12 @@ namespace Utiliza.Usuario.ViewModels
 
             var id = Int32.Parse(parameters.GetValue<string>("id"));
 
-            _fornecedor = new FornecedorServicos().GetFornecedor(id);
+            _fornecedor = new FornecedorService().GetFornecedor(id);
             //nomeFantasia = _fornecedor.NomeFantasia;
             //_title = _fornecedor.NomeRazaoSocial;
             //descricao = _fornecedor.Descricao;
 
-            var facilidades = _fornecedor.Facilidades;
+            var facilidades = new FacilidadeService().FacilidadeDoFornecedor(id);
             foreach (var facilidade in facilidades)
             {
                 _listaDeFacilidades.Add(facilidade);

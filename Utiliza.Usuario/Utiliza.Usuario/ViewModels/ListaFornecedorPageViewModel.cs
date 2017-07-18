@@ -44,7 +44,7 @@ namespace Utiliza.Usuario.ViewModels
             if (parameters.ContainsKey("subcategoria"))
             {
                 var subcategoria = parameters.GetValue<SubCategoria>("subcategoria");
-                var fornecedores = new FornecedorServicos().FornecedoresDeUmaSubCategoria(subcategoria.IdSubCategoria);
+                var fornecedores = new FornecedorService().FornecedoresDeUmaSubCategoria(subcategoria.IdSubCategoria);
                 foreach (var fornecedor in fornecedores)
                 {
                     _fornecedores.Add(fornecedor);
@@ -53,7 +53,7 @@ namespace Utiliza.Usuario.ViewModels
             else if (parameters.ContainsKey("procura"))
             {
                 var procura = parameters.GetValue<Procura>("procura");
-                var fornecedores = new FornecedorServicos().FornecedoresDaProcura(procura);
+                var fornecedores = new FornecedorService().FornecedoresDaProcura(procura);
                 foreach (var fornecedor in fornecedores)
                 {
                     _fornecedores.Add(fornecedor);

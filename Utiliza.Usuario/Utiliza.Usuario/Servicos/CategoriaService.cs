@@ -53,5 +53,14 @@ namespace Utiliza.Usuario.Servicos
             PopulaCategoria();
             return CategoriaRepository.Instance.GetAllCategorias();
         }
+
+        public Categoria GetCategoria(int idCategoria)
+        {
+            return CategoriaRepository.Instance.GetCategoria(idCategoria);
+        }
+        public Categoria GetCategoria(string Categoria)
+        {
+            return CategoriaRepository.Instance.GetCategoria(Categoria);
+        }
     }
 }

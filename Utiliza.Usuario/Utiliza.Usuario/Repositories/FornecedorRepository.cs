@@ -252,7 +252,7 @@ namespace Utiliza.Usuario.Repositories
                 if (procuraPorDistancia)
                 {
                     var fornecedoresNaDistancia = new List<Fornecedor>();
-                    var fornServicos = new FornecedorServicos();
+                    var fornServicos = new FornecedorService();
                     foreach (var fornecedor in fornecedores)
                     {
                         if (fornServicos.DistanciaDoLocal(fornecedor.Latitude,fornecedor.Longitude) <= distancia)
@@ -372,7 +372,7 @@ namespace Utiliza.Usuario.Repositories
         }
 
         //Adiciona contato
-        public bool AddTelefone(Contato contato)
+        public bool AddContato(Contato contato)
         {
             try
             {
@@ -390,6 +390,32 @@ namespace Utiliza.Usuario.Repositories
                 return false;
             }
         }
+
+        //Verifica se um contato existe no banco
+        public bool ExisteContato(int idContato)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    var avaliacao = conn.Find<Contato>(c => c.IdContato == idContato);
+                    if (avaliacao == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erro no método ExisteSubCategoria. Erro: {ex.Message}");
+                throw ex;
+            }
+        }
+
 
         #endregion
 
@@ -470,6 +496,31 @@ namespace Utiliza.Usuario.Repositories
                 Debug.WriteLine(StatusMessage);
                 //throw ex;
                 return false;
+            }
+        }
+
+        //Verifica se um telefone existe no banco
+        public bool ExisteTelefone(int idTelefone)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    var avaliacao = conn.Find<Telefone>(c => c.IdTelefone == idTelefone);
+                    if (avaliacao == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erro no método ExisteSubCategoria. Erro: {ex.Message}");
+                throw ex;
             }
         }
 
@@ -555,9 +606,59 @@ namespace Utiliza.Usuario.Repositories
             }
         }
 
+        //Verifica se a facilidade existe no banco
+        public bool ExisteFacilidade(int idFacilidade)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    var avaliacao = conn.Find<Facilidade>(c => c.IdFacilidade == idFacilidade);
+                    if (avaliacao == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erro no método ExisteSubCategoria. Erro: {ex.Message}");
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region metodos Imagens
+
+        //Verifica se uma imagem existe no banco
+        public bool ExisteImagem(int idImagem)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    var avaliacao = conn.Find<ImagemFornecedor>(c => c.IdImagem == idImagem);
+                    if (avaliacao == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erro no método ExisteSubCategoria. Erro: {ex.Message}");
+                throw ex;
+            }
+        }
 
         //Retorna imagens de um fornecedor
         public List<ImagemFornecedor> GetImagensDeUmFornecedor(int idFornecedor)
@@ -641,7 +742,7 @@ namespace Utiliza.Usuario.Repositories
 
         #region metodos promoções
 
-        //Retorna imagens de um fornecedor
+        //Retorna promoções de um fornecedor
         public List<Promocao> GetPromocoesDeUmFornecedor(int idFornecedor)
         {
             try
@@ -659,6 +760,7 @@ namespace Utiliza.Usuario.Repositories
             }
         }
 
+        //Retorna todas as promoções
         public List<Promocao> GetTodasPromocoes()
         {
             try
@@ -716,7 +818,7 @@ namespace Utiliza.Usuario.Repositories
             }
         }
 
-        //Adiciona facilidade
+        //Adiciona promoção
         public bool AddPromocao(Promocao promocao)
         {
             try
@@ -736,8 +838,158 @@ namespace Utiliza.Usuario.Repositories
             }
         }
 
+        //Verifica se uma promoção existe no banco
+        public bool ExistePromocao(int idPromocao)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    var avaliacao = conn.Find<Promocao>(c => c.IdPromocao == idPromocao);
+                    if (avaliacao == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erro no método ExisteSubCategoria. Erro: {ex.Message}");
+                throw ex;
+            }
+        }
+
         #endregion
 
+        #region metodos Avaliacão
+
+        //Retorna todas as avaliações
+        public List<Avaliacao> GetAvaliacoesDoFornecedor(int idFornecedor)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Table<Avaliacao>().Where(c => c.IdFornecedor == idFornecedor).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+
+        //Retorna a avaliação de um usuário
+        public Avaliacao GetAvaliacãoDoUsuario(string userName)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Find<Avaliacao>(c => c.UserName == userName);
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+
+        //Atualiza avaliacao
+        public bool UpdateAvaliacao(Avaliacao avaliacao)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Update(avaliacao);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar a avaliacao. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Deleta avaliacao
+        public bool DeletaAvaliacao(Avaliacao avaliacao)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Delete(avaliacao);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco para deletar a avaliacao. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Adiciona avaliacao
+        public bool AddAvaliacao(Avaliacao avaliacao)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    conn.Insert(avaliacao);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao adicionar a avaliacao. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Verifica se uma avaliação existe no banco
+        public bool ExisteAvaliacao(int idAvaliacao)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    var avaliacao = conn.Find<Avaliacao>(c => c.IdAvaliacao == idAvaliacao);
+                    if (avaliacao == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erro no método ExisteSubCategoria. Erro: {ex.Message}");
+                throw ex;
+            }
+        }
+
+
+        #endregion
         #endregion
     }
 }

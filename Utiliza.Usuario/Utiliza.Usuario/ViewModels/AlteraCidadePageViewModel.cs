@@ -29,7 +29,7 @@ namespace Utiliza.Usuario.ViewModels
         }
         private void PopulaListaDeCidades()
         {
-            var cidades = new CidadeServicos().ListaDeCidades();
+            var cidades = new CidadeService().ListaDeCidades();
             foreach (var cidade in cidades)
             {
                 _cidades.Add(cidade);

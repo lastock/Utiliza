@@ -7,7 +7,7 @@ using Utiliza.Usuario.Model;
 
 namespace Utiliza.Usuario.Servicos
 {
-    public class CidadeServicos
+    public class CidadeService
     {
         public List<Cidade> ListaDeCidades()
         {
