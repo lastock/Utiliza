@@ -38,7 +38,7 @@ namespace Utiliza.Usuario.Servicos
             {
                 if ( CategoriaRepository.Instance.ExisteCategoria(categoria.IdCategoria))
                 {
-                    CategoriaRepository.Instance.UpdateCategoria(categoria);
+                    //CategoriaRepository.Instance.UpdateCategoria(categoria);
                 }
                 else
                 {

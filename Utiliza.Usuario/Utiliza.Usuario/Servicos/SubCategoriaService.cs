@@ -53,7 +53,7 @@ namespace Utiliza.Usuario.Servicos
             {
                 if (SubCategoriaRepository.Instance.ExisteSubCategoria(subCategoria.IdSubCategoria))
                 {
-                    SubCategoriaRepository.Instance.UpdateSubCategoria(subCategoria);
+                    //SubCategoriaRepository.Instance.UpdateSubCategoria(subCategoria);
                 }
                 else
                 {

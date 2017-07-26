@@ -38,7 +38,7 @@ namespace Utiliza.Usuario.Servicos
             {
                 if (FornecedorRepository.Instance.ExisteAvaliacao(avaliacao.IdAvaliacao))
                 {
-                    FornecedorRepository.Instance.UpdateAvaliacao(avaliacao);
+                    //FornecedorRepository.Instance.UpdateAvaliacao(avaliacao);
                 }
                 else
                 {

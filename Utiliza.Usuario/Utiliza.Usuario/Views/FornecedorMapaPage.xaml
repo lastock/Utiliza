@@ -8,8 +8,6 @@
              Title ="Total Dog">
   
     <StackLayout>
-        <maps:Map x:Name="map" 
-                  InitialCameraUpdate="{Binding position}">
-        </maps:Map>
+        <maps:Map x:Name="map" />
     </StackLayout>
 </ContentPage>

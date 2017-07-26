@@ -7,6 +7,9 @@ using Prism.Services;
 using Utiliza.Usuario.Model;
 using Utiliza.Usuario.Servicos;
 using Xamarin.Forms;
+using Plugin.Share;
+using Plugin.Share.Abstractions;
+using System.Threading.Tasks;
 
 namespace Utiliza.Usuario.ViewModels
 {
@@ -23,10 +26,11 @@ namespace Utiliza.Usuario.ViewModels
         // Construtor da classe
         public FornecedorDetalhePageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            PopulaRotator(_idFornecedor);
             NavigateToSitePageCommand = new DelegateCommand(NavigateToSitePage);
             NavigateToMapaEmpresaPageCommand = new DelegateCommand(NavigateToMapaEmpresaPage);
             MostraAvaliacoesCommand = new DelegateCommand(MostraAvaliacoesSelected);
+            WhatsAppChatCommand = new DelegateCommand(AbreChatNoWhatsApp);
+            //CompartilharFornecedorCommand = new DelegateCommand(CompartilharFornecedor);
         }
 
         #endregion
@@ -41,25 +45,38 @@ namespace Utiliza.Usuario.ViewModels
         ////Botão para mostrar a página com todas as avaliações do fornecedor por parte dos usuários
         public DelegateCommand MostraAvaliacoesCommand { get; private set; }
 
+        ////Botão para mostrar chat com o fornecedor
+        public DelegateCommand WhatsAppChatCommand { get; private set; }
+
+        ////Botão para Compartilhar o fornecedor 
+        DelegateCommand _compartilharFornecedorCommand;
+        public DelegateCommand CompartilharFornecedorCommand => _compartilharFornecedorCommand != null ? _compartilharFornecedorCommand : (_compartilharFornecedorCommand = new DelegateCommand(CompartilharFornecedor));
+
+        ////Botão para marcar desmarcar empresa dos favoritos 
+        DelegateCommand _marcaDesmarcaFavoritosCommand;
+        public DelegateCommand MarcaDesmarcaFavoritosCommand => _marcaDesmarcaFavoritosCommand != null ? _marcaDesmarcaFavoritosCommand : (_marcaDesmarcaFavoritosCommand = new DelegateCommand(MarcaDesmarcaFavoritos));
+
+        //public DelegateCommand CompartilharFornecedorCommand { get; private set; }
+
         #endregion
 
         #region Metodos de navegação
         //Navega para o site da empresa (precisa implementar o parâmetrao com o id do fornecedor para o qual vai navegar)
-        protected void NavigateToSitePage()
+        private async void NavigateToSitePage()
         {
             var p = new NavigationParameters();
             p.Add("id", _idFornecedor);
 
-            _navigationService.NavigateAsync(new Uri("SitePage", UriKind.Relative));
+            await _navigationService.NavigateAsync(new Uri("SitePage", UriKind.Relative),p);
         }
 
         //Navega para página com o mapa da empresa (precisa implementar o parâmetrao com o id do fornecedor que vai mostrar o mapa)
-        protected void NavigateToMapaEmpresaPage()
+        private async void NavigateToMapaEmpresaPage()
         {
             var p = new NavigationParameters();
             p.Add("id", _idFornecedor);
 
-            _navigationService.NavigateAsync(new Uri("MapaEmpresaPage", UriKind.Relative));
+            await _navigationService.NavigateAsync(new Uri("FornecedorMapaPage", UriKind.Relative),p);
         }
 
         //Navega para página que mostra todas as avaliações do fornecedor
@@ -68,11 +85,46 @@ namespace Utiliza.Usuario.ViewModels
             var p = new NavigationParameters();
             p.Add("id", _idFornecedor);
 
-            _navigationService.NavigateAsync("FornecedoresAvaliacoesPage", p);
+            _navigationService.NavigateAsync(new Uri("FornecedoresAvaliacoesPage", UriKind.Relative), p);
+        }
+
+        //Navega para página que mostra todas as avaliações do fornecedor
+        private void AbreChatNoWhatsApp()
+        {
+            var numWhatsApp = _fornecedor.WhatsApp;
+            var mensagem = $"Mensagem do cliente: XXXXX para {_fornecedor.NomeFantasia}";
+            Device.OpenUri(new Uri($"http://api.whatsapp.com/send?phone={numWhatsApp}&text={mensagem}"));
+
+        }
+        //Navega para página que mostra todas as avaliações do fornecedor
+        private void MarcaDesmarcaFavoritos()
+        {
+            var favorito = new FornecedorService().AdicionaRetiraDosFavoritos(_fornecedor.IdFornecedor);
+
+            if (favorito == true)
+            {
+                opacidadeFavorito = 1;
+            }
+            else
+            {
+                opacidadeFavorito = 0.5;
+            }
+        }
+
+        //Compartilha o site e informações do fornecedor
+        private void CompartilharFornecedor()
+        {
+            var site = _fornecedor.Site;
+            var nomeFornecedor = $"{_fornecedor.NomeFantasia } compartilhado pelo app Guia OndeVamos Mairiporã.";
+            var titulo = "Guia OndeVamos Mairiporã";
+            ShareMessage mensagem = new ShareMessage();
+            mensagem.Url = site;
+            mensagem.Title = titulo;
+            mensagem.Text = nomeFornecedor;
+            Compartilhar(mensagem);
         }
 
         #endregion
-
 
         #region Propriedades do Fornecedor
         // Propriedades dos fornecedor que serão utilizadas na página
@@ -140,6 +192,12 @@ namespace Utiliza.Usuario.ViewModels
             get => _horario;
             set => SetProperty(ref _horario, value);
         }
+        private double _opacidadeFavorito;
+        public double opacidadeFavorito
+        {
+            get => _opacidadeFavorito;
+            set => SetProperty(ref _opacidadeFavorito, value);
+        }
 
         #endregion
 
@@ -155,6 +213,8 @@ namespace Utiliza.Usuario.ViewModels
             var id = Int32.Parse(parameters.GetValue<string>("id"));
             _idFornecedor = id;
 
+            PopulaRotator(_idFornecedor);
+
             _fornecedor = new FornecedorService().GetFornecedor(id);
             imagem = _fornecedor.Logo;
             nomeFantasia = _fornecedor.NomeFantasia;
@@ -163,6 +223,14 @@ namespace Utiliza.Usuario.ViewModels
             telefones = MontaStringTelefones(_fornecedor.IdFornecedor);
             avaliacao = _fornecedor.Avaliacao;
             resumo = _fornecedor.Resumo;
+            if (_fornecedor.Favorito == true)
+            {
+                opacidadeFavorito = 1;
+            }
+            else
+            {
+                opacidadeFavorito = 0.5;
+            }
             //descricao = _fornecedor.Descricao;
             horario = Fornecedor.Horario;
             //var facilidades = _fornecedor.Facilidades;
@@ -177,6 +245,17 @@ namespace Utiliza.Usuario.ViewModels
         #endregion
 
         #region Metodos auxiliares
+
+        //método para compartilhar um site de um fornecedor
+        public void Compartilhar(ShareMessage mensagem)
+        {
+            if (CrossShare.IsSupported)
+            {
+                CrossShare.Current.Share(mensagem);
+            }
+        }
+
+
         //Popula lista de fotos do fornecedor
         private void PopulaRotator(int idFornecedor)
         {

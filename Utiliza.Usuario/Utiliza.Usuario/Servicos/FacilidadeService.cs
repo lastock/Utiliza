@@ -27,7 +27,7 @@ namespace Utiliza.Usuario.Servicos
             {
                 if (FornecedorRepository.Instance.ExisteFacilidade(facilidade.IdFacilidade))
                 {
-                    FornecedorRepository.Instance.UpdateFacilidade(facilidade);
+                    //FornecedorRepository.Instance.UpdateFacilidade(facilidade);
                 }
                 else
                 {

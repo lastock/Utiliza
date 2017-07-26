@@ -32,6 +32,7 @@ namespace Utiliza.Usuario.Servicos
                 TipoDePessoa = "J",
                 CnpjCpf = "10.922.665/0001-06",
                 Site = "http://www.totaldog.com.br",
+                WhatsApp = "5511999354059",
                 Resumo = "Hotel para cães, adestramento e agility, com 6.500 m2 de área verde a 20 min de São Paulo pela Fernão Dias, com total segurança e área totalmente murada. Administrado por pessoas que são apaixonados por cães. Aqui nós prezamos em primeiro lugar a felicidade do seu melhor amigo. Temos uma infraestrutura voltada para seu cão, muito próxima da natureza mas com toda a segurança e conforto que seu amigo merece. Esperamos ter você como novo membro da nossa família usufruindo do nosso paraíso canino. Equipe especializada no tratamento com cães de todas as raças e preparada para tornar a estadia aqui na Total Dog a mais feliz e agradável possível.",
                 Descricao = @"<html>
 	                                    <body>
@@ -80,31 +81,11 @@ namespace Utiliza.Usuario.Servicos
             {
                 if (FornecedorRepository.Instance.ExisteFornecedor(fornecedor.IdFornecedor))
                 {
-                    FornecedorRepository.Instance.UpdateFornecedor(fornecedor);
+                    //FornecedorRepository.Instance.UpdateFornecedor(fornecedor);
                 }
                 else
                 {
-                    FornecedorRepository.Instance.AddNewFornecedor(fornecedor.IdFornecedor,
-                        fornecedor.NomeRazaoSocial,
-                        fornecedor.NomeFantasia,
-                        fornecedor.Chamada,
-                        fornecedor.Endereco,
-                        fornecedor.Bairro,
-                        fornecedor.Cep,
-                        fornecedor.Cidade,
-                        fornecedor.Estado,
-                        fornecedor.TipoDePessoa,
-                        fornecedor.CnpjCpf,
-                        fornecedor.Site,
-                        fornecedor.Resumo,
-                        fornecedor.Descricao,
-                        fornecedor.Latitude,
-                        fornecedor.Longitude,
-                        fornecedor.Logo,
-                        fornecedor.Subcategoria,
-                        fornecedor.Categoria,
-                        fornecedor.Avaliacao,
-                        fornecedor.Horario);
+                    FornecedorRepository.Instance.AddNewFornecedor(fornecedor);
                 }
             }
         }
@@ -231,7 +212,10 @@ namespace Utiliza.Usuario.Servicos
             return 5;
         }
 
-
+        public bool AdicionaRetiraDosFavoritos(int idFornecedor)
+        {
+            return FornecedorRepository.Instance.AdicionaRetiraFornecedorDosFavoritos(idFornecedor);
+        }
 
 
     }

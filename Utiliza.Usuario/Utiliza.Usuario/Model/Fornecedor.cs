@@ -47,6 +47,9 @@ namespace Utiliza.Usuario.Model
         [MaxLength(255)]
         public string Site { get; set; }
 
+        [MaxLength(13)]
+        public string WhatsApp { get; set; }
+
         [MaxLength(255)]
         public string Resumo { get; set; }
 

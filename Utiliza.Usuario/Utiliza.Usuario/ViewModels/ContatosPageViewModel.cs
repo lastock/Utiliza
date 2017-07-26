@@ -44,7 +44,7 @@ namespace Utiliza.Usuario.ViewModels
 
             _fornecedor = new FornecedorService().GetFornecedor(id);
             nomeFantasia = _fornecedor.NomeFantasia;
-            _title = _fornecedor.NomeRazaoSocial;
+            //_title = _fornecedor.NomeRazaoSocial;
             //descricao = _fornecedor.Descricao;
 
             var contatos = new ContatoService().ContatosDoFornecedor(id);

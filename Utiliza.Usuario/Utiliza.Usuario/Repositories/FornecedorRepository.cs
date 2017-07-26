@@ -16,6 +16,12 @@ namespace Utiliza.Usuario.Repositories
             using (var conn = new SQLiteConnection(dbFile))
             {
                 conn.CreateTable<Fornecedor>();
+                conn.CreateTable<ImagemFornecedor>();
+                conn.CreateTable<Telefone>();
+                conn.CreateTable<Contato>();
+                conn.CreateTable<Facilidade>();
+                conn.CreateTable<Promocao>();
+                conn.CreateTable<Avaliacao>();
             }
         }
         #endregion
@@ -100,63 +106,21 @@ namespace Utiliza.Usuario.Repositories
         }
 
         //Adiciona um fornecedor ao banco
-        public void AddNewFornecedor(int IdFornecedor, 
-            string razaoSocial, 
-            string nomeFantasia,
-            string chamada,
-            string endereco,
-            string bairro,
-            string cep,
-            string cidade,
-            string estado,
-            string tipoDePessoa,
-            string cnpjCpf,
-            string site,
-            string resumo,
-            string descricao,
-            double latitude,
-            double longitude,
-            string logo,
-            int subCategoria,
-            int categoria,
-            double avaliacao,
-            string horario)
+        public void AddNewFornecedor(Fornecedor fornecedor)
         {
             int result = 0;
             try
             {
                 using (var conn = new SQLiteConnection(dbFile))
                 {
-                    result = conn.Insert(new Fornecedor {
-                        IdFornecedor = IdFornecedor,
-                        NomeRazaoSocial = razaoSocial,
-                        NomeFantasia = nomeFantasia,
-                        Chamada = chamada,
-                        Endereco = endereco,
-                        Bairro = bairro,
-                        Cep = cep,
-                        Cidade = cidade,
-                        Estado = estado,
-                        TipoDePessoa = tipoDePessoa,
-                        CnpjCpf = cnpjCpf,
-                        Site = site,
-                        Resumo = resumo,
-                        Descricao = descricao,
-                        Latitude = latitude,
-                        Longitude = longitude,
-                        Logo = logo,
-                        Subcategoria = subCategoria,
-                        Categoria = categoria,
-                        Avaliacao = avaliacao,
-                        Horario = horario
-                    });
+                    result = conn.Insert(fornecedor);
                 }
-                StatusMessage = string.Format($"{result} registro de Fornecedor adicionado: {razaoSocial}");
+                StatusMessage = string.Format($"{result} registro de Fornecedor adicionado: {fornecedor.NomeFantasia}");
                 Debug.WriteLine(StatusMessage);
             }
             catch (Exception ex)
             {
-                StatusMessage = string.Format($"Falha ao adicionar {razaoSocial}. Error: {ex.Message}");
+                StatusMessage = string.Format($"Falha ao adicionar {fornecedor.NomeFantasia}. Error: {ex.Message}");
                 Debug.WriteLine(StatusMessage);
             }
         }
@@ -311,6 +275,28 @@ namespace Utiliza.Usuario.Repositories
         }
         #endregion
 
+        #region métodos favoritos
+
+        public bool AdicionaRetiraFornecedorDosFavoritos(int idFornecedor)
+        {
+            var fornecedor = GetFornecedorById(idFornecedor);
+            if (fornecedor.Favorito == true)
+            {
+                fornecedor.Favorito = false;
+                var alterado = UpdateFornecedor(fornecedor);
+                return false;
+            }
+            else
+            {
+                fornecedor.Favorito = true;
+                var alterado = UpdateFornecedor(fornecedor);
+                return true;
+            }
+
+        }
+
+        #endregion
+
         #region Metodos Contato
 
         //Retorna contatos de um fornecedor
@@ -320,7 +306,12 @@ namespace Utiliza.Usuario.Repositories
             {
                 using (var conn = new SQLiteConnection(dbFile))
                 {
-                    return conn.Table<Contato>().Where(c => c.IdFornecedor == idFornecedor).ToList();
+                    //var contatos = conn.Table<Contato>().ToList();
+                    var contatosInfo = conn.GetTableInfo("contato");
+                    var contatos = conn.Table<Contato>().ToList();
+
+                    //var contatos = conn.Table<Contato>().Where(c => c.IdFornecedor == idFornecedor).ToList();
+                    return contatos;
                 }
             }
             catch (Exception ex)
@@ -339,6 +330,9 @@ namespace Utiliza.Usuario.Repositories
                 using (var conn = new SQLiteConnection(dbFile))
                 {
                     conn.Update(contato);
+                    StatusMessage = string.Format($"Update feito no contato: {contato.NomeContato}.");
+                    Debug.WriteLine(StatusMessage);
+
                     return true;
                 }
             }
@@ -379,8 +373,34 @@ namespace Utiliza.Usuario.Repositories
                 using (var conn = new SQLiteConnection(dbFile))
                 {
                     conn.Insert(contato);
+                    StatusMessage = string.Format($"Adicionado novo contato: {contato.NomeContato}.");
+                    Debug.WriteLine(StatusMessage);
+
                     return true;
                 }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco ao atualizar o telefone {contato.NomeContato}. {ex.Message}");
+                Debug.WriteLine(StatusMessage);
+                //throw ex;
+                return false;
+            }
+        }
+
+        //Adiciona ou altera contato
+        public bool AddOrUpdateContato(Contato contato)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    var i = conn.InsertOrReplace(contato, typeof(Contato));
+                    StatusMessage = string.Format($"{i} registro Adicionado ou alterado o contato: {contato.NomeContato}.");
+                }
+                    Debug.WriteLine(StatusMessage);
+
+                    return true;
             }
             catch (Exception ex)
             {
@@ -429,6 +449,23 @@ namespace Utiliza.Usuario.Repositories
                 using (var conn = new SQLiteConnection(dbFile))
                 {
                     return conn.Table<Telefone>().Where(c => c.IdFornecedor == idFornecedor).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+        //Retorna o telefone principal de um fornecedor
+        public Telefone GetTelefonePrincipalDeUmFornecedor(int idFornecedor)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                     return conn.Find<Telefone>(c => c.IdFornecedor == idFornecedor && c.TelefonePrincipal==true);
                 }
             }
             catch (Exception ex)
@@ -990,6 +1027,7 @@ namespace Utiliza.Usuario.Repositories
 
 
         #endregion
+
         #endregion
     }
 }

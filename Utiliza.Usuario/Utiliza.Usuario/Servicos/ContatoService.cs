@@ -23,20 +23,15 @@ namespace Utiliza.Usuario.Servicos
 
             foreach (var contato in contatos)
             {
-                if (FornecedorRepository.Instance.ExisteTelefone(contato.IdContato))
-                {
-                    FornecedorRepository.Instance.UpdateContato(contato);
-                }
-                else
-                {
-                    FornecedorRepository.Instance.AddContato(contato);
-                }
+                FornecedorRepository.Instance.AddOrUpdateContato(contato);
             }
+            var conts = FornecedorRepository.Instance.GetContatosDeUmFornecedor(1);
         }
 
         public List<Contato> ContatosDoFornecedor(int idFornecedor)
         {
-            return FornecedorRepository.Instance.GetContatosDeUmFornecedor(idFornecedor);
+            var contatos = FornecedorRepository.Instance.GetContatosDeUmFornecedor(idFornecedor);
+            return contatos;
         }
 
     }

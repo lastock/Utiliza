@@ -11,6 +11,7 @@ namespace Utiliza.Usuario
         {
             CategoriaRepository.Initialize(dbFileName);
             SubCategoriaRepository.Initialize(dbFileName);
+            FornecedorRepository.Initialize(dbFileName);
         }
 
         protected override void OnInitialized()

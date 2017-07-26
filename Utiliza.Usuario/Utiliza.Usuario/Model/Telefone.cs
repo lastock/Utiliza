@@ -20,5 +20,7 @@ namespace Utiliza.Usuario.Model
         public string NumeroTelefone { get; set; }
 
         public string Operadora { get; set; }
+
+        public bool TelefonePrincipal { get; set; }
     }
 }

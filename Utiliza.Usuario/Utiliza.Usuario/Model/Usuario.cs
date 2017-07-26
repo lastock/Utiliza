@@ -13,6 +13,7 @@ namespace Utiliza.Usuario.Model
     {
         [PrimaryKey]
         public int IdUsuario { get; set; }
+        [NotNull]
         public string NomeUsuario { get; set; }
         [NotNull,Unique]
         public string UserName { get; set; }

@@ -18,13 +18,13 @@ namespace Utiliza.Usuario.Servicos
         private void PopulaTelefones()
         {
             var telefones = new List<Telefone>();
-            telefones.Add(new Telefone { IdTelefone = 1, IdFornecedor = 1, CodigoArea = "11", NumeroTelefone = "99935-1364", Operadora = "Vivo" });
-            telefones.Add(new Telefone { IdTelefone = 2, IdFornecedor = 1, CodigoArea = "11", NumeroTelefone = "99935-4059", Operadora = "Vivo" });
+            telefones.Add(new Telefone { IdTelefone = 1, IdFornecedor = 1, CodigoArea = "11", NumeroTelefone = "99935-1364", Operadora = "Vivo", TelefonePrincipal = true });
+            telefones.Add(new Telefone { IdTelefone = 2, IdFornecedor = 1, CodigoArea = "11", NumeroTelefone = "99935-4059", Operadora = "Vivo", TelefonePrincipal = false });
             foreach (var telefone in telefones)
             {
                 if (FornecedorRepository.Instance.ExisteTelefone(telefone.IdTelefone))
                 {
-                    FornecedorRepository.Instance.UpdateTelefone(telefone);
+                    //FornecedorRepository.Instance.UpdateTelefone(telefone);
                 }
                 else
                 {
@@ -37,6 +37,11 @@ namespace Utiliza.Usuario.Servicos
         public List<Telefone> TelefonesDoFornecedor(int idFornecedor)
         {
             return FornecedorRepository.Instance.GetTelefonesDeUmFornecedor(idFornecedor);
+        }
+
+        public Telefone  TelefonePrincipalDofornecedor(int idFornecedor)
+        {
+            return FornecedorRepository.Instance.GetTelefonePrincipalDeUmFornecedor(idFornecedor);
         }
     }
 }

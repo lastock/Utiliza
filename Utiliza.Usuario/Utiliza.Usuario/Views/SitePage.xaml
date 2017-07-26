@@ -6,7 +6,7 @@
              x:Class="Utiliza.Usuario.Views.SitePage"
              Title="Site">
     <StackLayout>
-        <WebView Source="http://www.uol.com.br/index.aspx"  WidthRequest="1000" HeightRequest="10000"/>
+        <WebView Source="{Binding site}"  WidthRequest="1000" HeightRequest="10000"/>
     </StackLayout>
   
 </ContentPage>

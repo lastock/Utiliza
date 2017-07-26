@@ -10,8 +10,8 @@
 
     <StackLayout>
         <maps:Map x:Name="map" 
-                  InitialCameraUpdate="{Binding position}">
-        </maps:Map>
+                  InitialCameraUpdate="{Binding position}"/>
+
     </StackLayout>
 
 </ContentPage>

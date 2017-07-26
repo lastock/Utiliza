@@ -26,7 +26,7 @@ namespace Utiliza.Usuario.Servicos
             {
                 if (FornecedorRepository.Instance.ExisteImagem(imagem.IdImagem))
                 {
-                    FornecedorRepository.Instance.UpdateImagemFornecedor(imagem);
+                    //FornecedorRepository.Instance.UpdateImagemFornecedor(imagem);
                 }
                 else
                 {

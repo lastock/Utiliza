@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
 using Xamarin.Forms.GoogleMaps;
+using Utiliza.Usuario.Servicos;
 
 namespace Utiliza.Usuario.ViewModels
 {
@@ -12,15 +13,37 @@ namespace Utiliza.Usuario.ViewModels
     {
         public MapaEmpresaPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            _position = CameraUpdateFactory.NewPositionZoom(new Position(-23.343091d, -46.574892d), 15d);
         }
-        private CameraUpdate _position;
 
+        private CameraUpdate _position;
         public CameraUpdate position
         {
             get => _position;
             set => SetProperty(ref _position, value);
         }
+
+        private Position _posisaoPinFornecedor;
+        public Position posisaoPinFornecedor
+        {
+            get => _posisaoPinFornecedor;
+            set => SetProperty(ref _posisaoPinFornecedor, value);
+        }
+
+
+        private string _nomeFornecedor;
+        public string nomeFornecedor
+        {
+            get => _nomeFornecedor;
+            set => SetProperty(ref _nomeFornecedor, value);
+        }
+        private string _telefoneFornecedor;
+        public string telefoneFornecedor
+        {
+            get => _telefoneFornecedor;
+            set => SetProperty(ref _telefoneFornecedor, value);
+        }
+
+
         //private IList<Pin> _pins;
 
         //public IList<Pin> pins
@@ -41,6 +64,29 @@ namespace Utiliza.Usuario.ViewModels
         //    };
         //    _pins.Add(pin);
         //}
+
+        #region Método para recuperar parâmetros
+        public override void OnNavigatingTo(NavigationParameters parameters)
+        {
+            if (!parameters.ContainsKey("id")) return;
+
+            var id = Int32.Parse(parameters.GetValue<string>("id"));
+            //_idFornecedor = id;
+
+
+            var _fornecedor = new FornecedorService().GetFornecedor(id);
+
+            _position = CameraUpdateFactory.NewPositionZoom(new Position(_fornecedor.Latitude, _fornecedor.Longitude), 15d);
+
+            posisaoPinFornecedor = new Position(_fornecedor.Latitude, _fornecedor.Longitude);
+
+            nomeFornecedor = _fornecedor.NomeFantasia;
+            var telefonePrincipal = new TelefoneService().TelefonePrincipalDofornecedor(id);
+            telefoneFornecedor = $"({telefonePrincipal.CodigoArea }) {telefonePrincipal.NumeroTelefone}";
+
+        }
+
+        #endregion
 
     }
 }
