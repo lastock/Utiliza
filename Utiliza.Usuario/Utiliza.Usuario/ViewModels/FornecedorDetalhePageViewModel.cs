@@ -61,6 +61,7 @@ namespace Utiliza.Usuario.ViewModels
         #endregion
 
         #region Metodos de navegação
+
         //Navega para o site da empresa (precisa implementar o parâmetrao com o id do fornecedor para o qual vai navegar)
         private async void NavigateToSitePage()
         {
@@ -88,14 +89,14 @@ namespace Utiliza.Usuario.ViewModels
             _navigationService.NavigateAsync(new Uri("FornecedoresAvaliacoesPage", UriKind.Relative), p);
         }
 
-        //Navega para página que mostra todas as avaliações do fornecedor
+        //Abre o chat no whatsapp no numero do fornecedor.
         private void AbreChatNoWhatsApp()
         {
             var numWhatsApp = _fornecedor.WhatsApp;
             var mensagem = $"Mensagem do cliente: XXXXX para {_fornecedor.NomeFantasia}";
             Device.OpenUri(new Uri($"http://api.whatsapp.com/send?phone={numWhatsApp}&text={mensagem}"));
-
         }
+        
         //Navega para página que mostra todas as avaliações do fornecedor
         private void MarcaDesmarcaFavoritos()
         {
@@ -127,7 +128,9 @@ namespace Utiliza.Usuario.ViewModels
         #endregion
 
         #region Propriedades do Fornecedor
+
         // Propriedades dos fornecedor que serão utilizadas na página
+
         private Fornecedor _fornecedor;
         public Fornecedor Fornecedor
         {
@@ -201,10 +204,6 @@ namespace Utiliza.Usuario.ViewModels
 
         #endregion
 
-
-
-
-
         #region Método para recuperar parâmetros
         public override void OnNavigatingTo(NavigationParameters parameters)
         {
@@ -231,14 +230,7 @@ namespace Utiliza.Usuario.ViewModels
             {
                 opacidadeFavorito = 0.5;
             }
-            //descricao = _fornecedor.Descricao;
             horario = Fornecedor.Horario;
-            //var facilidades = _fornecedor.Facilidades;
-            //foreach (var facilidade in facilidades)
-            //{
-            //    _listaDeFacilidades.Add(facilidade);
-            //}
-            //ListaDeFacilidades = _listaDeFacilidades;
 
         }
 

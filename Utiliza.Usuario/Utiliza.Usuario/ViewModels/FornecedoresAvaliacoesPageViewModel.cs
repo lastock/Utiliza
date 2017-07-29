@@ -11,12 +11,12 @@ namespace Utiliza.Usuario.ViewModels
 {
     public class FornecedoresAvaliacoesPageViewModel : BaseViewModel
     {
-        //private List<Avaliacao> _listaDeAvaliacoes = new List<Avaliacao>();
-        //public List<Avaliacao> ListaDeAvaliacoes
-        //{
-        //    get { return _listaDeAvaliacoes; }
-        //    set { _listaDeAvaliacoes = value; }
-        //}
+        private List<Avaliacao> _listaDeAvaliacoes = new List<Avaliacao>();
+        public List<Avaliacao> ListaDeAvaliacoes
+        {
+            get { return _listaDeAvaliacoes; }
+            set { _listaDeAvaliacoes = value; }
+        }
         private string _nomeFor;
         public string nomeFor
         {
@@ -35,13 +35,14 @@ namespace Utiliza.Usuario.ViewModels
             var idfornecedor = parameters.GetValue<int>("id");
             Title = "Avaliações";
             nomeFor = "Total Dog";
-            //_nomeFor = new FornecedorServicos().NomeFornecedor(idfornecedor);
-            //var avaliacoes = new AvaliacoesService().RetornaAvaliacoes(idfornecedor);
-            //foreach (var avaliacao in avaliacoes)
-            //{
-            //    _listaDeAvaliacoes.Add(avaliacao);
-            //}
-            //ListaDeAvaliacoes = _listaDeAvaliacoes;
+
+            _nomeFor = new FornecedorService().NomeFornecedor(idfornecedor);
+            var avaliacoes = new AvaliacaoService().RetornaAvaliacoes(idfornecedor);
+            foreach (var avaliacao in avaliacoes)
+            {
+                _listaDeAvaliacoes.Add(avaliacao);
+            }
+            ListaDeAvaliacoes = _listaDeAvaliacoes;
         }
     }
 }

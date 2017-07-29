@@ -86,8 +86,8 @@
                                     ItemSize="30"
                                     HorizontalOptions="Center"
                                     Margin="0,0,0,0">
-                    <rating:SfRating.RatingSettings>
-                    <rating:SfRatingSettings RatedFill="Gold" UnRatedFill="White" RatedStroke="Black" UnRatedStroke="Black" />
+                        <rating:SfRating.RatingSettings>
+                            <rating:SfRatingSettings RatedFill="Gold" UnRatedFill="White" RatedStroke="Black" UnRatedStroke="Black" />
                         </rating:SfRating.RatingSettings>
                     </rating:SfRating>
                     <Button Text="Todas as avaliações" Command="{Binding MostraAvaliacoesCommand}" CommandParameter="{Binding IdFornecedor}" TextColor="Black" FontSize="Small" HorizontalOptions="Center"/>
@@ -97,15 +97,8 @@
                      <Label Text="{Binding resumo}" TextColor="Black" Margin="20"/>
                  
                      <!--Detalhes-->
-                     <Label Text="Detalhes" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
-                     <Grid >
-                         <Grid.ColumnDefinitions>
-                             <ColumnDefinition Width="*"/>
-                             <ColumnDefinition Width="*"/>
-                         </Grid.ColumnDefinitions>
-                         <Button Grid.Column="0" Text="Mensagem" Image="mail_icon_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="20,0,0,20"/>
-                         <Button Grid.Column="1" Text="Oferta" Image="percentage_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="0,0,20,20"/>
-                     </Grid>
+                     <Label Text="Ofertas" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
+                    <Button Text="Ofertas" Image="percentage_32.png" BorderColor="Gray" BorderWidth="1" TextColor="Black" BorderRadius="10" BackgroundColor="White" Margin="20,0,20,0"/>
 
                      <!--Horário de funcionamento-->
                      <Label Text="Horário de funcionamento" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
