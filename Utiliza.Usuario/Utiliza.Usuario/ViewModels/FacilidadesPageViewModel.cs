@@ -1,4 +1,5 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -10,7 +11,7 @@ using Utiliza.Usuario.Servicos;
 namespace Utiliza.Usuario.ViewModels
 {
 
-    public class FacilidadesPageViewModel : BaseViewModel
+    public class FacilidadesPageViewModel : ChildViewModelBase
     {
         private List<Facilidade> _listaDeFacilidades = new List<Facilidade>();
         public List<Facilidade> ListaDeFacilidades
@@ -26,7 +27,7 @@ namespace Utiliza.Usuario.ViewModels
             set => SetProperty(ref _fornecedor, value);
         }
 
-        public FacilidadesPageViewModel(INavigationService navigationService) : base(navigationService)
+        public FacilidadesPageViewModel(IEventAggregator eventAggregator, INavigationService navigationService) : base(eventAggregator, navigationService)
         {
 
         }

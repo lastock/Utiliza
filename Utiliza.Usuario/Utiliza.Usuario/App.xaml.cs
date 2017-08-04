@@ -54,6 +54,7 @@ namespace Utiliza.Usuario
             Container.RegisterTypeForNavigation<PromocoesPage>();
             Container.RegisterTypeForNavigation<FavoritosPage>();
             Container.RegisterTypeForNavigation<TermosDeUsoPage>();
+            Container.RegisterTypeForNavigation<AvaliacaoPage>();
         }
     }
 }

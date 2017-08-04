@@ -36,6 +36,7 @@ namespace Utiliza.Usuario.ViewModels
             p.Add("id", id);
 
             await _navigationService.NavigateAsync("/InicialPage/UtilizaNavigationPage/FornecedorTabbedPage/FornecedorDetalhePage", p, false);
+            //await _navigationService.NavigateAsync("/UtilizaNavigationPage/FornecedorTabbedPage/FornecedorDetalhePage", p, false);
         }
 
 

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Utiliza.Usuario.Views.AvaliacaoPage"
+             Title="{Binding Title}"
+             >
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding NavigateToProcuraPageCommand}" Order = "Primary" Icon="lupa32.png"  />
+        <ToolbarItem Text="Home" Command="{Binding NavigateToMainPageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Fornecedores" Command="{Binding NavigateToCategoriaPageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Sobre" Command="{Binding NavigateToSobrePageCommand}" Order = "Secondary"/>
+        <ToolbarItem Text="Config" Command="{Binding NavigateToConfiguracaoPageCommand}" Order = "Secondary"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <Label Text="Fornecedor" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,5"/>
+        <Label Text="{Binding NomeFornecedor}" TextColor="Black" HorizontalTextAlignment="Start" Margin="10,0,0,0"/>
+
+        <Label Text="Usuário" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,5"/>
+        <Label Text="{Binding Nome}" TextColor="Black" HorizontalTextAlignment="Start" Margin="10,0,0,0"/>
+
+        <Label Text="Avaliação" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,5"/>
+        <rating:SfRating ItemCount="5"
+                                    WidthRequest="185"
+                                    Value="{Binding ValorAvaliacao}"
+                                    ReadOnly="True"
+                                    Precision="Standard"
+                                    TooltipPlacement="None"
+                                    ItemSize="30"
+                                    HorizontalOptions="Center"
+                                    Margin="0,0,0,0">
+            <rating:SfRating.RatingSettings>
+                <rating:SfRatingSettings RatedFill="Gold" UnRatedFill="White" RatedStroke="Black" UnRatedStroke="Black" />
+            </rating:SfRating.RatingSettings>
+        </rating:SfRating>
+        
+        <Label Text="Comentário" TextColor="White" HorizontalTextAlignment="Center" FontSize="Medium" BackgroundColor="Green" FontAttributes="Bold" Margin="0,10,0,10"/>
+        <Label Text="{Binding Comentario}" TextColor="Black" HorizontalTextAlignment="Start" Margin="10,0,0,0"/>
+    </StackLayout>
+</ContentPage>

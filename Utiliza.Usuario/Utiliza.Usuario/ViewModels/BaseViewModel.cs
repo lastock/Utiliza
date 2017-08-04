@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace Utiliza.Usuario.ViewModels
 {
-    public class BaseViewModel : BindableBase, INavigationAware
+    public class BaseViewModel : BindableBase, INavigationAware, IDestructible
     {
         #region Construtor
 
@@ -138,7 +138,12 @@ namespace Utiliza.Usuario.ViewModels
             return cidade;
         }
 
+
         #endregion
+
+        public virtual void Destroy()
+        {
+        }
 
     }
 }

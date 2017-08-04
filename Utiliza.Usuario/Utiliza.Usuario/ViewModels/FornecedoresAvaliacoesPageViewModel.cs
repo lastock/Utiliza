@@ -11,6 +11,15 @@ namespace Utiliza.Usuario.ViewModels
 {
     public class FornecedoresAvaliacoesPageViewModel : BaseViewModel
     {
+        public FornecedoresAvaliacoesPageViewModel(INavigationService navigationService) : base(navigationService)
+        {
+
+        }
+
+        //Clicar na lista de avaliações 
+        DelegateCommand<Avaliacao> _mostrarAvaliacaoCommand;
+        public DelegateCommand<Avaliacao> MostrarAvaliacaoCommand => _mostrarAvaliacaoCommand != null ? _mostrarAvaliacaoCommand : (_mostrarAvaliacaoCommand = new DelegateCommand<Avaliacao>(MostrarAvaliacao));
+
         private List<Avaliacao> _listaDeAvaliacoes = new List<Avaliacao>();
         public List<Avaliacao> ListaDeAvaliacoes
         {
@@ -24,9 +33,12 @@ namespace Utiliza.Usuario.ViewModels
             set { _nomeFor = value; }
         }
 
-        public FornecedoresAvaliacoesPageViewModel(INavigationService navigationService) : base(navigationService)
+        private void MostrarAvaliacao(Avaliacao avaliacao)
         {
+            var p = new NavigationParameters();
+            p.Add("avaliacao", avaliacao);
 
+            _navigationService.NavigateAsync(new Uri("AvaliacaoPage", UriKind.Relative), p);
         }
 
         public override void OnNavigatingTo(NavigationParameters parameters)

@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 using Prism.Commands;
 using Prism.Navigation;
-using Prism.Services;
 using Utiliza.Usuario.Model;
 using Utiliza.Usuario.Servicos;
 using Xamarin.Forms;
 using Plugin.Share;
 using Plugin.Share.Abstractions;
-using System.Threading.Tasks;
+using Prism.Events;
 
 namespace Utiliza.Usuario.ViewModels
 {
-    public class FornecedorDetalhePageViewModel : BaseViewModel
+    public class FornecedorDetalhePageViewModel : ChildViewModelBase
     {
 
         #region Inicialização de variáveis
@@ -24,7 +23,7 @@ namespace Utiliza.Usuario.ViewModels
 
         #region Construtor
         // Construtor da classe
-        public FornecedorDetalhePageViewModel(INavigationService navigationService) : base(navigationService)
+        public FornecedorDetalhePageViewModel(IEventAggregator eventAggregator, INavigationService navigationService) : base(eventAggregator, navigationService)
         {
             NavigateToSitePageCommand = new DelegateCommand(NavigateToSitePage);
             NavigateToMapaEmpresaPageCommand = new DelegateCommand(NavigateToMapaEmpresaPage);
@@ -86,7 +85,7 @@ namespace Utiliza.Usuario.ViewModels
             var p = new NavigationParameters();
             p.Add("id", _idFornecedor);
 
-            _navigationService.NavigateAsync(new Uri("FornecedoresAvaliacoesPage", UriKind.Relative), p);
+            _navigationService.NavigateAsync(new Uri("/UtilizaNavigationPage/FornecedoresAvaliacoesPage", UriKind.Relative), p);
         }
 
         //Abre o chat no whatsapp no numero do fornecedor.

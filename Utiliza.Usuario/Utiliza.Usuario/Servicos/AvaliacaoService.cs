@@ -20,9 +20,14 @@ namespace Utiliza.Usuario.Servicos
             return FornecedorRepository.Instance.GetAvaliacoesDoFornecedor(idFornecedor);
         }
 
-        public Avaliacao AvaliacaoDoUsuario(string userName)
+        public Avaliacao RetornaAvaliacaoById(int idAvaliacao)
         {
-            return FornecedorRepository.Instance.GetAvaliacãoDoUsuario(userName);
+            return FornecedorRepository.Instance.GetAvaliacaoById(idAvaliacao);
+        }
+
+        public Avaliacao AvaliacaoDoUsuario(string userName, int idFornecedor)
+        {
+            return FornecedorRepository.Instance.GetAvaliacaoDoUsuario(userName, idFornecedor);
         }
 
         public void PopulaAvaliacao()

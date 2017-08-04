@@ -1,4 +1,5 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -9,9 +10,9 @@ using Utiliza.Usuario.Servicos;
 
 namespace Utiliza.Usuario.ViewModels
 {
-    public class ContatosPageViewModel : BaseViewModel
+    public class ContatosPageViewModel : ChildViewModelBase
     {
-        public ContatosPageViewModel(INavigationService navigationService) : base(navigationService)
+        public ContatosPageViewModel(IEventAggregator eventAggregator, INavigationService navigationService) : base(eventAggregator, navigationService)
         {
             Title = "Contatos";
         }

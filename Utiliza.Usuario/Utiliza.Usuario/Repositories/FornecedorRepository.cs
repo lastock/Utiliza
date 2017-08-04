@@ -923,13 +923,31 @@ namespace Utiliza.Usuario.Repositories
         }
 
         //Retorna a avaliação de um usuário
-        public Avaliacao GetAvaliacãoDoUsuario(string userName)
+        public Avaliacao GetAvaliacaoDoUsuario(string userName, int idFornecedor)
         {
             try
             {
                 using (var conn = new SQLiteConnection(dbFile))
                 {
-                    return conn.Find<Avaliacao>(c => c.UserName == userName);
+                    return conn.Find<Avaliacao>(c => c.UserName == userName && c.IdFornecedor == idFornecedor);
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format($"Não pude acessar o banco. {ex.Message}");
+                return null;
+                //throw ex;
+            }
+        }
+
+        //Retorna a avaliação de um usuário pelo id da avaliação
+        public Avaliacao GetAvaliacaoById(int idAvaliacao)
+        {
+            try
+            {
+                using (var conn = new SQLiteConnection(dbFile))
+                {
+                    return conn.Find<Avaliacao>(c => c.IdAvaliacao == idAvaliacao);
                 }
             }
             catch (Exception ex)
